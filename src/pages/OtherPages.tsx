@@ -369,58 +369,99 @@ export const AboutPage: React.FC = () => (
       <h1 className="text-3xl sm:text-4xl font-bold text-slate-900 mb-4">NIST CSF 2.0 Navigator</h1>
     </div>
 
-    <div className="prose prose-slate max-w-none space-y-8">
+    <div className="space-y-5">
+
+      {/* Sobre o projeto */}
       <div className="bg-white rounded-xl border border-slate-200 p-6">
-        <h2 className="text-lg font-bold text-slate-900 mb-3">Sobre o Projeto</h2>
+        <p className="text-xs font-bold uppercase tracking-widest text-slate-400 mb-4">Sobre o projeto</p>
         <p className="text-slate-600 text-sm leading-relaxed">
-          O NIST CSF 2.0 Navigator é uma ferramenta educacional open source que transforma o NIST Cybersecurity Framework 2.0 em uma experiência visual, interativa e acessível. O objetivo é facilitar a compreensão do framework, orientar sua implementação e explorar suas relações com outros frameworks de segurança, risco e continuidade.
+          O NIST CSF 2.0 Navigator é uma ferramenta educacional open source que transforma o NIST Cybersecurity Framework 2.0 em uma experiência visual, interativa e acessível. O objetivo é facilitar a compreensão do framework, orientar sua implementação e explorar relações com outros frameworks de segurança, risco e continuidade — como NIST SP 800-53, ISO/IEC 27002, CIS Controls e MITRE ATT&CK.
         </p>
-      </div>
-
-      <div className="bg-white rounded-xl border border-slate-200 p-6">
-        <h2 className="text-lg font-bold text-slate-900 mb-3">Propriedade Intelectual</h2>
-        <ul className="space-y-2 text-sm text-slate-600">
-          <li>• O <strong>NIST CSF</strong> é desenvolvido pelo National Institute of Standards and Technology (NIST), agência do governo dos Estados Unidos.</li>
-          <li>• Os <strong>padrões ISO/IEC</strong> são publicados pela International Organization for Standardization (ISO) e International Electrotechnical Commission (IEC).</li>
-          <li>• Os <strong>CIS Controls</strong> são mantidos pelo Center for Internet Security (CIS).</li>
-          <li>• O <strong>MITRE ATT&CK</strong> é desenvolvido pela MITRE Corporation.</li>
-          <li>• Este Navigator não é endossado por nenhuma dessas organizações.</li>
-        </ul>
-      </div>
-
-      <div className="bg-white rounded-xl border border-slate-200 p-6">
-        <h2 className="text-lg font-bold text-slate-900 mb-3">Aviso Legal</h2>
-        <p className="text-slate-600 text-sm leading-relaxed">
-          Este Navigator é uma ferramenta de orientação e planejamento. As descrições, orientações e mapeamentos apresentados são baseados em fontes públicas e representam interpretações para fins educacionais. Não substituem a consulta aos documentos oficiais dos frameworks mencionados, nem representam aconselhamento profissional de segurança.
-        </p>
-        <p className="text-slate-600 text-sm leading-relaxed mt-3">
-          Os mapeamentos entre frameworks são orientativos e não representam equivalências absolutas. Um controle pode atender parcialmente a múltiplos resultados, e o contexto organizacional deve sempre ser considerado.
-        </p>
-      </div>
-
-      <div className="bg-white rounded-xl border border-slate-200 p-6">
-        <h2 className="text-lg font-bold text-slate-900 mb-3">Tecnologias</h2>
-        <div className="flex flex-wrap gap-2">
+        <div className="mt-4 flex flex-wrap gap-2">
           {['React', 'TypeScript', 'Vite', 'Tailwind CSS', 'React Router', 'Lucide Icons'].map(t => (
-            <span key={t} className="px-3 py-1.5 bg-slate-100 text-slate-700 rounded-lg text-sm font-medium">{t}</span>
+            <span key={t} className="px-2.5 py-1 bg-slate-100 text-slate-600 rounded-lg text-xs font-medium">{t}</span>
           ))}
         </div>
-      </div>
-
-      <div className="bg-white rounded-xl border border-slate-200 p-6">
-        <h2 className="text-lg font-bold text-slate-900 mb-3">Contribuições</h2>
-        <p className="text-slate-600 text-sm leading-relaxed">
-          Este é um projeto open source. Contribuições são bem-vindas — seja para melhorar o conteúdo, adicionar mapeamentos, corrigir imprecisões ou melhorar a interface.
-        </p>
         <a
           href="https://github.com/felipenicacio/nist-csf-navigator"
           target="_blank"
           rel="noopener noreferrer"
-          className="mt-3 inline-flex items-center gap-2 text-sm font-semibold text-blue-600 hover:underline"
+          className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-blue-600 hover:underline"
         >
           Ver repositório no GitHub ↗
         </a>
       </div>
+
+      {/* Sobre o autor */}
+      <div className="rounded-xl p-6" style={{ backgroundColor: '#0B1F33' }}>
+        <p className="text-xs font-bold uppercase tracking-widest mb-5" style={{ color: '#14B8A6' }}>Sobre o autor</p>
+
+        {/* Avatar + nome */}
+        <div className="flex items-center gap-4 mb-5">
+          <img
+            src="./assets/avatar.jpg"
+            alt="Felipe Nicácio"
+            className="w-20 h-20 rounded-full object-cover shrink-0"
+            style={{ border: '3px solid #14B8A6' }}
+          />
+          <div>
+            <p className="text-white font-bold text-lg leading-tight">Felipe Nicácio</p>
+            <p className="text-sm font-semibold mt-0.5" style={{ color: '#14B8A6' }}>
+              Consultor em Segurança da Informação
+            </p>
+          </div>
+        </div>
+
+        {/* Bio */}
+        <p className="text-sm leading-relaxed mb-6" style={{ color: 'rgba(255,255,255,0.6)' }}>
+          Consultor de Segurança da Informação, Privacidade de Dados e Continuidade de Negócios.
+          Especialista em implementação de SGSI, ISO 27001, LGPD e programas de conscientização corporativa.
+        </p>
+
+        {/* Links */}
+        <div className="flex flex-wrap gap-3">
+          <a
+            href="https://www.linkedin.com/in/felipe-nicacio/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg text-sm font-semibold transition-opacity hover:opacity-90"
+            style={{ backgroundColor: '#0A66C2', color: '#fff' }}
+          >
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+            </svg>
+            Conecte-se no LinkedIn
+          </a>
+          <a
+            href="https://github.com/felipenicacio"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg text-sm font-semibold transition-opacity hover:opacity-90"
+            style={{ backgroundColor: 'rgba(255,255,255,0.1)', color: '#fff', border: '1px solid rgba(255,255,255,0.2)' }}
+          >
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+            </svg>
+            GitHub
+          </a>
+        </div>
+      </div>
+
+      {/* Aviso legal */}
+      <div className="bg-white rounded-xl border border-slate-200 p-6">
+        <p className="text-xs font-bold uppercase tracking-widest text-slate-400 mb-4">Aviso legal</p>
+        <ul className="space-y-2 text-sm text-slate-600">
+          <li>O <strong>NIST CSF</strong> é desenvolvido pelo National Institute of Standards and Technology (NIST).</li>
+          <li>Os <strong>padrões ISO/IEC</strong> são publicados pela ISO e IEC.</li>
+          <li>Os <strong>CIS Controls</strong> são mantidos pelo Center for Internet Security.</li>
+          <li>O <strong>MITRE ATT&CK</strong> é desenvolvido pela MITRE Corporation.</li>
+          <li>Este Navigator não é endossado por nenhuma dessas organizações.</li>
+        </ul>
+        <p className="text-slate-500 text-sm leading-relaxed mt-4">
+          Os mapeamentos apresentados são orientativos e não representam equivalências absolutas entre frameworks. Um controle pode contribuir parcialmente para múltiplos resultados do CSF. O contexto organizacional deve sempre ser considerado.
+        </p>
+      </div>
+
     </div>
   </div>
 );
