@@ -8,6 +8,8 @@ import CategoryPage from './pages/CategoryPage';
 import SubcategoryPage from './pages/SubcategoryPage';
 import ImplementationPage from './pages/ImplementationPage';
 import ConsultantViewPage from './pages/ConsultantViewPage';
+import ERMPage from './pages/ERMPage';
+import CSCRMPage from './pages/CSCRMPage';
 import { TiersPage, ProfilesPage, CrosswalkPage, FrameworksPage, GlossaryPage, AboutPage } from './pages/OtherPages';
 
 function App() {
@@ -25,6 +27,8 @@ function App() {
             <Route path="/subcategory/:id" element={<SubcategoryPage />} />
             <Route path="/implementation" element={<ImplementationPage />} />
             <Route path="/consultant" element={<ConsultantViewPage />} />
+            <Route path="/erm" element={<ERMPage />} />
+            <Route path="/cscrm" element={<CSCRMPage />} />
             <Route path="/tiers" element={<TiersPage />} />
             <Route path="/profiles" element={<ProfilesPage />} />
             <Route path="/crosswalk" element={<CrosswalkPage />} />

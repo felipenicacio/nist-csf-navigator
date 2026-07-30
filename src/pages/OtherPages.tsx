@@ -10,52 +10,127 @@ import { allSubcategories } from '../data';
 
 // ── TIERS ────────────────────────────────────────────────────────────────────
 export const TiersPage: React.FC = () => {
+  const [activeComponent, setActiveComponent] = useState<'governance' | 'management'>('governance');
+
   const tiers = [
     {
       n: 1, name: 'PARTIAL', color: '#DC2626', bg: '#FEF2F2',
-      desc: 'Gestão de riscos de cibersegurança ad hoc. A organização não possui processo formalizado e a consciência de riscos é limitada.',
-      characteristics: ['Práticas não formalizadas ou inconsistentes', 'Informações de ameaças não compartilhadas', 'Conscientização de riscos limitada à organização', 'Gestão de riscos não integrada à estratégia'],
-      examples: ['Sem política formal de segurança', 'Resposta a incidentes reativa e não documentada', 'Sem processo de avaliação de riscos', 'Inventário de ativos incompleto ou inexistente'],
+      desc: 'Práticas ad hoc e reativas. Sem processo formalizado. Consciência de riscos limitada.',
+      governance: [
+        'Sem processo organizacional de gestão de riscos de cibersegurança definido',
+        'Riscos de cibersegurança não são identificados de forma consistente',
+        'Papéis e responsabilidades não estão formalizados',
+        'Não há estratégia de riscos aprovada pela liderança',
+      ],
+      management: [
+        'Gestão de riscos ad hoc, sem metodologia definida',
+        'Compartilhamento de informações de ameaças não ocorre ou é informal',
+        'Riscos de fornecedores não são sistematicamente avaliados',
+        'Resposta a incidentes é reativa e não documentada',
+      ],
+      examples: ['Sem política formal de segurança', 'Inventário de ativos incompleto', 'Sem avaliações periódicas de risco'],
     },
     {
       n: 2, name: 'RISK INFORMED', color: '#D97706', bg: '#FFFBEB',
-      desc: 'A organização possui maior consciência sobre riscos, mas práticas ainda não estão formalizadas de forma consistente.',
-      characteristics: ['Práticas de gestão de riscos parcialmente estabelecidas', 'Aprovação da liderança para gestão de riscos', 'Compartilhamento informal de inteligência de ameaças', 'Consciência de dependências da cadeia de suprimentos'],
-      examples: ['Política de segurança existente mas não amplamente seguida', 'Avaliações de risco realizadas mas sem metodologia consistente', 'Algum monitoramento de ameaças externas', 'Plano de resposta a incidentes básico'],
+      desc: 'Maior consciência de riscos. Aprovação da liderança. Práticas parcialmente formalizadas.',
+      governance: [
+        'Prioridades de riscos de cibersegurança são estabelecidas pela liderança, mas não formalmente documentadas',
+        'Existe consciência dos riscos, mas não há abordagem organizacional completa',
+        'Algumas políticas existem mas não cobrem todo o escopo necessário',
+        'Papéis e responsabilidades existem em algumas áreas',
+      ],
+      management: [
+        'Existência de consciência de riscos cibernéticos em nível organizacional',
+        'Avaliações de risco ocorrem, mas não são recorrentes ou repetíveis',
+        'Informações de ameaças são compartilhadas informalmente',
+        'Dependências da cadeia de suprimentos são reconhecidas mas não totalmente gerenciadas',
+      ],
+      examples: ['Política existente mas não amplamente seguida', 'Avaliações de risco sem metodologia consistente', 'Plano de resposta básico'],
     },
     {
-      n: 3, name: 'REPEATABLE', color: '#16A34A', bg: '#F0FDF4',
-      desc: 'Práticas de gestão de riscos formalmente estabelecidas, aprovadas pela liderança e expressas como política.',
-      characteristics: ['Práticas formalizadas e documentadas', 'Processo definido de gestão de riscos', 'Compartilhamento regular de informações de ameaças', 'Gestão de riscos da cadeia de suprimentos estruturada'],
-      examples: ['Programa de gestão de riscos estruturado', 'Avaliações de risco periódicas com metodologia definida', 'SIEM implementado com alertas monitorados', 'Plano de resposta a incidentes testado regularmente'],
+      n: 3, name: 'REPEATABLE', color: '#1E9E52', bg: '#E2FAF0',
+      desc: 'Práticas formalizadas, documentadas e aprovadas. Processos repetíveis e consistentes.',
+      governance: [
+        'Estratégia de gestão de riscos de cibersegurança aprovada pela liderança e documentada',
+        'Políticas formalizadas, comunicadas e revisadas periodicamente',
+        'Papéis, responsabilidades e autoridades claramente definidos',
+        'Cadeia de suprimentos incluída no programa de gestão de riscos',
+      ],
+      management: [
+        'Avaliações de risco são realizadas com metodologia definida e de forma periódica',
+        'Compartilhamento de informações de ameaças é regular e estruturado',
+        'Riscos de fornecedores são avaliados formalmente',
+        'Planos de resposta e recuperação testados e atualizados',
+      ],
+      examples: ['SIEM implementado e monitorado', 'Avaliações periódicas com metodologia', 'Plano de resposta testado regularmente'],
     },
     {
-      n: 4, name: 'ADAPTIVE', color: '#0F766E', bg: '#F0FDFA',
-      desc: 'A organização adapta ativamente suas práticas de cibersegurança com base em lições aprendidas e previsão de ameaças.',
-      characteristics: ['Aprendizado contínuo e adaptação ativa', 'Contribuição ativa para comunidades de segurança', 'Análise preditiva de ameaças', 'Cibersegurança integrada à cultura organizacional'],
-      examples: ['Threat hunting proativo', 'Participação em ISACs e compartilhamento de CTI', 'Automação extensiva de segurança', 'Programa de segurança orientado a dados e métricas'],
+      n: 4, name: 'ADAPTIVE', color: '#1A7FA8', bg: '#E0F4FB',
+      desc: 'Adaptação ativa baseada em aprendizado contínuo e previsão de ameaças.',
+      governance: [
+        'Liderança adapta a estratégia com base no ambiente de ameaças e em lições aprendidas',
+        'Cibersegurança está integrada à cultura e às decisões de negócio',
+        'Relações com parceiros e fornecedores incluem colaboração ativa em segurança',
+        'Contribuição ativa para comunidades de compartilhamento de informações',
+      ],
+      management: [
+        'Análise preditiva de ameaças e threat hunting proativo',
+        'Automação extensiva de detecção e resposta',
+        'Melhoria contínua baseada em dados, métricas e lições aprendidas',
+        'Compartilhamento ativo de inteligência com setor e comunidade',
+      ],
+      examples: ['Threat hunting proativo', 'Participação em ISACs', 'Programa orientado a dados e métricas'],
     },
   ];
 
   return (
     <div className="max-w-screen-xl mx-auto px-4 sm:px-6 py-10 animate-fadeIn">
-      <div className="mb-10">
-        <p className="text-xs font-semibold uppercase tracking-widest text-teal-600 mb-2">NIST CSF 2.0</p>
-        <h1 className="text-3xl sm:text-4xl font-bold text-slate-900 mb-4">CSF Tiers</h1>
-        <p className="text-slate-500 max-w-2xl leading-relaxed">
-          Os Tiers descrevem o grau de sofisticação das práticas de gestão de riscos de cibersegurança de uma organização. São uma referência para autoavaliação — não um indicador de maturidade absoluto.
+      <div className="mb-8">
+        <p className="text-xs font-semibold uppercase tracking-widest mb-2" style={{ color: '#0F766E' }}>NIST CSF 2.0 — NIST SP 1302</p>
+        <h1 className="text-3xl sm:text-4xl font-bold text-slate-900 mb-3">CSF Tiers</h1>
+        <p className="text-slate-500 max-w-2xl leading-relaxed text-sm">
+          Os Tiers caracterizam o rigor das práticas de gestão de riscos de cibersegurança de uma organização. Cada Tier possui dois componentes distintos: <strong className="text-slate-700">Governance</strong> (relativo ao GOVERN) e <strong className="text-slate-700">Management</strong> (relativo às outras 5 Functions).
         </p>
-        <div className="mt-4 p-4 bg-amber-50 border border-amber-200 rounded-xl">
-          <p className="text-sm text-amber-700">
-            <strong>Nota:</strong> Os Tiers não são etapas que precisam ser seguidas em ordem. O objetivo não é atingir o Tier 4, mas identificar o nível atual e determinar se ele é adequado ao contexto e aos riscos da organização.
-          </p>
-        </div>
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+      {/* Key notes */}
+      <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-8">
+        {[
+          { title: 'Não são etapas obrigatórias', desc: 'O objetivo não é atingir o Tier 4. O Tier correto é o que atende ao contexto e ao risco da organização.' },
+          { title: 'Selecionados pela liderança', desc: 'A seleção do Tier desejado é responsabilidade da liderança organizacional, não da equipe técnica.' },
+          { title: 'Aplicados por Function ou Category', desc: 'Os Tiers podem ser selecionados globalmente ou por Function/Category para maior granularidade.' },
+        ].map(n => (
+          <div key={n.title} className="bg-white rounded-xl border border-slate-200 p-4">
+            <p className="text-xs font-bold text-slate-800 mb-1">{n.title}</p>
+            <p className="text-xs text-slate-500 leading-relaxed">{n.desc}</p>
+          </div>
+        ))}
+      </div>
+
+      {/* Component toggle */}
+      <div className="flex gap-2 mb-6">
+        <button
+          onClick={() => setActiveComponent('governance')}
+          className={`px-5 py-2.5 rounded-xl text-sm font-semibold transition-colors border-2 ${activeComponent === 'governance' ? 'border-slate-900 bg-slate-900 text-white' : 'border-slate-200 bg-white text-slate-600 hover:bg-slate-50'}`}
+        >
+          Cybersecurity Risk Governance
+          <span className="ml-2 text-xs opacity-60">Function GOVERN</span>
+        </button>
+        <button
+          onClick={() => setActiveComponent('management')}
+          className={`px-5 py-2.5 rounded-xl text-sm font-semibold transition-colors border-2 ${activeComponent === 'management' ? 'border-slate-900 bg-slate-900 text-white' : 'border-slate-200 bg-white text-slate-600 hover:bg-slate-50'}`}
+        >
+          Cybersecurity Risk Management
+          <span className="ml-2 text-xs opacity-60">Functions ID · PR · DE · RS · RC</span>
+        </button>
+      </div>
+
+      {/* Tiers grid */}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mb-8">
         {tiers.map(tier => (
           <div key={tier.n} className="bg-white rounded-2xl border-2 p-6" style={{ borderColor: tier.color }}>
             <div className="flex items-center gap-3 mb-4">
-              <div className="w-12 h-12 rounded-xl flex items-center justify-center text-xl font-black" style={{ backgroundColor: tier.bg, color: tier.color }}>
+              <div className="w-12 h-12 rounded-xl flex items-center justify-center text-2xl font-black" style={{ backgroundColor: tier.bg, color: tier.color }}>
                 T{tier.n}
               </div>
               <div>
@@ -63,82 +138,271 @@ export const TiersPage: React.FC = () => {
                 <h2 className="text-lg font-bold" style={{ color: tier.color }}>{tier.name}</h2>
               </div>
             </div>
-            <p className="text-slate-600 text-sm leading-relaxed mb-4">{tier.desc}</p>
+            <p className="text-sm text-slate-600 leading-relaxed mb-4">{tier.desc}</p>
+
             <div className="mb-4">
-              <p className="text-xs font-semibold text-slate-500 uppercase tracking-wider mb-2">Características</p>
-              <ul className="space-y-1">
-                {tier.characteristics.map((c, i) => (
-                  <li key={i} className="text-sm text-slate-600 flex gap-2">
-                    <span style={{ color: tier.color }}>·</span>{c}
+              <p className="text-xs font-bold uppercase tracking-wider mb-2" style={{ color: tier.color }}>
+                {activeComponent === 'governance' ? 'Cybersecurity Risk Governance' : 'Cybersecurity Risk Management'}
+              </p>
+              <ul className="space-y-1.5">
+                {(activeComponent === 'governance' ? tier.governance : tier.management).map((item, i) => (
+                  <li key={i} className="flex gap-2 text-sm text-slate-600">
+                    <span className="shrink-0 mt-1 w-1.5 h-1.5 rounded-full" style={{ backgroundColor: tier.color }} />
+                    {item}
                   </li>
                 ))}
               </ul>
             </div>
-            <div>
-              <p className="text-xs font-semibold text-slate-500 uppercase tracking-wider mb-2">Exemplos</p>
-              <ul className="space-y-1">
+
+            <div className="pt-3 border-t border-slate-100">
+              <p className="text-xs text-slate-400 font-semibold uppercase tracking-wider mb-2">Exemplos práticos</p>
+              <div className="flex flex-wrap gap-1.5">
                 {tier.examples.map((e, i) => (
-                  <li key={i} className="text-sm text-slate-500 flex gap-2">
-                    <span className="text-slate-300">→</span>{e}
-                  </li>
+                  <span key={i} className="text-xs px-2 py-1 rounded-lg" style={{ backgroundColor: tier.bg, color: tier.color }}>{e}</span>
                 ))}
-              </ul>
+              </div>
             </div>
           </div>
         ))}
+      </div>
+
+      {/* Tiers + Profiles connection */}
+      <div className="bg-white rounded-xl border border-slate-200 p-6">
+        <h2 className="text-sm font-bold uppercase tracking-wider text-slate-500 mb-4">Como Tiers e Profiles se conectam</h2>
+        <p className="text-sm text-slate-600 leading-relaxed mb-5">
+          O Tier selecionado pela liderança define o nível de rigor esperado para o Current e Target Profile de cada Function. Por exemplo, se a liderança determina que a organização deve operar no Tier 2 para as Functions IDENTIFY e PROTECT, o Current Profile reflete o quanto o Tier 2 está sendo alcançado hoje, e o Target Profile define as melhorias necessárias para alcançá-lo plenamente.
+        </p>
+        <div className="flex flex-col sm:flex-row items-center gap-3 justify-center">
+          {[
+            { label: 'Liderança seleciona Tier', sub: 'por Function ou globalmente', color: '#0B1F33' },
+            { arrow: true },
+            { label: 'Current Profile', sub: 'quanto do Tier está sendo alcançado', color: '#64748B' },
+            { arrow: true },
+            { label: 'Gap Analysis', sub: 'diferença para o Tier alvo', color: '#C07800' },
+            { arrow: true },
+            { label: 'Target Profile', sub: 'alcançar plenamente o Tier selecionado', color: '#1E9E52' },
+          ].map((item, i) =>
+            'arrow' in item ? (
+              <span key={i} className="text-slate-300 font-bold hidden sm:block">→</span>
+            ) : (
+              <div key={i} className="text-center px-4 py-2.5 rounded-xl border" style={{ borderColor: `${item.color}40`, backgroundColor: `${item.color}08` }}>
+                <p className="text-xs font-bold" style={{ color: item.color }}>{item.label}</p>
+                <p className="text-xs text-slate-400 mt-0.5">{item.sub}</p>
+              </div>
+            )
+          )}
+        </div>
       </div>
     </div>
   );
 };
 
 // ── PROFILES ─────────────────────────────────────────────────────────────────
-export const ProfilesPage: React.FC = () => (
-  <div className="max-w-screen-xl mx-auto px-4 sm:px-6 py-10 animate-fadeIn">
-    <div className="mb-10">
-      <p className="text-xs font-semibold uppercase tracking-widest text-teal-600 mb-2">NIST CSF 2.0</p>
-      <h1 className="text-3xl sm:text-4xl font-bold text-slate-900 mb-4">Organizational Profiles</h1>
-      <p className="text-slate-500 max-w-2xl leading-relaxed">
-        Os Profiles são mecanismos do CSF 2.0 para descrever o estado atual ou desejado da cibersegurança de uma organização, selecionando resultados do Core relevantes ao contexto organizacional.
-      </p>
-    </div>
+export const ProfilesPage: React.FC = () => {
+  const [activeTab, setActiveTab] = useState<'overview' | 'community' | 'cprt'>('overview');
 
-    <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
-      {[
-        { title: 'Current Profile', desc: 'Representa os resultados de cibersegurança que a organização está alcançando atualmente. Baseia-se em avaliação do estado presente.', color: '#64748B', bg: '#F8FAFC', icon: '◎' },
-        { title: 'Gap Analysis', desc: 'Comparação entre Current Profile e Target Profile. Revela lacunas que precisam ser endereçadas para alcançar os resultados desejados.', color: '#D97706', bg: '#FFFBEB', icon: '△' },
-        { title: 'Target Profile', desc: 'Representa os resultados de cibersegurança que a organização deseja alcançar, com base em objetivos, tolerância a riscos e necessidades.', color: '#16A34A', bg: '#F0FDF4', icon: '◉' },
-      ].map(p => (
-        <div key={p.title} className="bg-white rounded-2xl border border-slate-200 p-6">
-          <div className="text-4xl mb-4" style={{ color: p.color }}>{p.icon}</div>
-          <h3 className="text-lg font-bold text-slate-900 mb-2">{p.title}</h3>
-          <p className="text-slate-500 text-sm leading-relaxed">{p.desc}</p>
-        </div>
-      ))}
-    </div>
+  return (
+    <div className="max-w-screen-xl mx-auto px-4 sm:px-6 py-10 animate-fadeIn">
+      <div className="mb-8">
+        <p className="text-xs font-semibold uppercase tracking-widest mb-2" style={{ color: '#0F766E' }}>NIST CSF 2.0 — NIST SP 1301</p>
+        <h1 className="text-3xl sm:text-4xl font-bold text-slate-900 mb-3">Organizational Profiles</h1>
+        <p className="text-slate-500 max-w-2xl text-sm leading-relaxed">
+          Profiles são o mecanismo central do CSF 2.0 para descrever o estado atual e desejado da cibersegurança. São criados selecionando e priorizando outcomes do CSF Core relevantes ao contexto organizacional.
+        </p>
+      </div>
 
-    <div className="bg-white rounded-2xl border border-slate-200 p-8">
-      <h2 className="text-xl font-bold text-slate-900 mb-6">Como usar os Profiles</h2>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+      {/* Three cards */}
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-5 mb-8">
         {[
-          { title: 'Autoavaliação', desc: 'Use o Current Profile para entender onde você está agora em relação aos resultados do CSF Core.' },
-          { title: 'Planejamento', desc: 'Defina o Target Profile com base nos objetivos de negócio, riscos aceitos e requisitos das partes interessadas.' },
-          { title: 'Priorização', desc: 'Compare os dois profiles para identificar gaps e priorizar investimentos com base no risco.' },
-          { title: 'Comunicação', desc: 'Use os Profiles para comunicar o estado da cibersegurança à liderança e às partes interessadas.' },
-          { title: 'Monitoramento', desc: 'Revise os Profiles periodicamente para acompanhar o progresso em direção ao estado desejado.' },
-          { title: 'Colaboração', desc: 'Profiles podem ser usados para alinhar expectativas entre organizações e seus fornecedores.' },
-        ].map(item => (
-          <div key={item.title} className="flex gap-3">
-            <ChevronRight size={16} className="text-teal-500 mt-0.5 shrink-0" />
-            <div>
-              <p className="text-sm font-semibold text-slate-800">{item.title}</p>
-              <p className="text-sm text-slate-500">{item.desc}</p>
-            </div>
+          { title: 'Current Profile', icon: '◎', color: '#64748B', bg: '#F8FAFC', desc: 'Outcomes que a organização está alcançando atualmente. Documenta práticas, status e avaliação de cada resultado.' },
+          { title: 'Gap Analysis', icon: '△', color: '#C07800', bg: '#FFF3DC', desc: 'Diferença entre o Current e o Target Profile. Base para o Action Plan priorizado por risco e impacto.' },
+          { title: 'Target Profile', icon: '◉', color: '#1E9E52', bg: '#E2FAF0', desc: 'Outcomes desejados, com prioridade definida. Considera novos requisitos, tecnologias e tendências de ameaças.' },
+        ].map(p => (
+          <div key={p.title} className="bg-white rounded-2xl border border-slate-200 p-6">
+            <div className="text-4xl mb-3" style={{ color: p.color }}>{p.icon}</div>
+            <h3 className="text-base font-bold text-slate-900 mb-2">{p.title}</h3>
+            <p className="text-sm text-slate-500 leading-relaxed">{p.desc}</p>
           </div>
         ))}
       </div>
+
+      {/* Tabs */}
+      <div className="flex gap-2 mb-6 flex-wrap">
+        {[
+          { id: 'overview', label: 'Processo e campos' },
+          { id: 'community', label: 'Community Profiles' },
+          { id: 'cprt', label: 'Informative References e CPRT' },
+        ].map(tab => (
+          <button
+            key={tab.id}
+            onClick={() => setActiveTab(tab.id as any)}
+            className={`px-4 py-2 rounded-lg text-sm font-semibold transition-colors ${activeTab === tab.id ? 'text-white' : 'bg-white border border-slate-200 text-slate-600 hover:bg-slate-50'}`}
+            style={activeTab === tab.id ? { backgroundColor: '#0B1F33' } : {}}
+          >
+            {tab.label}
+          </button>
+        ))}
+      </div>
+
+      {activeTab === 'overview' && (
+        <div className="space-y-5">
+          {/* Fields */}
+          <div className="bg-white rounded-xl border border-slate-200 p-6">
+            <h2 className="text-sm font-bold uppercase tracking-wider text-slate-500 mb-4">Campos do Organizational Profile</h2>
+            <div className="overflow-x-auto rounded-xl border border-slate-200">
+              <table className="w-full text-sm">
+                <thead>
+                  <tr className="border-b border-slate-200 bg-slate-50">
+                    <th className="px-4 py-3 text-left font-bold text-slate-700" colSpan={2}>Outcome CSF</th>
+                    <th className="px-4 py-3 text-left font-bold text-blue-700 border-l border-slate-200" colSpan={3}>Current Profile</th>
+                    <th className="px-4 py-3 text-left font-bold text-green-700 border-l border-slate-200" colSpan={2}>Target Profile</th>
+                  </tr>
+                  <tr className="border-b border-slate-200 text-xs text-slate-500 bg-slate-50">
+                    <th className="px-4 py-2 text-left">Identificador</th>
+                    <th className="px-4 py-2 text-left">Descrição</th>
+                    <th className="px-4 py-2 text-left border-l border-slate-200">Práticas</th>
+                    <th className="px-4 py-2 text-left">Status</th>
+                    <th className="px-4 py-2 text-left">Avaliação</th>
+                    <th className="px-4 py-2 text-left border-l border-slate-200">Prioridade</th>
+                    <th className="px-4 py-2 text-left">Metas</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr className="border-b border-slate-100 text-xs">
+                    <td className="px-4 py-3 font-mono font-bold text-purple-700">PR.PS-01</td>
+                    <td className="px-4 py-3 text-slate-600">Configurações de segurança estabelecidas</td>
+                    <td className="px-4 py-3 text-slate-500 border-l border-slate-200">Baselines definidos para plataformas principais; uso não monitorado</td>
+                    <td className="px-4 py-3"><span className="px-2 py-0.5 bg-yellow-100 text-yellow-700 rounded font-semibold">Parcial</span></td>
+                    <td className="px-4 py-3 text-slate-600">3/5</td>
+                    <td className="px-4 py-3 border-l border-slate-200"><span className="px-2 py-0.5 bg-red-100 text-red-700 rounded font-semibold">Alta</span></td>
+                    <td className="px-4 py-3 text-slate-500">Baselines aplicados a todos os sistemas; desvios detectados automaticamente</td>
+                  </tr>
+                  <tr className="text-xs">
+                    <td className="px-4 py-3 font-mono font-bold text-blue-700">ID.RA-01</td>
+                    <td className="px-4 py-3 text-slate-600">Vulnerabilidades identificadas e documentadas</td>
+                    <td className="px-4 py-3 text-slate-500 border-l border-slate-200">Varreduras mensais com Nessus em sistemas críticos</td>
+                    <td className="px-4 py-3"><span className="px-2 py-0.5 bg-green-100 text-green-700 rounded font-semibold">Em andamento</span></td>
+                    <td className="px-4 py-3 text-slate-600">4/5</td>
+                    <td className="px-4 py-3 border-l border-slate-200"><span className="px-2 py-0.5 bg-yellow-100 text-yellow-700 rounded font-semibold">Média</span></td>
+                    <td className="px-4 py-3 text-slate-500">Expandir para todos os ambientes incluindo nuvem; varreduras semanais</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <p className="text-xs text-slate-400 mt-3 italic">Exemplo ilustrativo baseado no template oficial NIST SP 1301. Os campos podem ser adaptados ao contexto da organização.</p>
+          </div>
+
+          {/* How to use */}
+          <div className="bg-white rounded-xl border border-slate-200 p-6">
+            <h2 className="text-sm font-bold uppercase tracking-wider text-slate-500 mb-4">Como usar os Profiles</h2>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              {[
+                { title: 'Autoavaliação', desc: 'Documentar o estado atual de cada outcome do CSF Core com práticas, status e avaliação.' },
+                { title: 'Planejamento', desc: 'Definir o Target Profile com prioridades baseadas nos objetivos de negócio e na tolerância a riscos.' },
+                { title: 'Gap Analysis', desc: 'Comparar Current e Target para identificar lacunas e desenvolver Action Plan estruturado.' },
+                { title: 'Comunicação', desc: 'Comunicar a postura de cibersegurança à liderança e às partes interessadas em linguagem de negócio.' },
+                { title: 'Monitoramento', desc: 'Revisar os Profiles periodicamente com KPIs e KRIs para acompanhar o progresso.' },
+                { title: 'Fornecedores', desc: 'Criar Target Profiles por nível de criticidade de fornecedor para comunicar requisitos de segurança.' },
+              ].map(item => (
+                <div key={item.title} className="flex gap-3">
+                  <ChevronRight size={14} className="text-teal-500 mt-0.5 shrink-0" />
+                  <div>
+                    <p className="text-sm font-semibold text-slate-800">{item.title}</p>
+                    <p className="text-xs text-slate-500 mt-0.5">{item.desc}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      )}
+
+      {activeTab === 'community' && (
+        <div className="space-y-5">
+          <div className="bg-white rounded-xl border border-slate-200 p-6">
+            <h2 className="text-sm font-bold uppercase tracking-wider text-slate-500 mb-3">O que são Community Profiles</h2>
+            <p className="text-sm text-slate-600 leading-relaxed mb-4">
+              Um Community Profile é um baseline de outcomes do CSF criado para múltiplas organizações com interesses e objetivos comuns — geralmente um setor, subssetor, tipo de tecnologia ou caso de uso específico.
+            </p>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              {[
+                { title: 'Base para o Target Profile', desc: 'Uma organização pode copiar um Community Profile relevante como ponto de partida para seu próprio Target Profile.' },
+                { title: 'Adaptável', desc: 'O Community Profile pode ser ajustado — alterando prioridades, adicionando Subcategories ou Informative References específicos.' },
+                { title: 'Criado por setores', desc: 'Setores como saúde, financeiro, energia e manufatura publicam Community Profiles específicos para suas necessidades.' },
+                { title: 'Disponível no NIST', desc: 'O NIST mantém repositório de Community Profiles públicos em csrc.nist.gov/projects/cybersecurity-framework.' },
+              ].map(item => (
+                <div key={item.title} className="bg-slate-50 rounded-xl p-4">
+                  <p className="text-sm font-bold text-slate-800 mb-1">{item.title}</p>
+                  <p className="text-xs text-slate-500 leading-relaxed">{item.desc}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+          <div className="bg-amber-50 border border-amber-200 rounded-xl p-4">
+            <p className="text-sm text-amber-800">
+              <strong>Dica:</strong> Antes de criar um Profile do zero, verifique se existe um Community Profile para o seu setor. Isso acelera o processo e garante alinhamento com as melhores práticas setoriais.
+            </p>
+          </div>
+        </div>
+      )}
+
+      {activeTab === 'cprt' && (
+        <div className="space-y-5">
+          <div className="bg-white rounded-xl border border-slate-200 p-6">
+            <h2 className="text-sm font-bold uppercase tracking-wider text-slate-500 mb-3">Informative References</h2>
+            <p className="text-sm text-slate-600 leading-relaxed mb-4">
+              Informative References são os mapeamentos formais entre os outcomes do CSF e outros documentos — padrões, diretrizes, regulações e boas práticas. Eles ajudam a entender como alcançar cada outcome do CSF usando referências que a organização já conhece ou utiliza.
+            </p>
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-4">
+              {[
+                { fw: 'NIST SP 800-53', desc: 'Catálogo de controles de segurança e privacidade — referência mais completa para implementação técnica.' },
+                { fw: 'ISO/IEC 27001', desc: 'Requisitos para SGSI — complementar ao CSF para organizações que buscam certificação.' },
+                { fw: 'CIS Controls v8', desc: 'Controles priorizados e práticos — ideal para organizações que precisam de guidance direto e acionável.' },
+              ].map(item => (
+                <div key={item.fw} className="bg-slate-50 rounded-xl p-4">
+                  <p className="text-sm font-bold text-slate-800 mb-1">{item.fw}</p>
+                  <p className="text-xs text-slate-500 leading-relaxed">{item.desc}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div className="bg-white rounded-xl border border-slate-200 p-6">
+            <h2 className="text-sm font-bold uppercase tracking-wider text-slate-500 mb-3">NIST Cybersecurity & Privacy Reference Tool (CPRT)</h2>
+            <p className="text-sm text-slate-600 leading-relaxed mb-4">
+              O CPRT é a ferramenta oficial do NIST para acessar, navegar e baixar os mapeamentos entre o CSF e outros frameworks. É a fonte autorizada para Informative References — sempre atualizada pelo NIST.
+            </p>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-4">
+              {[
+                { title: 'CSF Core em JSON e Excel', desc: 'Baixar o Core completo em formatos machine-readable para integração com ferramentas.' },
+                { title: 'Implementation Examples', desc: 'Exemplos concisos e orientados à ação para cada Subcategory, publicados pelo NIST.' },
+                { title: 'Mapeamentos atualizados', desc: 'Consultar mapeamentos entre CSF e NIST SP 800-53, ISO 27002, CIS Controls e outros.' },
+                { title: 'Submit mappings', desc: 'Organizações podem submeter seus próprios mapeamentos para inclusão no CPRT.' },
+              ].map(item => (
+                <div key={item.title} className="flex gap-2">
+                  <ChevronRight size={14} className="text-teal-500 mt-0.5 shrink-0" />
+                  <div>
+                    <p className="text-sm font-semibold text-slate-800">{item.title}</p>
+                    <p className="text-xs text-slate-500">{item.desc}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+            <a
+              href="https://csrc.nist.gov/projects/cprt"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-4 py-2.5 rounded-lg text-sm font-semibold text-white"
+              style={{ backgroundColor: '#0B1F33' }}
+            >
+              Acessar o NIST CPRT ↗
+            </a>
+          </div>
+        </div>
+      )}
     </div>
-  </div>
-);
+  );
+};
 
 // ── CROSSWALK ─────────────────────────────────────────────────────────────────
 export const CrosswalkPage: React.FC = () => {
