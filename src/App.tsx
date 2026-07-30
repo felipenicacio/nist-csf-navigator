@@ -19,6 +19,17 @@ function App() {
     <Router>
       <div className="min-h-screen flex flex-col" style={{ backgroundColor: '#F8FAFC' }}>
         <Header />
+
+        {/* Work in progress banner */}
+        <div className="bg-amber-50 border-b border-amber-200 px-4 py-2">
+          <div className="max-w-screen-xl mx-auto flex items-center justify-center gap-2">
+            <span className="text-amber-500 text-sm">🚧</span>
+            <p className="text-xs text-amber-700 font-medium text-center">
+              Projeto em construção. Conteúdo e funcionalidades estão sendo adicionados continuamente.
+            </p>
+          </div>
+        </div>
+
         <main className="flex-1">
           <Routes>
             <Route path="/" element={<HomePage />} />
@@ -41,6 +52,7 @@ function App() {
             <Route path="/about" element={<AboutPage />} />
           </Routes>
         </main>
+
         <footer className="py-6 px-4 border-t border-slate-200 bg-white">
           <p className="text-xs text-center text-slate-400">
             NIST CSF 2.0 Navigator · Ferramenta educacional open source ·{' '}
