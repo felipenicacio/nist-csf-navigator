@@ -135,7 +135,7 @@ const ConsultantViewPage: React.FC = () => {
                   className="w-full text-left bg-white rounded-xl border border-slate-200 p-5 hover:shadow-md transition-all group"
                 >
                   <div className="flex items-start gap-4">
-                    <span className="text-xs font-mono font-bold px-2 py-1 rounded shrink-0 mt-0.5" style={{ backgroundColor: fc.light, color: fc.bg }}>
+                    <span className="text-xs font-mono font-bold px-2 py-1 rounded shrink-0 mt-0.5" style={{ backgroundColor: fc.bg, color: '#1a1a1a' }}>
                       {c.code}
                     </span>
                     <div className="flex-1">
@@ -166,7 +166,7 @@ const ConsultantViewPage: React.FC = () => {
                   className="w-full text-left bg-white rounded-xl border border-slate-200 px-5 py-4 hover:shadow-md transition-all group"
                 >
                   <div className="flex items-start gap-4">
-                    <span className="text-xs font-mono font-bold px-2 py-1 rounded shrink-0 mt-0.5" style={{ backgroundColor: fc.light, color: fc.bg }}>
+                    <span className="text-xs font-mono font-bold px-2 py-1 rounded shrink-0 mt-0.5" style={{ backgroundColor: fc.bg, color: '#1a1a1a' }}>
                       {s.code}
                     </span>
                     <div className="flex-1">
@@ -188,7 +188,7 @@ const ConsultantViewPage: React.FC = () => {
           {/* Sub header */}
           <div className="bg-white rounded-xl border border-slate-200 p-6 mb-6">
             <div className="flex items-start gap-4">
-              <span className="text-sm font-mono font-bold px-3 py-1.5 rounded-lg shrink-0" style={{ backgroundColor: getFnColor(fn.id).light, color: getFnColor(fn.id).bg }}>
+              <span className="text-sm font-mono font-bold px-3 py-1.5 rounded-lg shrink-0" style={{ backgroundColor: getFnColor(fn.id).bg, color: '#1a1a1a' }}>
                 {sub.code}
               </span>
               <div className="flex-1">
@@ -233,7 +233,7 @@ const ConsultantViewPage: React.FC = () => {
                 <div className="space-y-4">
                   {sub.guidingQuestions.map((q, i) => (
                     <div key={i} className="flex gap-4 p-4 bg-slate-50 rounded-xl border border-slate-100">
-                      <div className="w-7 h-7 rounded-full flex items-center justify-center text-xs font-bold text-white shrink-0 mt-0.5" style={{ backgroundColor: getFnColor(fn.id).bg }}>
+                      <div className="w-7 h-7 rounded-full flex items-center justify-center text-xs font-bold text-slate-900 shrink-0 mt-0.5" style={{ backgroundColor: getFnColor(fn.id).bg, color: '#1a1a1a' }}>
                         {i + 1}
                       </div>
                       <div className="flex-1">
@@ -336,7 +336,7 @@ const ConsultantViewPage: React.FC = () => {
                 <div className="space-y-3 mb-6">
                   {sub.howToImplement.map((h, i) => (
                     <div key={i} className="flex gap-3 p-4 bg-slate-50 rounded-xl border border-slate-100">
-                      <span className="w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold text-white shrink-0" style={{ backgroundColor: getFnColor(fn.id).bg }}>{i + 1}</span>
+                      <span className="w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold text-slate-900 shrink-0" style={{ backgroundColor: getFnColor(fn.id).bg, color: '#1a1a1a' }}>{i + 1}</span>
                       <p className="text-sm text-slate-700">{h}</p>
                     </div>
                   ))}
@@ -367,7 +367,7 @@ const ConsultantViewPage: React.FC = () => {
             <Link
               to={`/subcategory/${sub.id}`}
               className="flex items-center gap-2 text-sm font-semibold px-4 py-2 rounded-lg text-white transition-colors"
-              style={{ backgroundColor: getFnColor(fn.id).bg }}
+              style={{ backgroundColor: getFnColor(fn.id).bg, color: '#1a1a1a' }}
             >
               Ver página completa <ChevronRight size={14} />
             </Link>
