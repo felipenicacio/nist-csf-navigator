@@ -19,12 +19,12 @@ const frameworkItems = [
 ];
 
 // 5 etapas do NIST como sub-itens de Implementação
-const implementSteps = [
-  { n: '01', label: 'Escopo', desc: 'Contexto organizacional e definição do escopo', to: '/implementation#escopo' },
-  { n: '02', label: 'Reunir Informações', desc: 'Políticas, riscos, requisitos e Community Profiles', to: '/implementation#informacoes' },
-  { n: '03', label: 'Criar Perfil', desc: 'Perfil Atual e Perfil Alvo', to: '/implementation#perfil' },
-  { n: '04', label: 'Analisar Lacunas + Plano de Ação', desc: 'Gap Analysis e Action Plan priorizado', to: '/implementation#lacunas' },
-  { n: '05', label: 'Implementar + Atualizar', desc: 'Executar, monitorar e melhorar continuamente', to: '/implementation#implementar' },
+const implementSteps: { n: string; label: string; desc: string; to: string; color: string; bg: string }[] = [
+  { n: '01', label: 'Escopo', desc: 'Contexto organizacional e definição do escopo', to: '/implementation?step=escopo', color: '#C8A800', bg: '#FFF9C4' },
+  { n: '02', label: 'Reunir Informações', desc: 'Políticas, riscos, requisitos e Community Profiles', to: '/implementation?step=informacoes', color: '#1A7FA8', bg: '#E0F4FB' },
+  { n: '03', label: 'Criar Perfil', desc: 'Perfil Atual e Perfil Alvo', to: '/implementation?step=perfil', color: '#5B57C0', bg: '#EEECFB' },
+  { n: '04', label: 'Analisar Lacunas + Plano de Ação', desc: 'Gap Analysis e Action Plan priorizado', to: '/implementation?step=lacunas', color: '#C07800', bg: '#FFF3DC' },
+  { n: '05', label: 'Implementar + Atualizar', desc: 'Executar, monitorar e melhorar continuamente', to: '/implementation?step=implementar', color: '#1E9E52', bg: '#E2FAF0' },
 ];
 
 const implementExtras = [
@@ -111,19 +111,37 @@ const ImplementationDropdown: React.FC<{ active?: boolean }> = ({ active }) => {
           <div className="px-4 py-1.5">
             <p className="text-xs font-bold uppercase tracking-widest text-slate-400">5 Etapas do NIST</p>
           </div>
-          {implementSteps.map(step => (
-            <button
-              key={step.to}
-              onClick={() => { navigate(step.to); setOpen(false); }}
-              className="w-full text-left px-4 py-2 hover:bg-slate-50 transition-colors flex items-start gap-3"
-            >
-              <span className="text-xs font-black text-slate-300 font-mono shrink-0 mt-0.5">{step.n}</span>
-              <div>
-                <p className="text-sm font-semibold text-slate-800">{step.label}</p>
-                <p className="text-xs text-slate-400">{step.desc}</p>
-              </div>
-            </button>
-          ))}
+          <div className="px-3 pb-2">
+            <div className="grid grid-cols-5 gap-1.5 mb-2">
+              {implementSteps.map((step) => (
+                <button
+                  key={step.to}
+                  onClick={() => { navigate(step.to); setOpen(false); }}
+                  className="flex flex-col items-center rounded-xl border-2 py-2 px-1 transition-all hover:scale-105"
+                  style={{ borderColor: step.color, backgroundColor: step.bg }}
+                  title={step.label}
+                >
+                  <span className="text-xs font-black" style={{ color: step.color }}>{step.n}</span>
+                  <span className="text-xs font-bold text-center leading-tight mt-0.5" style={{ color: step.color }}>
+                    {step.label.split(' ')[0]}
+                  </span>
+                </button>
+              ))}
+            </div>
+            {implementSteps.map(step => (
+              <button
+                key={step.to + '-row'}
+                onClick={() => { navigate(step.to); setOpen(false); }}
+                className="w-full text-left px-3 py-2 rounded-lg hover:bg-slate-50 transition-colors flex items-center gap-2.5"
+              >
+                <span className="text-xs font-black font-mono shrink-0 w-5 text-center" style={{ color: step.color }}>{step.n}</span>
+                <div className="flex-1 min-w-0">
+                  <p className="text-sm font-semibold text-slate-800 truncate">{step.label}</p>
+                  <p className="text-xs text-slate-400 truncate">{step.desc}</p>
+                </div>
+              </button>
+            ))}
+          </div>
           {/* Extras */}
           <div className="px-4 pt-2 pb-1 mt-1 border-t border-slate-100">
             <p className="text-xs font-bold uppercase tracking-widest text-slate-400">Ferramentas</p>

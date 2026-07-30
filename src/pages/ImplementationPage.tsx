@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import { ArrowRight, ArrowDown, CheckCircle, ChevronRight } from 'lucide-react';
 
@@ -122,6 +123,19 @@ const steps = [
 ];
 
 const ImplementationPage: React.FC = () => {
+  const location = useLocation();
+
+  useEffect(() => {
+    const params = new URLSearchParams(location.search);
+    const step = params.get('step');
+    if (step) {
+      const el = document.getElementById(step);
+      if (el) {
+        setTimeout(() => el.scrollIntoView({ behavior: 'smooth', block: 'start' }), 150);
+      }
+    }
+  }, [location.search]);
+
   return (
     <div className="animate-fadeIn">
 
@@ -147,7 +161,8 @@ const ImplementationPage: React.FC = () => {
             {steps.map((step, i) => (
               <React.Fragment key={step.id}>
                 <a
-                  href={`#${step.id}`}
+                  href={`?step=${step.id}`}
+                  onClick={(e) => { e.preventDefault(); document.getElementById(step.id)?.scrollIntoView({ behavior: 'smooth', block: 'start' }); }}
                   className="flex flex-col items-center gap-1 px-4 py-2.5 rounded-xl border-2 transition-all hover:scale-105 min-w-[90px] text-center"
                   style={{ borderColor: step.color, backgroundColor: step.bg }}
                 >
