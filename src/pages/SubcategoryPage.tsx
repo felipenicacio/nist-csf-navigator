@@ -5,6 +5,46 @@ import { allSubcategories } from '../data';
 import { csfCategories } from '../data/categories';
 import { csfFunctions } from '../data/functions';
 import { LayerBadge, MappingTypeBadge, Section } from '../components/ui';
+import { informativeReferences } from '../data/informativeReferences';
+
+// Group informative references by framework
+function groupRefs(refs: string[]): Record<string, string[]> {
+  const groups: Record<string, string[]> = {};
+  for (const ref of refs) {
+    let group = 'Outros';
+    if (ref.startsWith('SP 800-53')) group = 'NIST SP 800-53';
+    else if (ref.startsWith('ISO/IEC 27001')) group = 'ISO/IEC 27001';
+    else if (ref.startsWith('CIS Controls')) group = 'CIS Controls';
+    if (!groups[group]) groups[group] = [];
+    groups[group].push(ref);
+  }
+  return groups;
+}
+
+// Strip the framework prefix, keep only the control identifier
+function stripPrefix(ref: string, group: string): string {
+  if (group === 'NIST SP 800-53') {
+    // "SP 800-53 Rev 5.1.1: AC-01" → "AC-01"
+    return ref.replace(/^SP 800-53 Rev \d+\.\d+(\.\d+)?:\s*/, '').trim();
+  }
+  if (group === 'ISO/IEC 27001') {
+    // "ISO/IEC 27001:2022: Mandatory Clause: 4.1" → "Mandatory Clause: 4.1"
+    return ref.replace(/^ISO\/IEC 27001:\d+:\s*/, '').trim();
+  }
+  if (group === 'CIS Controls') {
+    // "CIS Controls v8.0: 5.1" → "5.1"
+    return ref.replace(/^CIS Controls v[\d.]+:\s*/, '').trim();
+  }
+  return ref;
+}
+
+const frameworkColors: Record<string, { text: string; bg: string; dot: string }> = {
+  'NIST SP 800-53': { text: 'text-blue-700', bg: 'bg-blue-50', dot: 'bg-blue-500' },
+  'ISO/IEC 27001':  { text: 'text-teal-700', bg: 'bg-teal-50', dot: 'bg-teal-500' },
+  'CIS Controls':   { text: 'text-orange-700', bg: 'bg-orange-50', dot: 'bg-orange-500' },
+};
+
+const FRAMEWORK_ORDER = ['NIST SP 800-53', 'ISO/IEC 27001', 'CIS Controls'];
 
 const SubcategoryPage: React.FC = () => {
   const { id } = useParams<{ id: string }>();
@@ -18,9 +58,16 @@ const SubcategoryPage: React.FC = () => {
   const prev = subIndex > 0 ? sameCatSubs[subIndex - 1] : null;
   const next = subIndex < sameCatSubs.length - 1 ? sameCatSubs[subIndex + 1] : null;
 
+  // Informative references from spreadsheet
+  const rawRefs = informativeReferences[sub.id] ?? [];
+  const grouped = groupRefs(rawRefs);
+  const hasRefs = rawRefs.length > 0;
+
+  // Legacy crosswalk from data layer (kept for complementary display)
   const hasNist = sub.mappings.nist80053.length > 0;
   const hasIso = sub.mappings.iso27002.length > 0;
   const hasCis = sub.mappings.cisControls.length > 0;
+  const hasLegacyCrosswalk = hasNist || hasIso || hasCis;
 
   return (
     <div className="max-w-screen-xl mx-auto px-4 sm:px-6 py-10 animate-fadeIn">
@@ -38,8 +85,9 @@ const SubcategoryPage: React.FC = () => {
       </nav>
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-        {/* Main */}
+        {/* Main content */}
         <div className="lg:col-span-2 space-y-8">
+
           {/* Header */}
           <div>
             <div className="flex items-center gap-3 mb-4 flex-wrap">
@@ -100,71 +148,11 @@ const SubcategoryPage: React.FC = () => {
             </div>
           </Section>
 
-          {/* Crosswalk */}
-          {(hasNist || hasIso || hasCis) && (
-            <Section title="Crosswalk: Mapeamentos">
-              <div className="space-y-6">
-                {hasNist && (
-                  <div>
-                    <h4 className="text-sm font-semibold text-slate-700 mb-3 flex items-center gap-2">
-                      <span className="w-2 h-2 rounded-full bg-blue-500" />
-                      NIST SP 800-53
-                    </h4>
-                    <div className="space-y-2">
-                      {sub.mappings.nist80053.map(m => (
-                        <div key={m.id} className="flex items-center gap-3 text-sm bg-slate-50 rounded-lg px-4 py-3">
-                          <span className="font-mono text-xs font-bold text-blue-700 bg-blue-100 px-2 py-0.5 rounded">{m.id}</span>
-                          <span className="text-slate-700 flex-1">{m.name}</span>
-                          <MappingTypeBadge type={m.type} />
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                )}
-                {hasIso && (
-                  <div>
-                    <h4 className="text-sm font-semibold text-slate-700 mb-3 flex items-center gap-2">
-                      <span className="w-2 h-2 rounded-full bg-teal-500" />
-                      ISO/IEC 27002
-                    </h4>
-                    <div className="space-y-2">
-                      {sub.mappings.iso27002.map(m => (
-                        <div key={m.id} className="flex items-center gap-3 text-sm bg-slate-50 rounded-lg px-4 py-3">
-                          <span className="font-mono text-xs font-bold text-teal-700 bg-teal-100 px-2 py-0.5 rounded">{m.id}</span>
-                          <span className="text-slate-700 flex-1">{m.name}</span>
-                          <MappingTypeBadge type={m.type} />
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                )}
-                {hasCis && (
-                  <div>
-                    <h4 className="text-sm font-semibold text-slate-700 mb-3 flex items-center gap-2">
-                      <span className="w-2 h-2 rounded-full bg-orange-500" />
-                      CIS Controls
-                    </h4>
-                    <div className="space-y-2">
-                      {sub.mappings.cisControls.map(m => (
-                        <div key={m.id} className="flex items-center gap-3 text-sm bg-slate-50 rounded-lg px-4 py-3">
-                          <span className="font-mono text-xs font-bold text-orange-700 bg-orange-100 px-2 py-0.5 rounded">{m.id}</span>
-                          <span className="text-slate-700 flex-1">{m.name}</span>
-                          <MappingTypeBadge type={m.type} />
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                )}
-                <p className="text-xs text-slate-400 italic">
-                  Os mapeamentos são orientativos e representam relações de complementaridade ou referência. Não indicam equivalência absoluta entre frameworks.
-                </p>
-              </div>
-            </Section>
-          )}
         </div>
 
         {/* Sidebar */}
         <div className="space-y-5">
+
           {/* Context */}
           <div className="bg-white rounded-xl border border-slate-200 p-5">
             <p className="text-xs font-semibold uppercase tracking-wider text-slate-400 mb-3">Contexto</p>
@@ -186,7 +174,7 @@ const SubcategoryPage: React.FC = () => {
             </div>
           </div>
 
-          {/* Keywords */}
+          {/* Palavras-chave */}
           {sub.keywords.length > 0 && (
             <div className="bg-white rounded-xl border border-slate-200 p-5">
               <p className="text-xs font-semibold uppercase tracking-wider text-slate-400 mb-3">Palavras-chave</p>
@@ -194,6 +182,117 @@ const SubcategoryPage: React.FC = () => {
                 {sub.keywords.map(k => (
                   <span key={k} className="px-2 py-1 bg-slate-100 text-slate-600 rounded text-xs">{k}</span>
                 ))}
+              </div>
+            </div>
+          )}
+
+          {/* ── CONTROLES E REFERÊNCIAS RELACIONADAS (from spreadsheet) ── */}
+          {hasRefs && (
+            <div className="bg-white rounded-xl border border-slate-200 p-5">
+              <p className="text-xs font-semibold uppercase tracking-wider text-slate-400 mb-4">Controles e Referências Relacionadas</p>
+              <div className="space-y-4">
+                {FRAMEWORK_ORDER.filter(fw => grouped[fw]).map(fw => {
+                  const colors = frameworkColors[fw];
+                  const refs = grouped[fw];
+
+                  // For SP 800-53: deduplicate by control ID (both Rev versions)
+                  let displayRefs = refs;
+                  if (fw === 'NIST SP 800-53') {
+                    const seen = new Set<string>();
+                    displayRefs = refs.filter(r => {
+                      const id = stripPrefix(r, fw);
+                      if (seen.has(id)) return false;
+                      seen.add(id);
+                      return true;
+                    });
+                  }
+
+                  return (
+                    <div key={fw}>
+                      <div className="flex items-center gap-2 mb-2">
+                        <span className={`w-2 h-2 rounded-full shrink-0 ${colors.dot}`} />
+                        <span className="text-xs font-bold text-slate-700">{fw}</span>
+                        <span className="text-xs text-slate-400 ml-auto">{displayRefs.length}</span>
+                      </div>
+                      <div className="flex flex-wrap gap-1.5">
+                        {displayRefs.map((r, i) => (
+                          <span
+                            key={i}
+                            className={`text-xs font-mono font-semibold px-2 py-0.5 rounded ${colors.bg} ${colors.text}`}
+                          >
+                            {stripPrefix(r, fw)}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                  );
+                })}
+                <p className="text-xs text-slate-400 italic pt-1 border-t border-slate-100">
+                  Fonte: NIST CSF 2.0 Reference Tool. Referências informativas são orientativas e não representam equivalência entre frameworks.
+                </p>
+              </div>
+            </div>
+          )}
+
+          {/* Legacy crosswalk (complementary) */}
+          {hasLegacyCrosswalk && (
+            <div className="bg-white rounded-xl border border-slate-200 p-5">
+              <p className="text-xs font-semibold uppercase tracking-wider text-slate-400 mb-3">Mapeamentos Complementares</p>
+              <div className="space-y-4">
+                {hasNist && (
+                  <div>
+                    <div className="flex items-center gap-2 mb-2">
+                      <span className="w-2 h-2 rounded-full bg-blue-500" />
+                      <span className="text-xs font-bold text-slate-700">NIST SP 800-53</span>
+                    </div>
+                    <div className="space-y-1.5">
+                      {sub.mappings.nist80053.map(m => (
+                        <div key={m.id} className="flex items-center gap-2 text-xs">
+                          <span className="font-mono font-bold text-blue-700 bg-blue-50 px-2 py-0.5 rounded shrink-0">{m.id}</span>
+                          <span className="text-slate-600 line-clamp-1">{m.name}</span>
+                          <MappingTypeBadge type={m.type} />
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                )}
+                {hasIso && (
+                  <div>
+                    <div className="flex items-center gap-2 mb-2">
+                      <span className="w-2 h-2 rounded-full bg-teal-500" />
+                      <span className="text-xs font-bold text-slate-700">ISO/IEC 27002</span>
+                    </div>
+                    <div className="space-y-1.5">
+                      {sub.mappings.iso27002.map(m => (
+                        <div key={m.id} className="flex items-center gap-2 text-xs">
+                          <span className="font-mono font-bold text-teal-700 bg-teal-50 px-2 py-0.5 rounded shrink-0">{m.id}</span>
+                          <span className="text-slate-600 line-clamp-1">{m.name}</span>
+                          <MappingTypeBadge type={m.type} />
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                )}
+                {hasCis && (
+                  <div>
+                    <div className="flex items-center gap-2 mb-2">
+                      <span className="w-2 h-2 rounded-full bg-orange-500" />
+                      <span className="text-xs font-bold text-slate-700">CIS Controls</span>
+                    </div>
+                    <div className="space-y-1.5">
+                      {sub.mappings.cisControls.map(m => (
+                        <div key={m.id} className="flex items-center gap-2 text-xs">
+                          <span className="font-mono font-bold text-orange-700 bg-orange-50 px-2 py-0.5 rounded shrink-0">{m.id}</span>
+                          <span className="text-slate-600 line-clamp-1">{m.name}</span>
+                          <MappingTypeBadge type={m.type} />
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                )}
+                <p className="text-xs text-slate-400 italic pt-1 border-t border-slate-100">
+                  Mapeamentos orientativos. Não indicam equivalência absoluta entre frameworks.
+                </p>
               </div>
             </div>
           )}
@@ -210,6 +309,7 @@ const SubcategoryPage: React.FC = () => {
               ))}
             </div>
           </div>
+
         </div>
       </div>
 
