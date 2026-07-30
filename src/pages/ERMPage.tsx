@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { getFnColorsFromCode } from '../utils/fnColors';
 
 const activityPoints = [
   {
@@ -79,18 +80,7 @@ const activityPoints = [
 const ERMPage: React.FC = () => {
   const [activeAP, setActiveAP] = useState<number | null>(null);
 
-  const fnColor = (code: string) => {
-    const map: Record<string, { color: string; bg: string }> = {
-      GV: { color: '#C8A800', bg: '#FFF9C4' },
-      ID: { color: '#1A7FA8', bg: '#E0F4FB' },
-      PR: { color: '#5B57C0', bg: '#EEECFB' },
-      DE: { color: '#C07800', bg: '#FFF3DC' },
-      RS: { color: '#D93E38', bg: '#FFE8E7' },
-      RC: { color: '#1E9E52', bg: '#E2FAF0' },
-    };
-    const fn = code.split('.')[0];
-    return map[fn] || { color: '#64748B', bg: '#F1F5F9' };
-  };
+
 
   return (
     <div className="max-w-screen-xl mx-auto px-4 sm:px-6 py-10 animate-fadeIn">
@@ -135,7 +125,7 @@ const ERMPage: React.FC = () => {
                 <span className={`text-2xl font-black ${activeAP === ap.n ? 'text-white/20' : 'text-slate-100'}`}>{ap.n}</span>
                 <div className="flex flex-wrap gap-1">
                   {ap.csf.map(code => {
-                    const { color, bg } = fnColor(code);
+                    const { bg, text: color } = getFnColorsFromCode(code);
                     return (
                       <span key={code} className="text-xs font-mono font-bold px-1.5 py-0.5 rounded" style={{ backgroundColor: activeAP === ap.n ? 'rgba(255,255,255,0.2)' : bg, color: activeAP === ap.n ? '#fff' : color }}>
                         {code}
@@ -168,7 +158,7 @@ const ERMPage: React.FC = () => {
                 <p className="text-xs font-bold uppercase tracking-wider text-slate-500 mb-3">Outcomes CSF relacionados</p>
                 <div className="flex flex-wrap gap-2">
                   {ap.csf.map(code => {
-                    const { color, bg } = fnColor(code);
+                    const { bg, text: color } = getFnColorsFromCode(code);
                     return (
                       <Link key={code} to={code.includes('.') ? `/category/${code}` : `/framework/${code.toLowerCase()}`}
                         className="text-sm font-mono font-bold px-3 py-1.5 rounded-lg hover:opacity-80 transition-opacity"

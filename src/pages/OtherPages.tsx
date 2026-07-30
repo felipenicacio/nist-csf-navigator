@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { getFnColors } from '../utils/fnColors';
 import { Link } from 'react-router-dom';
 import { ChevronRight } from 'lucide-react';
 import { frameworks } from '../data/frameworks';
@@ -505,7 +506,7 @@ export const FrameworksPage: React.FC = () => {
   ];
   const filtered = activeCategory === 'all' ? frameworks : frameworks.filter(f => f.category === activeCategory);
 
-  const fnColors: Record<string, string> = { GV: '#C8A800', ID: '#1A7FA8', PR: '#5B57C0', DE: '#C07800', RS: '#D93E38', RC: '#1E9E52' };
+
 
   return (
     <div className="max-w-screen-xl mx-auto px-4 sm:px-6 py-10 animate-fadeIn">
@@ -553,7 +554,7 @@ export const FrameworksPage: React.FC = () => {
                 {fw.relatedFunctions.map(f => (
                   <Link key={f} to={`/framework/${f.toLowerCase()}`}
                     className="text-xs font-mono font-bold px-2 py-0.5 rounded text-white"
-                    style={{ backgroundColor: fnColors[f] || '#64748B' }}
+                    style={{ backgroundColor: getFnColors(f).bg }}
                   >
                     {f}
                   </Link>

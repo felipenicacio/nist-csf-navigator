@@ -2,12 +2,11 @@ import React, { useState, useRef, useEffect } from 'react';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
 import { Search, Menu, X, ChevronDown, Map, BookOpen, GitBranch, ClipboardList, ArrowRight } from 'lucide-react';
 import { allSubcategories } from '../../data';
+import { getFnColors } from '../../utils/fnColors';
 import { csfFunctions } from '../../data/functions';
 import { csfCategories } from '../../data/categories';
 
-const fnColors: Record<string, string> = {
-  GV: '#0B1F33', ID: '#164E73', PR: '#0F766E', DE: '#D97706', RS: '#DC2626', RC: '#16A34A',
-};
+
 
 const exploreItems = [
   { label: 'Framework Map', desc: 'Visão visual completa do CSF 2.0', to: '/map', icon: <Map size={16} /> },
@@ -171,7 +170,7 @@ const Header: React.FC = () => {
                           >
                             <span
                               className="text-xs font-mono font-bold px-1.5 py-0.5 rounded text-white shrink-0"
-                              style={{ backgroundColor: fnColors[r.fnId] || '#64748B' }}
+                              style={{ backgroundColor: getFnColors(r.fnId).bg }}
                             >
                               {r.fnId}
                             </span>

@@ -1,69 +1,39 @@
 import React, { useState } from 'react';
+import { getFnColors } from '../utils/fnColors';
 import { ChevronRight, ArrowRight, ArrowDown, CheckSquare, FileText, AlertTriangle, TrendingUp } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const steps = [
-  {
-    n: 1, phase: 'Escopo',
+  { n: 1, phase: 'Escopo', fnId: 'GV',
     title: 'Definir o escopo do Profile',
     desc: 'Determinar quais divisões, ativos, sistemas, parceiros e tipos de ameaças serão cobertos.',
     detail: 'Cada Profile pode ter um escopo diferente — por tecnologia (IT, OT), tipo de dado (PII, PHI), usuários (internos, terceiros) ou unidade de negócio. Uma organização pode ter múltiplos Profiles simultâneos.',
-    questions: [
-      'Qual é o motivo para criar este Profile?',
-      'O Profile cobre toda a organização ou apenas parte dela?',
-      'Quais tipos de ameaças e vulnerabilidades serão incluídos?',
-      'Quem será responsável por desenvolver, revisar e operacionalizar o Profile?',
-    ],
-    color: '#0B1F33', bg: '#E8EDF2',
+    questions: ['Qual é o motivo para criar este Profile?','O Profile cobre toda a organização ou apenas parte dela?','Quais tipos de ameaças e vulnerabilidades serão incluídos?','Quem será responsável por desenvolver, revisar e operacionalizar o Profile?'],
   },
-  {
-    n: 2, phase: 'Informações',
+  { n: 2, phase: 'Informações', fnId: 'ID',
     title: 'Reunir informações necessárias',
     desc: 'Coletar políticas, requisitos regulatórios, prioridades de risco, Community Profiles e padrões aplicáveis.',
     detail: 'Fontes incluem: políticas organizacionais, Community Profiles setoriais, template oficial do NIST CSF, Informative References, Implementation Examples e requisitos legais/contratuais.',
-    questions: [
-      'Existe algum Community Profile relevante para o setor?',
-      'Quais requisitos legais e regulatórios se aplicam?',
-      'Quais são as prioridades estratégicas de risco da liderança?',
-      'Quais frameworks e padrões a organização já utiliza?',
-    ],
-    color: '#1A7FA8', bg: '#E0F4FB',
+    questions: ['Existe algum Community Profile relevante para o setor?','Quais requisitos legais e regulatórios se aplicam?','Quais são as prioridades estratégicas de risco da liderança?','Quais frameworks e padrões a organização já utiliza?'],
   },
-  {
-    n: 3, phase: 'Criação',
+  { n: 3, phase: 'Criação', fnId: 'PR',
     title: 'Criar o Organizational Profile',
     desc: 'Documentar as práticas atuais (Current Profile) e as metas desejadas (Target Profile) com campos estruturados.',
     detail: 'O Profile inclui para cada outcome do CSF: Práticas atuais, Status, Avaliação (rating), Prioridade e Metas. O Target Profile considera novos requisitos, novas tecnologias e tendências de ameaças.',
-    questions: [],
-    color: '#5B57C0', bg: '#EEECFB',
-    table: true,
+    questions: [], table: true,
   },
-  {
-    n: 4, phase: 'Gap Analysis',
+  { n: 4, phase: 'Gap Analysis', fnId: 'DE',
     title: 'Analisar gaps e criar Action Plan',
     desc: 'Comparar Current e Target Profile para identificar lacunas e desenvolver plano de ação priorizado.',
     detail: 'O Action Plan deve conter para cada melhoria: ação, prioridade, responsável, prazo e recursos necessários. Use Informative References e Implementation Examples do NIST como base.',
-    questions: [
-      'Quais são as maiores diferenças entre práticas atuais e metas?',
-      'Qual é o impacto de cada gap no risco organizacional?',
-      'Quais gaps são mais críticos para a missão?',
-      'Quais recursos (pessoal, orçamento, ferramentas) são necessários?',
-    ],
-    color: '#C07800', bg: '#FFF3DC',
+    questions: ['Quais são as maiores diferenças entre práticas atuais e metas?','Qual é o impacto de cada gap no risco organizacional?','Quais gaps são mais críticos para a missão?','Quais recursos (pessoal, orçamento, ferramentas) são necessários?'],
     actionPlan: true,
   },
-  {
-    n: 5, phase: 'Implementação',
+  { n: 5, phase: 'Implementação', fnId: 'RC',
     title: 'Implementar e atualizar o Profile',
     desc: 'Executar o Action Plan, monitorar com KPIs/KRIs e atualizar o Profile continuamente.',
     detail: 'Controles implementados reduzem riscos que são monitorados via KPIs e KRIs. Quando riscos ultrapassam a tolerância, o Action Plan, o Profile e as declarações de tolerância são revisados.',
-    questions: [
-      'Os controles implementados estão atingindo os resultados esperados?',
-      'Os KPIs e KRIs refletem adequadamente o progresso?',
-      'Há mudanças no ambiente de ameaças que exigem ajuste no Target Profile?',
-      'O Profile está sendo atualizado para refletir o estado atual?',
-    ],
-    color: '#1E9E52', bg: '#E2FAF0',
+    questions: ['Os controles implementados estão atingindo os resultados esperados?','Os KPIs e KRIs refletem adequadamente o progresso?','Há mudanças no ambiente de ameaças que exigem ajuste no Target Profile?','O Profile está sendo atualizado para refletir o estado atual?'],
   },
 ];
 
@@ -91,9 +61,9 @@ const ImplementationPage: React.FC = () => {
                 onClick={() => setActiveStep(activeStep === step.n ? null : step.n)}
                 className="flex flex-col items-center gap-1 px-4 py-3 rounded-xl border-2 transition-all hover:scale-105 text-center min-w-[110px]"
                 style={{
-                  borderColor: step.color,
-                  backgroundColor: activeStep === step.n ? step.color : step.bg,
-                  color: activeStep === step.n ? '#fff' : step.color,
+                  borderColor: getFnColors(step.fnId).text,
+                  backgroundColor: activeStep === step.n ? getFnColors(step.fnId).bg : getFnColors(step.fnId).light,
+                  color: getFnColors(step.fnId).text,
                 }}
               >
                 <span className="text-xl font-black opacity-40">{step.n}</span>
@@ -119,13 +89,13 @@ const ImplementationPage: React.FC = () => {
       {activeStep && (() => {
         const step = steps.find(s => s.n === activeStep)!;
         return (
-          <div className="rounded-2xl border-2 p-6 mb-8 animate-fadeIn" style={{ borderColor: step.color, backgroundColor: `${step.color}08` }}>
+          <div className="rounded-2xl border-2 p-6 mb-8 animate-fadeIn" style={{ borderColor: getFnColors(step.fnId).text, backgroundColor: `${getFnColors(step.fnId).text}08` }}>
             <div className="flex items-center gap-3 mb-4">
-              <div className="w-10 h-10 rounded-xl flex items-center justify-center font-black text-white shrink-0" style={{ backgroundColor: step.color }}>
+              <div className="w-10 h-10 rounded-xl flex items-center justify-center font-black text-white shrink-0" style={{ backgroundColor: getFnColors(step.fnId).bg }}>
                 {step.n}
               </div>
               <div>
-                <p className="text-xs font-bold uppercase tracking-widest" style={{ color: step.color }}>{step.phase}</p>
+                <p className="text-xs font-bold uppercase tracking-widest" style={{ color: getFnColors(step.fnId).text }}>{step.phase}</p>
                 <h3 className="text-lg font-bold text-slate-900">{step.title}</h3>
               </div>
             </div>
@@ -138,7 +108,7 @@ const ImplementationPage: React.FC = () => {
                 <ul className="space-y-2">
                   {step.questions.map((q, i) => (
                     <li key={i} className="flex gap-2 text-sm text-slate-700">
-                      <span className="font-bold shrink-0" style={{ color: step.color }}>Q{i + 1}</span>
+                      <span className="font-bold shrink-0" style={{ color: getFnColors(step.fnId).text }}>Q{i + 1}</span>
                       {q}
                     </li>
                   ))}
@@ -197,7 +167,7 @@ const ImplementationPage: React.FC = () => {
                     { label: 'Recursos', desc: 'Pessoal, orçamento, ferramentas', icon: <ChevronRight size={14} /> },
                   ].map(f => (
                     <div key={f.label} className="bg-white rounded-xl border border-slate-200 p-3 text-center">
-                      <div className="flex justify-center mb-1" style={{ color: step.color }}>{f.icon}</div>
+                      <div className="flex justify-center mb-1" style={{ color: getFnColors(step.fnId).text }}>{f.icon}</div>
                       <p className="text-xs font-bold text-slate-800">{f.label}</p>
                       <p className="text-xs text-slate-400 mt-0.5">{f.desc}</p>
                     </div>
@@ -218,11 +188,11 @@ const ImplementationPage: React.FC = () => {
             className="text-left bg-white rounded-xl border border-slate-200 p-5 hover:shadow-md transition-all group"
           >
             <div className="flex items-start gap-3">
-              <div className="w-8 h-8 rounded-lg flex items-center justify-center font-black text-sm shrink-0" style={{ backgroundColor: step.bg, color: step.color }}>
+              <div className="w-8 h-8 rounded-lg flex items-center justify-center font-black text-sm shrink-0" style={{ backgroundColor: getFnColors(step.fnId).light, color: getFnColors(step.fnId).text }}>
                 {step.n}
               </div>
               <div>
-                <p className="text-xs font-bold uppercase tracking-wider mb-1" style={{ color: step.color }}>{step.phase}</p>
+                <p className="text-xs font-bold uppercase tracking-wider mb-1" style={{ color: getFnColors(step.fnId).text }}>{step.phase}</p>
                 <h3 className="text-sm font-bold text-slate-800 mb-1">{step.title}</h3>
                 <p className="text-xs text-slate-500 leading-relaxed">{step.desc}</p>
               </div>

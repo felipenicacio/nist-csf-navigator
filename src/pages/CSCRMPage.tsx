@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { getFnColorsByName, getFnColorsFromCode } from '../utils/fnColors';
 import { CheckSquare, ChevronRight } from 'lucide-react';
 
 const activities = [
@@ -50,14 +51,7 @@ const supplierRequirements = [
   { category: 'RECOVER', items: ['RC.RP-03 — Comunicação sobre atividades de recuperação', 'RC.CO-03 — Progresso de recuperação comunicado a stakeholders designados'] },
 ];
 
-const fnColors: Record<string, { color: string; bg: string }> = {
-  GOVERN: { color: '#C8A800', bg: '#FFF9C4' },
-  IDENTIFY: { color: '#1A7FA8', bg: '#E0F4FB' },
-  PROTECT: { color: '#5B57C0', bg: '#EEECFB' },
-  DETECT: { color: '#C07800', bg: '#FFF3DC' },
-  RESPOND: { color: '#D93E38', bg: '#FFE8E7' },
-  RECOVER: { color: '#1E9E52', bg: '#E2FAF0' },
-};
+
 
 const CSCRMPage: React.FC = () => {
   const [activeActivity, setActiveActivity] = useState<number | null>(1);
@@ -121,7 +115,12 @@ const CSCRMPage: React.FC = () => {
               >
                 <div className="flex items-center gap-2 mb-1">
                   <span className={`text-lg font-black ${activeActivity === act.n ? 'text-white/20' : 'text-slate-100'}`}>{act.n}</span>
-                  <span className={`text-xs font-mono font-bold px-2 py-0.5 rounded ${activeActivity === act.n ? 'bg-white/20 text-white' : 'bg-amber-100 text-amber-700'}`}>{act.csf}</span>
+                  <span
+                    className="text-xs font-mono font-bold px-2 py-0.5 rounded"
+                    style={activeActivity === act.n
+                      ? { backgroundColor: 'rgba(255,255,255,0.2)', color: '#fff' }
+                      : { backgroundColor: getFnColorsFromCode(act.csf).bg, color: getFnColorsFromCode(act.csf).text }}
+                  >{act.csf}</span>
                 </div>
                 <p className={`text-sm font-semibold ${activeActivity === act.n ? 'text-white' : 'text-slate-800'}`}>{act.title}</p>
               </button>
@@ -137,7 +136,7 @@ const CSCRMPage: React.FC = () => {
                   <div className="flex items-center gap-3 mb-5">
                     <div className="w-8 h-8 rounded-lg bg-slate-900 flex items-center justify-center text-white font-black text-sm">{act.n}</div>
                     <div>
-                      <p className="text-xs font-mono font-bold text-amber-700 bg-amber-100 px-2 py-0.5 rounded inline-block mb-1">{act.csf}</p>
+                      <p className="text-xs font-mono font-bold px-2 py-0.5 rounded inline-block mb-1" style={{ backgroundColor: getFnColorsFromCode(act.csf).bg, color: getFnColorsFromCode(act.csf).text }}>{act.csf}</p>
                       <h3 className="text-sm font-bold text-slate-900">{act.title}</h3>
                     </div>
                   </div>
@@ -169,7 +168,7 @@ const CSCRMPage: React.FC = () => {
             Além da categoria GV.SC, muitas subcategories de outras Functions geram requisitos aplicáveis a fornecedores. A tabela abaixo mostra quais outcomes do CSF devem ser incluídos nos requisitos comunicados a fornecedores.
           </p>
           {supplierRequirements.map(fn => {
-            const colors = fnColors[fn.category] || { color: '#64748B', bg: '#F1F5F9' };
+            const raw = getFnColorsByName(fn.category); const colors = { color: raw.text, bg: raw.bg };
             return (
               <div key={fn.category} className="bg-white rounded-xl border border-slate-200 overflow-hidden">
                 <div className="px-5 py-3 flex items-center gap-3" style={{ backgroundColor: colors.bg }}>
@@ -206,19 +205,19 @@ const CSCRMPage: React.FC = () => {
               {
                 level: 'Criticidade Baixa',
                 desc: 'Fornecedores com acesso limitado e baixo impacto ao negócio',
-                color: '#1E9E52', bg: '#E2FAF0',
+                color: '#166534', bg: '#DCFCE7',
                 categories: ['GV.SC-01', 'GV.SC-04', 'GV.SC-05', 'PR.AA-01'],
               },
               {
                 level: 'Criticidade Média',
                 desc: 'Fornecedores com acesso a sistemas ou dados relevantes',
-                color: '#C07800', bg: '#FFF3DC',
+                color: '#92400E', bg: '#FEF3C7',
                 categories: ['GV.SC-01 a GV.SC-07', 'ID.RA-09', 'ID.RA-10', 'PR.AA-01', 'PR.AT-02', 'DE.CM-03', 'RS.CO-02'],
               },
               {
                 level: 'Criticidade Alta',
                 desc: 'Fornecedores críticos para a missão, com acesso amplo ou dados sensíveis',
-                color: '#D93E38', bg: '#FFE8E7',
+                color: '#991B1B', bg: '#FEE2E2',
                 categories: ['Todos os GV.SC (01 a 10)', 'ID.RA-09', 'ID.RA-10', 'ID.IM-02', 'PR.AA-01', 'PR.AT-02', 'DE.CM-03', 'RS.MA-04', 'RS.CO-02', 'RC.RP-03', 'RC.CO-03'],
               },
             ].map(profile => (

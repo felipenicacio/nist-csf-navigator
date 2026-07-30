@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight, Map, BookOpen, ClipboardList, GitBranch } from 'lucide-react';
+import { getFnColors } from '../utils/fnColors';
 import { csfFunctions } from '../data/functions';
 import { csfCategories } from '../data/categories';
 
@@ -48,8 +49,8 @@ const HomePage: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {/* EXPLORAR */}
           <div className="rounded-2xl border-2 border-slate-200 overflow-hidden">
-            <div className="px-8 py-6 border-b border-slate-100" style={{ backgroundColor: '#EBF4FA' }}>
-              <p className="text-xs font-bold uppercase tracking-widest mb-1" style={{ color: '#164E73' }}>EXPLORAR</p>
+            <div className="px-8 py-6 border-b border-slate-100" style={{ backgroundColor: getFnColors('ID').light }}>
+              <p className="text-xs font-bold uppercase tracking-widest mb-1" style={{ color: getFnColors('ID').text }}>EXPLORAR</p>
               <h3 className="text-xl font-bold text-slate-900">Entenda o NIST CSF 2.0</h3>
               <p className="text-slate-500 text-sm mt-1">Para quem quer compreender o framework, suas funções e relações com outros padrões.</p>
             </div>
@@ -61,7 +62,7 @@ const HomePage: React.FC = () => {
                 { to: '/frameworks', icon: <ArrowRight size={15} />, label: 'Frameworks Relacionados', desc: '22+ frameworks documentados' },
               ].map(item => (
                 <Link key={item.to} to={item.to} className="flex items-center gap-3 p-3 rounded-xl hover:bg-slate-50 transition-colors group">
-                  <div className="w-8 h-8 rounded-lg flex items-center justify-center shrink-0" style={{ backgroundColor: '#EBF4FA', color: '#164E73' }}>
+                  <div className="w-8 h-8 rounded-lg flex items-center justify-center shrink-0" style={{ backgroundColor: getFnColors('ID').light, color: getFnColors('ID').text }}>
                     {item.icon}
                   </div>
                   <div className="flex-1">
@@ -76,8 +77,8 @@ const HomePage: React.FC = () => {
 
           {/* IMPLEMENTAR */}
           <div className="rounded-2xl border-2 border-slate-200 overflow-hidden">
-            <div className="px-8 py-6 border-b border-slate-100" style={{ backgroundColor: '#ECFDF5' }}>
-              <p className="text-xs font-bold uppercase tracking-widest mb-1" style={{ color: '#0F766E' }}>IMPLEMENTAR</p>
+            <div className="px-8 py-6 border-b border-slate-100" style={{ backgroundColor: getFnColors('PR').light }}>
+              <p className="text-xs font-bold uppercase tracking-widest mb-1" style={{ color: getFnColors('PR').text }}>IMPLEMENTAR</p>
               <h3 className="text-xl font-bold text-slate-900">Coloque em prática</h3>
               <p className="text-slate-500 text-sm mt-1">Para consultores, CISOs e equipes que estão iniciando ou melhorando um programa de cibersegurança.</p>
             </div>
@@ -89,7 +90,7 @@ const HomePage: React.FC = () => {
                 { to: '/profiles', icon: <ArrowRight size={15} />, label: 'Profiles', desc: 'Current e Target Profile explicados' },
               ].map(item => (
                 <Link key={item.to} to={item.to} className="flex items-center gap-3 p-3 rounded-xl hover:bg-slate-50 transition-colors group">
-                  <div className="w-8 h-8 rounded-lg flex items-center justify-center shrink-0" style={{ backgroundColor: '#ECFDF5', color: '#0F766E' }}>
+                  <div className="w-8 h-8 rounded-lg flex items-center justify-center shrink-0" style={{ backgroundColor: getFnColors('PR').light, color: getFnColors('PR').text }}>
                     {item.icon}
                   </div>
                   <div className="flex-1">
