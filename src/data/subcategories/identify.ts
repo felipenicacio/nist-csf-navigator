@@ -17,9 +17,12 @@ export const identifySubcategories: CSFSubcategory[] = [
       'Atribuir proprietários para cada ativo',
     ],
     guidingQuestions: [
+      'Existe inventário atualizado de todos os ativos de hardware da organização, incluindo dispositivos de usuários, servidores e equipamentos de rede?',
+      'O inventário de ativos cobre dispositivos gerenciados e não gerenciados (incluindo BYOD) que se conectam à rede corporativa?',
+      'Os ativos de hardware são identificados, classificados e associados a proprietários responsáveis?',
+      'O inventário é mantido atualizado de forma automatizada ou por processo formal de revisão periódica?',
       'Existe um inventário completo de todos os dispositivos físicos?',
       'O inventário é atualizado automaticamente?',
-      'Dispositivos não autorizados são detectados?',
     ],
     practiceExamples: [
       'Implementar solução de discovery automático de ativos (ex: Nmap, Nessus, CMDB)',
@@ -55,9 +58,12 @@ export const identifySubcategories: CSFSubcategory[] = [
       'Monitorar instalações não autorizadas',
     ],
     guidingQuestions: [
+      'Existe inventário atualizado de todos os softwares, aplicações e serviços em nuvem utilizados pela organização?',
+      'O inventário de software inclui versão, fornecedor, proprietário e status de suporte de cada item?',
+      'Existem controles para detectar e tratar software não autorizado (shadow IT) no ambiente da organização?',
+      'O inventário de software é integrado ao processo de gestão de vulnerabilidades e atualizações?',
       'Existe inventário completo de softwares instalados?',
       'Os softwares SaaS e de nuvem estão inventariados?',
-      'Softwares não autorizados são detectados e removidos?',
     ],
     practiceExamples: [
       'Usar ferramentas de gestão de ativos de software (SAM)',
@@ -93,9 +99,12 @@ export const identifySubcategories: CSFSubcategory[] = [
       'Identificar fluxos de dados com terceiros',
     ],
     guidingQuestions: [
+      'Os fluxos de dados e comunicações de rede estão mapeados e documentados, incluindo dados em trânsito internos e externos?',
+      'A organização possui visibilidade sobre quais dados trafegam entre sistemas internos, parceiros e provedores de nuvem?',
+      'Os mapas de fluxo de dados são atualizados quando ocorrem mudanças relevantes na infraestrutura ou nos processos de negócio?',
+      'Os fluxos de dados sensíveis estão identificados e sujeitos a controles adicionais de proteção?',
       'Os fluxos de dados críticos estão mapeados?',
       'É sabido onde os dados sensíveis trafegam?',
-      'Os fluxos de dados com terceiros são conhecidos?',
     ],
     practiceExamples: [
       'Criar diagramas de fluxo de dados (DFDs)',
@@ -131,9 +140,12 @@ export const identifySubcategories: CSFSubcategory[] = [
       'Manter o inventário atualizado',
     ],
     guidingQuestions: [
+      'Os serviços externos (ex: SaaS, IaaS, APIs de terceiros) utilizados pela organização estão catalogados e avaliados do ponto de vista de risco?',
+      'A organização monitora a dependência de serviços externos críticos e avalia os riscos de continuidade associados?',
+      'Os requisitos de cibersegurança para serviços externos estão definidos e verificados periodicamente?',
+      'Existe processo para avaliar e aprovar novos serviços externos antes de sua adoção?',
       'Todos os serviços externos utilizados estão inventariados?',
       'É sabido quais dados cada serviço externo acessa?',
-      'O inventário inclui Shadow IT?',
     ],
     practiceExamples: [
       'Usar soluções de CASB para descobrir Shadow IT',
@@ -169,9 +181,12 @@ export const identifySubcategories: CSFSubcategory[] = [
       'Revisar a classificação periodicamente',
     ],
     guidingQuestions: [
+      'Os ativos de hardware e software estão priorizados com base em sua criticidade para os processos de negócio e na sensibilidade dos dados que processam?',
+      'A classificação de criticidade dos ativos é utilizada para orientar as decisões de controles de segurança e alocação de recursos?',
+      'O processo de priorização de ativos é revisado periodicamente ou quando ocorrem mudanças relevantes no negócio?',
+      'Os ativos críticos possuem controles de segurança proporcionais ao seu nível de criticidade?',
       'Os ativos estão classificados por criticidade?',
       'A classificação informa as prioridades de segurança?',
-      'Ativos críticos recebem proteção proporcional?',
     ],
     practiceExamples: [
       'Definir escala de criticidade (crítico, alto, médio, baixo)',
@@ -207,9 +222,12 @@ export const identifySubcategories: CSFSubcategory[] = [
       'Incluir dados pessoais e dados regulamentados',
     ],
     guidingQuestions: [
+      'Os dados e informações estão inventariados, classificados quanto à sensibilidade e associados a proprietários responsáveis?',
+      'A política de classificação da informação está implementada e os colaboradores compreendem como aplicá-la?',
+      'Os dados pessoais e sensíveis estão identificados e sujeitos a controles adicionais conforme requisitos legais e regulatórios?',
+      'O inventário de dados é atualizado quando ocorrem mudanças nos processos de negócio ou na infraestrutura?',
       'Existe inventário dos dados da organização?',
       'Os dados estão classificados conforme sensibilidade?',
-      'Os dados pessoais são identificados e tratados adequadamente?',
     ],
     practiceExamples: [
       'Implementar ferramenta de descoberta e classificação de dados',
@@ -245,9 +263,12 @@ export const identifySubcategories: CSFSubcategory[] = [
       'Gerenciar riscos de softwares sem suporte',
     ],
     guidingQuestions: [
+      'Os sistemas, aplicações e ativos tecnológicos estão inventariados e associados aos processos de negócio que suportam?',
+      'A organização possui visibilidade sobre as dependências entre sistemas e processos críticos de negócio?',
+      'O inventário de sistemas considera tecnologias operacionais (OT), IoT e sistemas legados além da TI tradicional?',
+      'As informações do inventário são utilizadas no processo de avaliação de risco e planejamento de continuidade?',
       'A segurança é considerada em todo o ciclo de vida dos ativos?',
       'Ativos em fim de vida são identificados e tratados?',
-      'O descarte de hardware e dados é realizado de forma segura?',
     ],
     practiceExamples: [
       'Criar política de gestão de ciclo de vida de ativos',
@@ -285,7 +306,10 @@ export const identifySubcategories: CSFSubcategory[] = [
       'Manter registro de vulnerabilidades conhecidas',
     ],
     guidingQuestions: [
-      'Existe programa formal de gestão de vulnerabilidades?',
+      'A organização realiza varreduras periódicas de vulnerabilidades em sistemas, aplicações e infraestrutura?',
+      'Existe programa formal de gestão de vulnerabilidades com critérios de priorização e prazos de remediação definidos?',
+      'As vulnerabilidades identificadas são rastreadas em registro formal até sua remediação ou aceitação justificada?',
+      'O processo de gestão de vulnerabilidades inclui ativos em nuvem, OT e sistemas de terceiros?',
       'Varreduras de vulnerabilidades são realizadas regularmente?',
       'As vulnerabilidades identificadas são classificadas e priorizadas?',
     ],
@@ -323,9 +347,12 @@ export const identifySubcategories: CSFSubcategory[] = [
       'Integrar inteligência de ameaças ao processo de gestão de riscos',
     ],
     guidingQuestions: [
+      'A organização monitora fontes de inteligência de ameaças para identificar riscos relevantes ao seu setor e perfil?',
+      'Informações sobre ameaças e vulnerabilidades são compartilhadas com comunidades de segurança (ex: ISACs, CERT.br)?',
+      'A inteligência de ameaças é integrada ao processo de gestão de riscos e utilizada para atualizar controles?',
+      'A organização participa de iniciativas de compartilhamento de informações sobre ameaças de forma estruturada?',
       'A organização recebe feeds de inteligência de ameaças?',
       'Participa de grupos de compartilhamento de informações do setor?',
-      'Monitora alertas de agências governamentais?',
     ],
     practiceExamples: [
       'Assinar serviços de CTI como MISP, VirusTotal, AlienVault OTX',
@@ -361,9 +388,12 @@ export const identifySubcategories: CSFSubcategory[] = [
       'Integrar análise de ameaças ao processo de avaliação de riscos',
     ],
     guidingQuestions: [
+      'A organização identifica e analisa proativamente ameaças internas e externas relevantes para seus ativos e processos?',
+      'Existe processo para avaliar como as ameaças emergentes impactam o perfil de risco da organização?',
+      'As ameaças são documentadas e classificadas por relevância, probabilidade e impacto potencial?',
+      'A análise de ameaças considera vetores específicos do setor, da tecnologia e do modelo de negócio da organização?',
       'As principais ameaças à organização estão identificadas?',
       'Ameaças internas são consideradas na análise de riscos?',
-      'Os perfis de ameaças são atualizados regularmente?',
     ],
     practiceExamples: [
       'Desenvolver perfis de ameaças específicos ao setor',
@@ -399,9 +429,12 @@ export const identifySubcategories: CSFSubcategory[] = [
       'Documentar a metodologia utilizada',
     ],
     guidingQuestions: [
+      'A organização avalia formalmente o impacto e a probabilidade de ameaças explorarem vulnerabilidades nos ativos?',
+      'Existe metodologia definida para estimar a probabilidade e o impacto de riscos de cibersegurança?',
+      'As avaliações de impacto consideram consequências financeiras, operacionais, regulatórias e reputacionais?',
+      'Os resultados das avaliações de impacto e probabilidade são documentados e utilizados na priorização de riscos?',
       'Existem escalas definidas de impacto e probabilidade?',
       'Cada risco identificado tem impacto e probabilidade avaliados?',
-      'A metodologia de avaliação está documentada?',
     ],
     practiceExamples: [
       'Criar matriz de risco (probabilidade × impacto)',
@@ -437,9 +470,12 @@ export const identifySubcategories: CSFSubcategory[] = [
       'Documentar a priorização e sua justificativa',
     ],
     guidingQuestions: [
+      'Os riscos de cibersegurança identificados são priorizados com base em critérios formais (ex: nível de risco, impacto, probabilidade)?',
+      'Existe registro de riscos atualizado que reflita a priorização atual dos riscos de cibersegurança?',
+      'A priorização de riscos é comunicada à liderança e utilizada para orientar decisões de investimento em segurança?',
+      'Os riscos priorizados possuem planos de tratamento formais com responsáveis e prazos definidos?',
       'Os riscos são priorizados para tratamento?',
       'A priorização considera o apetite a riscos?',
-      'A justificativa da priorização é documentada?',
     ],
     practiceExamples: [
       'Usar Heat Map de riscos para visualizar prioridades',
@@ -475,9 +511,12 @@ export const identifySubcategories: CSFSubcategory[] = [
       'Comunicar o status dos riscos e tratamentos',
     ],
     guidingQuestions: [
+      'Os riscos priorizados possuem respostas definidas (mitigar, transferir, aceitar, evitar) aprovadas pela liderança?',
+      'Os planos de resposta a riscos são implementados e monitorados de forma sistemática?',
+      'A eficácia das respostas implementadas é avaliada periodicamente e ajustada quando necessário?',
+      'Os riscos residuais após tratamento são documentados e aceitos formalmente por responsáveis competentes?',
       'Cada risco tem uma resposta definida (tratar, aceitar, transferir, evitar)?',
       'Os planos de tratamento são documentados e acompanhados?',
-      'O progresso dos tratamentos é comunicado à liderança?',
     ],
     practiceExamples: [
       'Criar registro de tratamento de riscos',
@@ -512,9 +551,12 @@ export const identifySubcategories: CSFSubcategory[] = [
       'Incluir a equipe de segurança no processo de aprovação de mudanças',
     ],
     guidingQuestions: [
+      'A organização monitora continuamente os riscos de cibersegurança e atualiza as avaliações quando ocorrem mudanças no ambiente?',
+      'Indicadores de risco (KRIs) são utilizados para identificar variações significativas no perfil de risco?',
+      'Existem gatilhos definidos para acionar reavaliações de risco (ex: mudanças de sistema, novos fornecedores, incidentes)?',
+      'Os resultados do monitoramento contínuo de riscos são reportados à liderança de forma regular?',
       'O processo de gestão de mudanças inclui avaliação de segurança?',
       'Mudanças significativas passam por revisão de segurança antes da aprovação?',
-      'A equipe de segurança participa do CAB (Change Advisory Board)?',
     ],
     practiceExamples: [
       'Incluir avaliação de risco de segurança no processo de RFC (Request for Change)',
@@ -550,9 +592,12 @@ export const identifySubcategories: CSFSubcategory[] = [
       'Comunicar o progresso aos reportadores',
     ],
     guidingQuestions: [
+      'A organização possui processo para receber e avaliar relatos de vulnerabilidades de fontes externas (ex: pesquisadores, clientes)?',
+      'Existe programa de divulgação coordenada de vulnerabilidades (responsible disclosure) formalmente implementado?',
+      'Os relatos de vulnerabilidades recebidos são triados, investigados e tratados de forma oportuna e documentada?',
+      'A organização comunica de forma transparente às partes afetadas sobre vulnerabilidades e as medidas tomadas?',
       'Existe processo para receber relatos de vulnerabilidades de terceiros?',
       'Um canal de contato para segurança está disponível publicamente?',
-      'Os relatos de vulnerabilidades são respondidos tempestivamente?',
     ],
     practiceExamples: [
       'Publicar política de divulgação responsável (security.txt)',
@@ -587,9 +632,12 @@ export const identifySubcategories: CSFSubcategory[] = [
       'Implementar verificação de integridade em processos de implantação',
     ],
     guidingQuestions: [
+      'A organização verifica a autenticidade e integridade dos produtos e serviços de tecnologia antes da aquisição e uso?',
+      'Existe processo formal para avaliar os riscos de cibersegurança de hardware e software adquiridos de fornecedores?',
+      'A cadeia de custódia dos componentes tecnológicos críticos é verificada para detectar possíveis adulterações?',
+      'Os fornecedores são avaliados quanto a práticas seguras de desenvolvimento e entrega de produtos?',
       'A integridade de software é verificada antes da instalação?',
       'O hardware é adquirido de fornecedores confiáveis?',
-      'Existe processo para detectar adulteração na cadeia de suprimentos?',
     ],
     practiceExamples: [
       'Verificar checksums e assinaturas digitais de software',
@@ -624,9 +672,12 @@ export const identifySubcategories: CSFSubcategory[] = [
       'Documentar os resultados e incluir na decisão de seleção',
     ],
     guidingQuestions: [
+      'Os fornecedores críticos são avaliados do ponto de vista de cibersegurança antes da contratação e periodicamente durante o relacionamento?',
+      'A avaliação de fornecedores críticos inclui revisão de controles de segurança, certificações e histórico de incidentes?',
+      'Os resultados das avaliações de fornecedores são documentados e utilizados nas decisões de contratação e renovação?',
+      'Existe processo para tratar fornecedores que não atendem aos requisitos mínimos de cibersegurança?',
       'Fornecedores críticos passam por avaliação de segurança antes da contratação?',
       'A avaliação influencia a decisão de seleção?',
-      'Os resultados são documentados?',
     ],
     practiceExamples: [
       'Aplicar questionários de segurança a candidatos a fornecedores críticos',
@@ -664,9 +715,12 @@ export const identifySubcategories: CSFSubcategory[] = [
       'Verificar a efetividade das melhorias implementadas',
     ],
     guidingQuestions: [
+      'A organização possui processo formal para identificar melhorias no programa de cibersegurança com base em avaliações periódicas?',
+      'As lacunas identificadas nas capacidades de cibersegurança são documentadas e priorizadas para tratamento?',
+      'Existe plano de melhoria contínua do programa de cibersegurança, com responsáveis, prazos e recursos definidos?',
+      'Os resultados de auditorias, testes de penetração e avaliações de risco são utilizados para alimentar o processo de melhoria?',
       'Testes de penetração são realizados periodicamente?',
       'As melhorias identificadas em auditorias são formalmente acompanhadas?',
-      'A efetividade das melhorias é verificada?',
     ],
     practiceExamples: [
       'Contratar testes de penetração externos anuais',
@@ -702,9 +756,12 @@ export const identifySubcategories: CSFSubcategory[] = [
       'Acompanhar a implementação das melhorias',
     ],
     guidingQuestions: [
+      'A organização realiza exercícios e simulações de resposta a incidentes (ex: tabletop exercises) de forma periódica?',
+      'Os resultados dos exercícios são documentados e utilizados para identificar melhorias nos planos e capacidades de cibersegurança?',
+      'Os exercícios incluem cenários relevantes para os riscos atuais, incluindo cenários com fornecedores e terceiros?',
+      'As lições aprendidas dos exercícios são formalmente incorporadas às políticas, processos e treinamentos de cibersegurança?',
       'Após incidentes, existe processo de lições aprendidas?',
       'Os exercícios resultam em planos de melhoria?',
-      'As melhorias identificadas são acompanhadas?',
     ],
     practiceExamples: [
       'Implementar processo formal de After Action Review (AAR)',
@@ -739,9 +796,12 @@ export const identifySubcategories: CSFSubcategory[] = [
       'Integrar inteligência externa ao processo de melhoria contínua',
     ],
     guidingQuestions: [
+      'As lições aprendidas de incidentes de cibersegurança são sistematicamente capturadas, analisadas e utilizadas para melhorar os controles?',
+      'Existe processo para incorporar aprendizados de incidentes externos relevantes ao setor nas práticas de cibersegurança?',
+      'As revisões pós-incidente são conduzidas de forma estruturada e seus resultados são documentados e comunicados?',
+      'As melhorias identificadas nas revisões pós-incidente são priorizadas e implementadas de forma rastreável?',
       'A organização participa de comunidades de compartilhamento de segurança?',
       'Eventos do setor são analisados para identificar melhorias?',
-      'O conhecimento externo informa o programa de melhoria?',
     ],
     practiceExamples: [
       'Participar de grupos como CERT.br, ISACs setoriais',
@@ -778,10 +838,12 @@ export const identifySubcategories: CSFSubcategory[] = [
       'Testar o plano periodicamente por meio de exercícios e simulações',
     ],
     guidingQuestions: [
+      'O plano de resposta a incidentes está formalmente documentado, aprovado pela liderança e comunicado às partes relevantes?',
+      'O plano de resposta a incidentes é testado e revisado periodicamente, incorporando lições aprendidas?',
+      'Os planos de continuidade e recuperação estão alinhados ao plano de resposta a incidentes?',
+      'Os responsáveis pelo plano de resposta a incidentes possuem autoridade e recursos para executá-lo efetivamente?',
       'Existe um Plano de Resposta a Incidentes formalmente documentado e aprovado?',
       'O plano é comunicado e conhecido por todos os que precisam agir durante um incidente?',
-      'O plano é revisado e atualizado regularmente?',
-      'Os planos de continuidade e recuperação estão alinhados ao plano de resposta?',
     ],
     practiceExamples: [
       'Manter o plano em repositório centralizado e acessível à equipe de resposta',

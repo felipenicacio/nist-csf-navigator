@@ -17,9 +17,12 @@ export const governSubcategories: CSFSubcategory[] = [
       'Revisar periodicamente o alinhamento entre missão e práticas de segurança',
     ],
     guidingQuestions: [
-      'A missão organizacional está formalmente documentada?',
+      'A missão organizacional está formalmente documentada, comunicada e alinhada à estratégia de cibersegurança?',
+      'As partes interessadas (liderança executiva, diretoria, áreas de negócio) compartilham um entendimento comum da missão e seus impactos nos riscos de cibersegurança?',
+      'Os objetivos de cibersegurança levam em conta como os riscos podem afetar a missão organizacional?',
+      'As políticas e controles de cibersegurança estão alinhados ao alcance dos objetivos estratégicos da organização?',
+      'A abordagem de gestão de riscos de cibersegurança é revisada periodicamente para refletir mudanças na missão e nas prioridades estratégicas?',
       'Os objetivos de cibersegurança estão alinhados à missão?',
-      'Os responsáveis por cibersegurança compreendem a missão organizacional?',
     ],
     practiceExamples: [
       'Incluir referência à missão no planejamento estratégico de cibersegurança',
@@ -55,9 +58,12 @@ export const governSubcategories: CSFSubcategory[] = [
       'Revisar periodicamente o mapeamento de requisitos',
     ],
     guidingQuestions: [
+      'As partes interessadas internas e externas relevantes para a cibersegurança estão identificadas e documentadas?',
+      'As necessidades e expectativas das partes interessadas em relação à cibersegurança são compreendidas e consideradas nas decisões de gestão de riscos?',
+      'Existe processo formal para engajar periodicamente as partes interessadas e capturar mudanças em suas expectativas de segurança?',
+      'O feedback das partes interessadas é incorporado às políticas e práticas de cibersegurança?',
+      'Os requisitos de cibersegurança das partes interessadas são comunicados de forma adequada a todas as áreas relevantes da organização?',
       'Os requisitos legais de cibersegurança aplicáveis foram identificados?',
-      'As obrigações contratuais de segurança estão mapeadas?',
-      'Existe processo para acompanhar mudanças regulatórias?',
     ],
     practiceExamples: [
       'Manter inventário de leis e regulamentos aplicáveis à cibersegurança',
@@ -92,9 +98,12 @@ export const governSubcategories: CSFSubcategory[] = [
       'Comunicar objetivos de cibersegurança às partes interessadas',
     ],
     guidingQuestions: [
+      'Os requisitos legais, regulatórios e contratuais de cibersegurança aplicáveis estão identificados, documentados e gerenciados?',
+      'Existe processo para monitorar mudanças em leis e regulações de cibersegurança e atualizar as práticas da organização?',
+      'As obrigações de privacidade e proteção de dados são consideradas nas decisões de gestão de riscos de cibersegurança?',
+      'A conformidade com requisitos legais e regulatórios é verificada e evidenciada periodicamente?',
       'Os resultados esperados de cibersegurança estão definidos?',
       'Os riscos de privacidade são considerados no planejamento de cibersegurança?',
-      'Os objetivos de segurança são comunicados às partes interessadas?',
     ],
     practiceExamples: [
       'Documentar os objetivos do programa de cibersegurança',
@@ -130,9 +139,12 @@ export const governSubcategories: CSFSubcategory[] = [
       'Comunicar o estado da cibersegurança periodicamente',
     ],
     guidingQuestions: [
+      'Os objetivos e serviços críticos que as partes interessadas dependem da organização estão identificados e documentados?',
+      'A organização compreende como falhas de cibersegurança podem impactar as capacidades e serviços críticos?',
+      'As dependências de terceiros para serviços críticos estão mapeadas e avaliadas do ponto de vista de risco de cibersegurança?',
+      'As partes interessadas são informadas sobre as capacidades de cibersegurança que protegem os serviços críticos?',
       'As partes interessadas com expectativas de cibersegurança foram identificadas?',
       'As expectativas de cada parte interessada são conhecidas?',
-      'Existe comunicação regular sobre cibersegurança com as partes interessadas?',
     ],
     practiceExamples: [
       'Realizar análise de partes interessadas (stakeholder analysis)',
@@ -167,9 +179,12 @@ export const governSubcategories: CSFSubcategory[] = [
       'Priorizar investimentos em cibersegurança com base na criticidade',
     ],
     guidingQuestions: [
+      'As consequências de riscos de cibersegurança para a missão organizacional estão identificadas e avaliadas?',
+      'Existe processo para avaliar como incidentes de cibersegurança podem afetar os resultados de negócio e a reputação da organização?',
+      'Os riscos de cibersegurança são comunicados à liderança no contexto de seus impactos para a missão e os objetivos estratégicos?',
+      'As decisões de aceitação ou tratamento de riscos consideram as consequências para a missão organizacional?',
       'Os serviços críticos da organização estão identificados?',
       'As capacidades de cibersegurança que protegem esses serviços estão mapeadas?',
-      'Os investimentos de cibersegurança refletem a criticidade dos serviços?',
     ],
     practiceExamples: [
       'Realizar análise de impacto no negócio (BIA)',
@@ -207,9 +222,12 @@ export const governSubcategories: CSFSubcategory[] = [
       'Revisar periodicamente o apetite a riscos',
     ],
     guidingQuestions: [
+      'A organização possui objetivos de gestão de riscos de cibersegurança claros, mensuráveis e alinhados à estratégia de negócio?',
+      'Os critérios de apetite e tolerância a riscos de cibersegurança estão formalmente definidos e aprovados pela liderança?',
+      'Existe estratégia documentada de gestão de riscos de cibersegurança, revisada e comunicada periodicamente?',
+      'A estratégia de riscos de cibersegurança é integrada ao processo de gestão de riscos empresariais (ERM)?',
+      'Os papéis e responsabilidades para gestão de riscos de cibersegurança estão claramente definidos e comunicados?',
       'O apetite a riscos de cibersegurança está formalmente definido?',
-      'Os critérios de tolerância a riscos estão documentados?',
-      'O apetite a riscos é comunicado e compreendido?',
     ],
     practiceExamples: [
       'Desenvolver declaração formal de apetite a riscos',
@@ -248,9 +266,12 @@ export const governSubcategories: CSFSubcategory[] = [
       'Atualizar periodicamente conforme mudanças organizacionais',
     ],
     guidingQuestions: [
+      'A organização realiza avaliações de risco de cibersegurança de forma periódica e baseada em metodologia definida?',
+      'Os resultados das avaliações de risco são documentados em um registro de riscos atualizado e acessível às partes relevantes?',
+      'As avaliações de risco consideram ameaças internas e externas, vulnerabilidades e impactos potenciais?',
+      'Os riscos identificados são priorizados e monitorados de forma consistente ao longo do tempo?',
       'As prioridades de gestão de riscos estão documentadas?',
       'As restrições organizacionais são consideradas nas decisões de risco?',
-      'As premissas de risco são revisadas periodicamente?',
     ],
     practiceExamples: [
       'Incluir restrições organizacionais no planejamento de cibersegurança',
@@ -285,9 +306,12 @@ export const governSubcategories: CSFSubcategory[] = [
       'Reportar riscos de cibersegurança à alta direção regularmente',
     ],
     guidingQuestions: [
+      'Os riscos de cibersegurança são reportados à alta direção e ao conselho de administração de forma regular e estruturada?',
+      'As informações sobre riscos de cibersegurança são comunicadas em linguagem adequada para a tomada de decisão executiva?',
+      'Existe processo formal para escalar riscos críticos à liderança e garantir que decisões sejam tomadas com base em informações atualizadas?',
+      'A comunicação de riscos considera o impacto para os objetivos de negócio e para as partes interessadas externas?',
       'As informações sobre riscos chegam a quem precisa para tomar decisões?',
       'A alta direção recebe relatórios de risco de cibersegurança?',
-      'As decisões de negócio consideram os riscos de cibersegurança?',
     ],
     practiceExamples: [
       'Criar relatórios de risco adaptados para cada nível organizacional',
@@ -322,9 +346,12 @@ export const governSubcategories: CSFSubcategory[] = [
       'Garantir que o CISO participe dos fóruns de gestão de riscos corporativos',
     ],
     guidingQuestions: [
+      'A organização considera os riscos de cibersegurança da cadeia de suprimentos na estratégia de gestão de riscos?',
+      'Existem critérios definidos para avaliar e selecionar fornecedores com base em seus controles de cibersegurança?',
+      'Os riscos associados a fornecedores e parceiros são incluídos no registro de riscos organizacional?',
+      'Os contratos com fornecedores incluem requisitos de cibersegurança proporcionais ao nível de criticidade?',
       'Os riscos de cibersegurança estão integrados ao registro de riscos corporativos?',
       'A metodologia de cibersegurança é consistente com a gestão de riscos corporativos?',
-      'O CISO participa dos fóruns de gestão de riscos da organização?',
     ],
     practiceExamples: [
       'Incluir riscos de cibersegurança no Enterprise Risk Register',
@@ -362,9 +389,12 @@ export const governSubcategories: CSFSubcategory[] = [
       'Definir frequência e formato de comunicação de riscos à liderança',
     ],
     guidingQuestions: [
+      'Existe processo estruturado para identificar, avaliar e tratar os riscos de cibersegurança?',
+      'As respostas aos riscos (mitigar, transferir, aceitar, evitar) são selecionadas com base em critérios definidos e alinhados ao apetite a riscos?',
+      'Os planos de tratamento de risco incluem responsáveis, prazos e recursos necessários?',
+      'A eficácia das respostas a riscos é monitorada e avaliada periodicamente?',
       'O CISO tem acesso direto à alta direção?',
       'Existe linha de reporte clara para riscos de cibersegurança?',
-      'A frequência de comunicação com a liderança está definida?',
     ],
     practiceExamples: [
       'Definir linha de reporte formal do CISO',
@@ -400,9 +430,12 @@ export const governSubcategories: CSFSubcategory[] = [
       'Revisar a política anualmente ou após mudanças significativas',
     ],
     guidingQuestions: [
+      'A organização monitora continuamente os riscos de cibersegurança e atualiza as avaliações quando ocorrem mudanças relevantes?',
+      'Existe processo para incorporar inteligência de ameaças à gestão de riscos de cibersegurança?',
+      'Os riscos emergentes e as mudanças no cenário de ameaças são avaliados e refletidos nas decisões de tratamento de risco?',
+      'O monitoramento de riscos inclui indicadores de risco residual e indicadores de eficácia dos controles?',
       'Existe uma política formal de gestão de riscos de cibersegurança?',
       'A política foi aprovada pela alta direção?',
-      'A política é comunicada e disponível a quem precisa?',
     ],
     practiceExamples: [
       'Desenvolver política de gestão de riscos baseada no NIST RMF ou ISO 31000',
@@ -437,6 +470,9 @@ export const governSubcategories: CSFSubcategory[] = [
       'Desenvolver processo de avaliação de cibersegurança para novos projetos estratégicos',
     ],
     guidingQuestions: [
+      'Os riscos positivos (oportunidades) são considerados na estratégia de gestão de riscos de cibersegurança?',
+      'A organização possui processo para identificar e aproveitar oportunidades que melhorem a postura de cibersegurança?',
+      'As decisões de investimento em cibersegurança consideram o retorno esperado em termos de redução de risco?',
       'A cibersegurança é avaliada em processos de due diligence?',
       'Novos projetos estratégicos incluem análise de riscos de cibersegurança?',
       'A integração pós-M&A inclui avaliação de cibersegurança?',
@@ -476,9 +512,12 @@ export const governSubcategories: CSFSubcategory[] = [
       'Incluir responsabilidade por cibersegurança nas avaliações de desempenho executivo',
     ],
     guidingQuestions: [
+      'Os papéis e responsabilidades de cibersegurança estão formalmente definidos para toda a organização, incluindo a alta direção?',
+      'A accountability pela cibersegurança está claramente atribuída em todos os níveis hierárquicos?',
+      'As responsabilidades de cibersegurança estão refletidas nas descrições de cargos e avaliações de desempenho?',
+      'Os responsáveis por cibersegurança possuem autoridade adequada para tomar decisões e executar suas funções?',
       'A alta direção assume responsabilidade pela cibersegurança?',
       'Os executivos estão informados sobre os riscos atuais de cibersegurança?',
-      'A responsabilidade pela cibersegurança está incluída nas avaliações executivas?',
     ],
     practiceExamples: [
       'Incluir cibersegurança na agenda do conselho de administração',
@@ -514,9 +553,12 @@ export const governSubcategories: CSFSubcategory[] = [
       'Garantir que as responsabilidades sejam aceitas e compreendidas',
     ],
     guidingQuestions: [
+      'Existem políticas e procedimentos que definem as responsabilidades de cibersegurança para fornecedores, parceiros e terceiros?',
+      'Os requisitos de cibersegurança para terceiros estão formalizados em contratos e acordos de nível de serviço?',
+      'A organização verifica periodicamente se fornecedores e parceiros cumprem com suas responsabilidades de cibersegurança?',
+      'As responsabilidades compartilhadas de cibersegurança estão claramente delimitadas nos acordos com terceiros?',
       'Os papéis de cibersegurança estão claramente definidos?',
       'As descrições de cargo incluem responsabilidades de segurança?',
-      'Todos os colaboradores conhecem suas responsabilidades?',
     ],
     practiceExamples: [
       'Desenvolver matriz de responsabilidades de cibersegurança',
@@ -552,9 +594,12 @@ export const governSubcategories: CSFSubcategory[] = [
       'Revisar periodicamente a adequação dos recursos',
     ],
     guidingQuestions: [
+      'Os profissionais de cibersegurança possuem as qualificações, certificações e treinamentos adequados para suas funções?',
+      'Existe programa formal de desenvolvimento de competências de cibersegurança para as equipes responsáveis?',
+      'A organização avalia periodicamente se a força de trabalho possui as habilidades necessárias para executar as atividades de cibersegurança?',
+      'Há plano de sucessão e capacitação para funções críticas de cibersegurança?',
       'O orçamento de cibersegurança é adequado para os riscos identificados?',
       'A equipe de cibersegurança está suficientemente dimensionada?',
-      'Os recursos tecnológicos são adequados?',
     ],
     practiceExamples: [
       'Comparar orçamento de cibersegurança com benchmarks do setor',
@@ -590,9 +635,12 @@ export const governSubcategories: CSFSubcategory[] = [
       'Incluir cibersegurança nas avaliações de desempenho',
     ],
     guidingQuestions: [
+      'A organização possui políticas que abordam o conflito de interesses em funções de cibersegurança?',
+      'Existem controles para garantir a separação de funções em atividades críticas de cibersegurança?',
+      'Os mecanismos de responsabilização (accountability) estão implementados para garantir o cumprimento das políticas de cibersegurança?',
+      'Violações de políticas de cibersegurança são investigadas e tratadas de forma consistente e documentada?',
       'O processo de contratação inclui verificações de segurança?',
       'O processo de desligamento garante revogação imediata de acessos?',
-      'Colaboradores com acesso privilegiado são sujeitos a controles adicionais?',
     ],
     practiceExamples: [
       'Implementar processo de verificação de antecedentes',
@@ -630,9 +678,12 @@ export const governSubcategories: CSFSubcategory[] = [
       'Comunicar a política a todos os colaboradores',
     ],
     guidingQuestions: [
+      'A organização possui política de cibersegurança formalmente aprovada pela alta direção e comunicada a todos os colaboradores?',
+      'A política de cibersegurança está alinhada aos objetivos estratégicos, requisitos legais e ao apetite a riscos da organização?',
+      'Existe processo para revisar e atualizar a política de cibersegurança periodicamente ou quando ocorrem mudanças relevantes?',
+      'As políticas de cibersegurança definem claramente as responsabilidades e expectativas para todos os colaboradores?',
+      'A conformidade com a política de cibersegurança é monitorada e desvios são tratados de forma adequada?',
       'Existe uma política de cibersegurança abrangente e aprovada?',
-      'A política cobre todas as áreas críticas?',
-      'A política é conhecida e acessível a todos?',
     ],
     practiceExamples: [
       'Desenvolver política de cibersegurança baseada em frameworks reconhecidos',
@@ -668,9 +719,12 @@ export const governSubcategories: CSFSubcategory[] = [
       'Documentar o histórico de versões das políticas',
     ],
     guidingQuestions: [
+      'As políticas de cibersegurança incluem requisitos para proteção de dados pessoais e conformidade com legislação de privacidade?',
+      'As obrigações de privacidade e liberdades civis são consideradas no desenvolvimento e revisão das políticas de cibersegurança?',
+      'Existe integração formal entre as políticas de cibersegurança e as políticas de privacidade da organização?',
+      'Os colaboradores são treinados sobre os requisitos de privacidade presentes nas políticas de cibersegurança?',
       'Existe um processo de revisão periódica das políticas?',
       'As políticas são revisadas após incidentes relevantes?',
-      'O histórico de versões é mantido?',
     ],
     practiceExamples: [
       'Definir ciclo anual de revisão de políticas',
@@ -708,9 +762,12 @@ export const governSubcategories: CSFSubcategory[] = [
       'Acompanhar a implementação das ações definidas',
     ],
     guidingQuestions: [
+      'A liderança revisa periodicamente o desempenho e a eficácia do programa de cibersegurança?',
+      'Existem indicadores (KPIs/KRIs) que permitem à alta direção avaliar a postura de cibersegurança da organização?',
+      'Os resultados das revisões do programa de cibersegurança são documentados e utilizados para melhorias?',
+      'A supervisão da cibersegurança está integrada aos mecanismos de governança corporativa?',
       'A liderança realiza análises periódicas do programa de cibersegurança?',
       'As revisões resultam em decisões e ações documentadas?',
-      'O acompanhamento das ações é realizado?',
     ],
     practiceExamples: [
       'Estabelecer reuniões trimestrais de revisão executiva de cibersegurança',
@@ -745,9 +802,12 @@ export const governSubcategories: CSFSubcategory[] = [
       'Monitorar o ambiente de ameaças e ajustar prioridades',
     ],
     guidingQuestions: [
+      'Existem processos formais para identificar e registrar lições aprendidas de incidentes e exercícios de cibersegurança?',
+      'As lições aprendidas são utilizadas para atualizar políticas, processos e controles de cibersegurança?',
+      'A organização realiza revisões pós-incidente estruturadas para identificar melhorias no programa de cibersegurança?',
+      'As melhorias identificadas são priorizadas e implementadas de forma sistemática?',
       'Existem KPIs para monitorar a estratégia de cibersegurança?',
       'Os KPIs são revisados periodicamente?',
-      'A estratégia é ajustada com base nos resultados?',
     ],
     practiceExamples: [
       'Definir conjunto de KPIs estratégicos de cibersegurança',
@@ -782,9 +842,12 @@ export const governSubcategories: CSFSubcategory[] = [
       'Implementar melhorias e acompanhar sua eficácia',
     ],
     guidingQuestions: [
+      'A organização avalia periodicamente a adequação dos recursos alocados ao programa de cibersegurança?',
+      'Os processos de planejamento de cibersegurança estão integrados ao ciclo de planejamento estratégico e orçamentário?',
+      'A liderança revisa e ajusta as estratégias de cibersegurança com base nas mudanças no ambiente de ameaças e nos objetivos de negócio?',
+      'Existe supervisão formal para garantir que as atividades de cibersegurança estejam alinhadas às prioridades organizacionais?',
       'Os resultados da gestão de riscos são analisados regularmente?',
       'As análises resultam em melhorias no programa?',
-      'As melhorias são acompanhadas e avaliadas?',
     ],
     practiceExamples: [
       'Realizar revisão anual do processo de gestão de riscos',
@@ -822,9 +885,12 @@ export const governSubcategories: CSFSubcategory[] = [
       'Revisar e atualizar o programa periodicamente',
     ],
     guidingQuestions: [
+      'A organização possui estratégia formal de gestão de riscos de cibersegurança da cadeia de suprimentos (C-SCRM), com objetivos e políticas definidos?',
+      'A estratégia de C-SCRM está integrada ao programa geral de gestão de riscos de cibersegurança e ao ERM da organização?',
+      'Existem processos e procedimentos documentados para implementar e monitorar a estratégia de C-SCRM?',
+      'A estratégia de C-SCRM é revisada e atualizada periodicamente para refletir mudanças no cenário de ameaças e na cadeia de suprimentos?',
       'Existe um programa formal de gestão de riscos de fornecedores?',
       'O programa está aprovado pela liderança?',
-      'O programa é revisado periodicamente?',
     ],
     practiceExamples: [
       'Desenvolver framework de gestão de riscos de terceiros',
@@ -859,9 +925,12 @@ export const governSubcategories: CSFSubcategory[] = [
       'Estabelecer colaboração entre TI, segurança, jurídico e compras',
     ],
     guidingQuestions: [
+      'Os papéis e responsabilidades de C-SCRM estão formalmente definidos e comunicados dentro e fora da organização?',
+      'Existe função ou equipe dedicada com autoridade para planejar, executar e monitorar as atividades de C-SCRM?',
+      'As responsabilidades de C-SCRM estão documentadas em políticas e refletidas nas descrições de cargo dos envolvidos?',
+      'Os fornecedores e parceiros estão cientes de suas responsabilidades de cibersegurança na cadeia de suprimentos?',
       'Os papéis na gestão de riscos de fornecedores estão definidos?',
       'Existe colaboração entre áreas na gestão de fornecedores?',
-      'A responsabilidade por cada fornecedor crítico está atribuída?',
     ],
     practiceExamples: [
       'Criar RACI para gestão de riscos de fornecedores',
@@ -896,9 +965,12 @@ export const governSubcategories: CSFSubcategory[] = [
       'Integrar resultados de avaliações de fornecedores ao perfil de risco global',
     ],
     guidingQuestions: [
+      'As práticas de C-SCRM estão integradas aos processos de gestão de riscos empresariais e de cibersegurança da organização?',
+      'O desempenho das práticas de C-SCRM é monitorado ao longo do ciclo de vida da tecnologia adquirida?',
+      'Existem métricas para avaliar a eficácia da integração do C-SCRM ao programa de gestão de riscos?',
+      'Os resultados do monitoramento de C-SCRM são reportados à liderança e utilizados para ajustar a estratégia?',
       'Os riscos de fornecedores estão no registro geral de riscos de cibersegurança?',
       'A metodologia de avaliação de fornecedores é consistente com a interna?',
-      'O perfil de risco organizacional inclui riscos de terceiros?',
     ],
     practiceExamples: [
       'Usar a mesma escala e critérios de risco para fornecedores e sistemas internos',
@@ -933,9 +1005,12 @@ export const governSubcategories: CSFSubcategory[] = [
       'Aplicar controles mais rigorosos a fornecedores críticos',
     ],
     guidingQuestions: [
+      'A organização identificou e documentou todos os fornecedores de tecnologia relevantes e determinou o nível de criticidade de cada um?',
+      'Existem critérios formais para classificar fornecedores por nível de criticidade com base no impacto potencial para o negócio?',
+      'O inventário de fornecedores é mantido atualizado e inclui informações sobre os produtos e serviços fornecidos?',
+      'A criticidade dos fornecedores é considerada nas decisões de gestão de risco e nos requisitos contratuais de cibersegurança?',
       'Os fornecedores estão classificados por criticidade?',
       'Existem controles diferenciados para fornecedores críticos?',
-      'O inventário de fornecedores críticos é mantido atualizado?',
     ],
     practiceExamples: [
       'Desenvolver critérios de criticidade (acesso a dados, dependência operacional, etc.)',
@@ -970,9 +1045,12 @@ export const governSubcategories: CSFSubcategory[] = [
       'Definir requisitos mínimos de segurança por nível de criticidade',
     ],
     guidingQuestions: [
+      'Os requisitos de cibersegurança para fornecedores estão definidos e são proporcionais ao nível de criticidade de cada fornecedor?',
+      'Os requisitos de cibersegurança estão incluídos nos contratos, SLAs e outras formas de acordo com fornecedores?',
+      'A organização verifica se os fornecedores cumprem os requisitos de cibersegurança estabelecidos nos contratos?',
+      'Os fornecedores são obrigados a reportar incidentes de cibersegurança que possam afetar a organização?',
       'Os contratos com fornecedores incluem requisitos de cibersegurança?',
       'Existem requisitos mínimos de segurança definidos para fornecedores?',
-      'Os contratos incluem obrigação de notificação de incidentes?',
     ],
     practiceExamples: [
       'Criar biblioteca de cláusulas de segurança para contratos',
@@ -1007,9 +1085,12 @@ export const governSubcategories: CSFSubcategory[] = [
       'Avaliar a postura de segurança durante o processo de aquisição',
     ],
     guidingQuestions: [
+      'A organização realiza due diligence de cibersegurança nos fornecedores antes da contratação e ao longo do relacionamento?',
+      'Existem critérios e processos formais para selecionar fornecedores com base em sua postura de cibersegurança?',
+      'As avaliações de cibersegurança de fornecedores são documentadas e utilizadas nas decisões de contratação e renovação?',
+      'A organização avalia periodicamente os riscos associados ao portfólio de fornecedores ativos?',
       'A segurança é um critério de seleção de fornecedores?',
       'Due diligence de segurança é realizada antes da contratação?',
-      'A postura de segurança influencia a decisão de contratação?',
     ],
     practiceExamples: [
       'Incluir questionários de segurança em processos de RFP',
@@ -1044,9 +1125,12 @@ export const governSubcategories: CSFSubcategory[] = [
       'Incluir riscos de fornecedores no registro de riscos organizacional',
     ],
     guidingQuestions: [
+      'A organização realiza avaliações periódicas de cibersegurança dos fornecedores durante o ciclo de vida do relacionamento?',
+      'Existem processos para responder a descobertas de não conformidade de cibersegurança nos fornecedores?',
+      'Os resultados das avaliações de fornecedores são documentados e compartilhados com as partes relevantes da organização?',
+      'Os fornecedores críticos são reavaliados quando ocorrem mudanças significativas em seus serviços ou em seus controles de segurança?',
       'Os riscos de cada fornecedor crítico são avaliados formalmente?',
       'Os riscos de fornecedores estão documentados?',
-      'O registro de riscos inclui riscos de terceiros?',
     ],
     practiceExamples: [
       'Implementar plataforma de avaliação de riscos de terceiros (TPRM)',
@@ -1081,9 +1165,12 @@ export const governSubcategories: CSFSubcategory[] = [
       'Realizar exercícios que incluam fornecedores críticos',
     ],
     guidingQuestions: [
+      'Os fornecedores relevantes estão incluídos nos planos de resposta a incidentes e recuperação de desastres da organização?',
+      'Existem acordos formais com fornecedores críticos para coordenar a resposta a incidentes de cibersegurança?',
+      'Os fornecedores são notificados sobre incidentes que os afetam de forma oportuna e conforme os acordos contratuais?',
+      'Os exercícios e simulações de resposta a incidentes incluem cenários envolvendo fornecedores da cadeia de suprimentos?',
       'Os fornecedores críticos estão incluídos nos planos de resposta a incidentes?',
       'Existe procedimento para comunicar incidentes a fornecedores?',
-      'Exercícios de resposta incluem fornecedores relevantes?',
     ],
     practiceExamples: [
       'Incluir contatos de segurança de fornecedores no plano de resposta',
@@ -1118,6 +1205,9 @@ export const governSubcategories: CSFSubcategory[] = [
       'Comunicar resultados de monitoramento aos responsáveis',
     ],
     guidingQuestions: [
+      'Os fornecedores são obrigados contratualmente a comunicar mudanças significativas em seus serviços, sub-fornecedores ou controles de cibersegurança?',
+      'A organização monitora proativamente os fornecedores para identificar mudanças que possam introduzir novos riscos?',
+      'Existem processos para avaliar o impacto de mudanças nos fornecedores sobre a postura de cibersegurança da organização?',
       'Os fornecedores críticos são avaliados periodicamente quanto à segurança?',
       'Existem métricas de segurança para fornecedores?',
       'Os resultados são comunicados e utilizados para decisões?',
@@ -1155,9 +1245,12 @@ export const governSubcategories: CSFSubcategory[] = [
       'Estabelecer processo de aprovação de novos produtos',
     ],
     guidingQuestions: [
+      'O ciclo de vida completo dos produtos e serviços adquiridos é considerado na gestão de riscos de cibersegurança da cadeia de suprimentos?',
+      'Existem processos para gerenciar os riscos de cibersegurança no descomissionamento e descarte de tecnologias adquiridas de fornecedores?',
+      'A organização verifica a autenticidade e integridade de hardware e software adquiridos de fornecedores?',
+      'Os planos de descontinuação de fornecedores incluem considerações de cibersegurança e transferência segura de dados?',
       'Novos produtos de TI passam por avaliação de segurança antes de adoção?',
       'Existe processo de aprovação de hardware e software?',
-      'Os riscos de componentes de fornecedores são avaliados?',
     ],
     practiceExamples: [
       'Desenvolver processo de revisão de segurança de novos produtos',
