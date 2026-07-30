@@ -7,12 +7,12 @@ import { allSubcategories } from '../data';
 import { MappingTypeBadge } from '../components/ui';
 
 const fnColors: Record<string, { bg: string; light: string; text: string }> = {
-  GV: { bg: '#0B1F33', light: '#E8EDF2', text: '#fff' },
-  ID: { bg: '#164E73', light: '#EBF4FA', text: '#fff' },
-  PR: { bg: '#0F766E', light: '#ECFDF5', text: '#fff' },
-  DE: { bg: '#D97706', light: '#FFFBEB', text: '#fff' },
-  RS: { bg: '#DC2626', light: '#FEF2F2', text: '#fff' },
-  RC: { bg: '#16A34A', light: '#F0FDF4', text: '#fff' },
+  GV: { bg: '#0B1F33', light: '#FFF9C4', text: '#1a1a1a' },
+  ID: { bg: '#164E73', light: '#E0F4FB', text: '#1a1a1a' },
+  PR: { bg: '#0F766E', light: '#EEECFB', text: '#1a1a1a' },
+  DE: { bg: '#D97706', light: '#FFF3DC', text: '#1a1a1a' },
+  RS: { bg: '#DC2626', light: '#FFE8E7', text: '#1a1a1a' },
+  RC: { bg: '#16A34A', light: '#E2FAF0', text: '#1a1a1a' },
 };
 
 type Step = 'function' | 'category' | 'subcategory' | 'detail';

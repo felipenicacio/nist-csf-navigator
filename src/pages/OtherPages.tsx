@@ -241,7 +241,7 @@ export const FrameworksPage: React.FC = () => {
   ];
   const filtered = activeCategory === 'all' ? frameworks : frameworks.filter(f => f.category === activeCategory);
 
-  const fnColors: Record<string, string> = { GV: '#0B1F33', ID: '#164E73', PR: '#0F766E', DE: '#D97706', RS: '#DC2626', RC: '#16A34A' };
+  const fnColors: Record<string, string> = { GV: '#C8A800', ID: '#1A7FA8', PR: '#5B57C0', DE: '#C07800', RS: '#D93E38', RC: '#1E9E52' };
 
   return (
     <div className="max-w-screen-xl mx-auto px-4 sm:px-6 py-10 animate-fadeIn">
