@@ -72,7 +72,7 @@ const CSCRMPage: React.FC = () => {
       <PageIntro
         title="O que é C-SCRM?"
         plain="C-SCRM é a gestão de riscos de cibersegurança na cadeia de suprimentos, ou seja, os riscos introduzidos por fornecedores, softwares, hardwares e serviços que sua organização compra e usa."
-        detail="Um ataque pode entrar pela cadeia de suprimentos mesmo que seus sistemas internos estejam protegidos. Por isso o CSF dedica uma Category inteira a este tema: GV.SC."
+        detail="Um ataque pode entrar pela cadeia de suprimentos mesmo que seus sistemas internos estejam protegidos. Por isso o CSF dedica uma Categoria inteira a este tema: GV.SC."
         learnMore={{ label: 'Ver GV.SC no Framework', to: '/category/GV.SC' }}
       />
       {/* Intro card */}
@@ -95,7 +95,7 @@ const CSCRMPage: React.FC = () => {
       <div className="flex gap-2 mb-6 flex-wrap">
         {[
           { id: 'activities', label: 'Atividades de C-SCRM' },
-          { id: 'requirements', label: 'Requisitos por Function' },
+          { id: 'requirements', label: 'Requisitos por Função' },
           { id: 'profiles', label: 'Target Profiles por criticidade' },
         ].map(tab => (
           <button
@@ -178,7 +178,7 @@ const CSCRMPage: React.FC = () => {
       {activeTab === 'requirements' && (
         <div className="space-y-4">
           <p className="text-sm text-slate-500 mb-4">
-            Além da categoria GV.SC, muitas subcategories de outras Functions geram requisitos aplicáveis a fornecedores. A tabela abaixo mostra quais outcomes do CSF devem ser incluídos nos requisitos comunicados a fornecedores.
+            Além da categoria GV.SC, muitas subcategorias de outras Funções geram requisitos aplicáveis a fornecedores. A tabela abaixo mostra quais outcomes do CSF devem ser incluídos nos requisitos comunicados a fornecedores.
           </p>
           {supplierRequirements.map(fn => {
             const raw = getFnColorsByName(fn.category); const colors = { color: raw.text, bg: raw.bg };

@@ -91,7 +91,7 @@ export const TiersPage: React.FC = () => {
         <p className="text-xs font-semibold uppercase tracking-widest mb-2" style={{ color: '#0F766E' }}>NIST CSF 2.0. NIST SP 1302</p>
         <h1 className="text-3xl sm:text-4xl font-bold text-slate-900 mb-3">CSF Tiers</h1>
         <p className="text-slate-500 max-w-2xl leading-relaxed text-sm">
-          Os Tiers caracterizam o rigor das práticas de gestão de riscos de cibersegurança de uma organização. Cada Tier possui dois componentes distintos: <strong className="text-slate-700">Governance</strong> (relativo ao GOVERN) e <strong className="text-slate-700">Management</strong> (relativo às outras 5 Functions).
+          Os Tiers caracterizam o rigor das práticas de gestão de riscos de cibersegurança de uma organização. Cada Tier possui dois componentes distintos: <strong className="text-slate-700">Governance</strong> (relativo ao GOVERN) e <strong className="text-slate-700">Management</strong> (relativo às outras 5 Funções).
         </p>
       </div>
 
@@ -106,7 +106,7 @@ export const TiersPage: React.FC = () => {
         {[
           { title: 'Não são etapas obrigatórias', desc: 'O objetivo não é atingir o Tier 4. O Tier correto é o que atende ao contexto e ao risco da organização.' },
           { title: 'Selecionados pela liderança', desc: 'A seleção do Tier desejado é responsabilidade da liderança organizacional, não da equipe técnica.' },
-          { title: 'Aplicados por Function ou Category', desc: 'Os Tiers podem ser selecionados globalmente ou por Function/Category para maior granularidade.' },
+          { title: 'Aplicados por Função ou Categoria', desc: 'Os Tiers podem ser selecionados globalmente ou por Função/Categoria para maior granularidade.' },
         ].map(n => (
           <div key={n.title} className="bg-white rounded-xl border border-slate-200 p-4">
             <p className="text-xs font-bold text-slate-800 mb-1">{n.title}</p>
@@ -122,14 +122,14 @@ export const TiersPage: React.FC = () => {
           className={`px-5 py-2.5 rounded-xl text-sm font-semibold transition-colors border-2 ${activeComponent === 'governance' ? 'border-slate-900 bg-slate-900 text-white' : 'border-slate-200 bg-white text-slate-600 hover:bg-slate-50'}`}
         >
           Cybersecurity Risk Governance
-          <span className="ml-2 text-xs opacity-60">Function GOVERN</span>
+          <span className="ml-2 text-xs opacity-60">Função GOVERN</span>
         </button>
         <button
           onClick={() => setActiveComponent('management')}
           className={`px-5 py-2.5 rounded-xl text-sm font-semibold transition-colors border-2 ${activeComponent === 'management' ? 'border-slate-900 bg-slate-900 text-white' : 'border-slate-200 bg-white text-slate-600 hover:bg-slate-50'}`}
         >
           Cybersecurity Risk Management
-          <span className="ml-2 text-xs opacity-60">Functions ID · PR · DE · RS · RC</span>
+          <span className="ml-2 text-xs opacity-60">Funções ID · PR · DE · RS · RC</span>
         </button>
       </div>
 
@@ -142,7 +142,7 @@ export const TiersPage: React.FC = () => {
                 T{tier.n}
               </div>
               <div>
-                <p className="text-xs text-slate-400 font-medium">Tier {tier.n}</p>
+                <p className="text-xs text-slate-400 font-medium">Nível {tier.n}</p>
                 <h2 className="text-lg font-bold" style={{ color: tier.color }}>{tier.name}</h2>
               </div>
             </div>
@@ -178,11 +178,11 @@ export const TiersPage: React.FC = () => {
       <div className="bg-white rounded-xl border border-slate-200 p-6">
         <h2 className="text-sm font-bold uppercase tracking-wider text-slate-500 mb-4">Como Tiers e Profiles se conectam</h2>
         <p className="text-sm text-slate-600 leading-relaxed mb-5">
-          O Tier selecionado pela liderança define o nível de rigor esperado para o Current e Target Profile de cada Function. Por exemplo, se a liderança determina que a organização deve operar no Tier 2 para as Functions IDENTIFY e PROTECT, o Current Profile reflete o quanto o Tier 2 está sendo alcançado hoje, e o Target Profile define as melhorias necessárias para alcançá-lo plenamente.
+          O Tier selecionado pela liderança define o nível de rigor esperado para o Current e Target Profile de cada Função. Por exemplo, se a liderança determina que a organização deve operar no Tier 2 para as Funções IDENTIFY e PROTECT, o Current Profile reflete o quanto o Tier 2 está sendo alcançado hoje, e o Target Profile define as melhorias necessárias para alcançá-lo plenamente.
         </p>
         <div className="flex flex-col sm:flex-row items-center gap-3 justify-center">
           {[
-            { label: 'Liderança seleciona Tier', sub: 'por Function ou globalmente', color: '#0B1F33' },
+            { label: 'Liderança seleciona Tier', sub: 'por Função ou globalmente', color: '#0B1F33' },
             { arrow: true },
             { label: 'Current Profile', sub: 'quanto do Tier está sendo alcançado', color: '#64748B' },
             { arrow: true },
@@ -262,14 +262,14 @@ export const ProfilesPage: React.FC = () => {
         <div className="space-y-5">
           {/* Fields */}
           <div className="bg-white rounded-xl border border-slate-200 p-6">
-            <h2 className="text-sm font-bold uppercase tracking-wider text-slate-500 mb-4">Campos do Organizational Profile</h2>
+            <h2 className="text-sm font-bold uppercase tracking-wider text-slate-500 mb-4">Campos do Perfil Organizacional</h2>
             <div className="overflow-x-auto rounded-xl border border-slate-200">
               <table className="w-full text-sm">
                 <thead>
                   <tr className="border-b border-slate-200 bg-slate-50">
                     <th className="px-4 py-3 text-left font-bold text-slate-700" colSpan={2}>Outcome CSF</th>
-                    <th className="px-4 py-3 text-left font-bold text-blue-700 border-l border-slate-200" colSpan={3}>Current Profile</th>
-                    <th className="px-4 py-3 text-left font-bold text-green-700 border-l border-slate-200" colSpan={2}>Target Profile</th>
+                    <th className="px-4 py-3 text-left font-bold text-blue-700 border-l border-slate-200" colSpan={3}>Perfil Atual</th>
+                    <th className="px-4 py-3 text-left font-bold text-green-700 border-l border-slate-200" colSpan={2}>Perfil Alvo</th>
                   </tr>
                   <tr className="border-b border-slate-200 text-xs text-slate-500 bg-slate-50">
                     <th className="px-4 py-2 text-left">Identificador</th>
@@ -341,7 +341,7 @@ export const ProfilesPage: React.FC = () => {
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {[
                 { title: 'Base para o Target Profile', desc: 'Uma organização pode copiar um Community Profile relevante como ponto de partida para seu próprio Target Profile.' },
-                { title: 'Adaptável', desc: 'O Community Profile pode ser ajustado, alterando prioridades, adicionando Subcategories ou Informative References específicos.' },
+                { title: 'Adaptável', desc: 'O Community Profile pode ser ajustado, alterando prioridades, adicionando Subcategorias ou Informative References específicos.' },
                 { title: 'Criado por setores', desc: 'Setores como saúde, financeiro, energia e manufatura publicam Community Profiles específicos para suas necessidades.' },
                 { title: 'Disponível no NIST', desc: 'O NIST mantém repositório de Community Profiles públicos em csrc.nist.gov/projects/cybersecurity-framework.' },
               ].map(item => (
@@ -389,7 +389,7 @@ export const ProfilesPage: React.FC = () => {
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-4">
               {[
                 { title: 'CSF Core em JSON e Excel', desc: 'Baixar o Core completo em formatos machine-readable para integração com ferramentas.' },
-                { title: 'Implementation Examples', desc: 'Exemplos concisos e orientados à ação para cada Subcategory, publicados pelo NIST.' },
+                { title: 'Implementation Examples', desc: 'Exemplos concisos e orientados à ação para cada Subcategoria, publicados pelo NIST.' },
                 { title: 'Mapeamentos atualizados', desc: 'Consultar mapeamentos entre CSF e NIST SP 800-53, ISO 27002, CIS Controls e outros.' },
                 { title: 'Submit mappings', desc: 'Organizações podem submeter seus próprios mapeamentos para inclusão no CPRT.' },
               ].map(item => (
@@ -567,7 +567,7 @@ export const FrameworksPage: React.FC = () => {
               <p className="text-sm text-slate-600">{fw.relationToCSF}</p>
             </div>
             <div>
-              <p className="text-xs font-semibold text-slate-500 uppercase tracking-wider mb-2">Functions Relacionadas</p>
+              <p className="text-xs font-semibold text-slate-500 uppercase tracking-wider mb-2">Funções Relacionadas</p>
               <div className="flex flex-wrap gap-1.5">
                 {fw.relatedFunctions.map(f => (
                   <Link key={f} to={`/framework/${f.toLowerCase()}`}

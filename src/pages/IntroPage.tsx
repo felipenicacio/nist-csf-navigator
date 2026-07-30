@@ -4,7 +4,7 @@ import { ArrowRight, ChevronDown, ChevronUp, BookOpen, Target, MessageSquare, Ch
 import { getFnColors } from '../utils/fnColors';
 
 const fns = [
-  { id: 'GV', name: 'Governar', verb: 'Estabelecer e monitorar', role: 'prevenir + detectar', desc: 'Define a estratégia, as políticas e a supervisão. É a base de tudo, sem governança, as demais Functions perdem direção.', always: true },
+  { id: 'GV', name: 'Governar', verb: 'Estabelecer e monitorar', role: 'prevenir + detectar', desc: 'Define a estratégia, as políticas e a supervisão. É a base de tudo, sem governança, as demais Funções perdem direção.', always: true },
   { id: 'ID', name: 'Identificar', verb: 'Compreender', role: 'prevenir', desc: 'Entender o que a organização tem (ativos, dados, pessoas, fornecedores) e quais são os riscos associados.', always: true },
   { id: 'PR', name: 'Proteger', verb: 'Usar salvaguardas', role: 'prevenir', desc: 'Colocar controles para reduzir a chance de ataques acontecerem ou limitarem seu impacto.', always: true },
   { id: 'DE', name: 'Detectar', verb: 'Identificar e analisar', role: 'detectar', desc: 'Monitorar continuamente para encontrar ataques em andamento antes que causem dano maior.', always: true },
@@ -27,11 +27,11 @@ const faqs = [
   },
   {
     q: 'Como o CSF se aplica à minha organização se sou uma empresa pequena?',
-    a: 'O CSF foi criado para ser adaptado a qualquer organização, independente de tamanho, setor ou maturidade técnica. Uma empresa pequena não precisa implementar todas as 106 Subcategories, começa pelos resultados mais críticos para o seu negócio e expande progressivamente.',
+    a: 'O CSF foi criado para ser adaptado a qualquer organização, independente de tamanho, setor ou maturidade técnica. Uma empresa pequena não precisa implementar todas as 106 Subcategorias, começa pelos resultados mais críticos para o seu negócio e expande progressivamente.',
   },
   {
-    q: 'Qual é a diferença entre Function, Category e Subcategory?',
-    a: 'Function é o nível mais alto (ex: PROTECT). Category é um grupo de resultados dentro de uma Function (ex: Data Security). Subcategory é o resultado específico (ex: "Dados em repouso são protegidos"). Pense como: área → tema → resultado concreto.',
+    q: 'Qual é a diferença entre Função, Categoria e Subcategoria?',
+    a: 'Função é o nível mais alto (ex: PROTECT). Categoria é um grupo de resultados dentro de uma Função (ex: Segurança de Dados). Subcategoria é o resultado específico (ex: "Dados em repouso são protegidos"). Pense como: área → tema → resultado concreto.',
   },
   {
     q: 'Por onde devo começar na prática?',
@@ -113,7 +113,7 @@ const IntroPage: React.FC = () => {
                   {
                     icon: '📋',
                     title: 'Uma taxonomia de resultados',
-                    desc: 'O CSF descreve o que sua organização deve ser capaz de fazer em cibersegurança, não como fazer. Ele define resultados desejados, organizados em Functions, Categories e Subcategories.',
+                    desc: 'O CSF descreve o que sua organização deve ser capaz de fazer em cibersegurança, não como fazer. Ele define resultados desejados, organizados em Funções, Categorias e Subcategorias.',
                   },
                   {
                     icon: '🏢',
@@ -208,16 +208,16 @@ const IntroPage: React.FC = () => {
               ))}
             </div>
             <p className="text-xs text-slate-400 bg-slate-50 rounded-lg px-4 py-3 border border-slate-200">
-              A escolha depende do nível de risco, do custo do tratamento e do apetite a riscos da organização, definido na Function <strong className="text-slate-600">GOVERN</strong>.
+              A escolha depende do nível de risco, do custo do tratamento e do apetite a riscos da organização, definido na Função <strong className="text-slate-600">GOVERN</strong>.
             </p>
           </div>
         </section>
 
-        {/* As 6 Functions com papel de cada uma */}
+        {/* As 6 Funções com papel de cada uma */}
         <section className="pb-14">
           <div className="text-center mb-8">
-            <h2 className="text-2xl sm:text-3xl font-bold text-slate-900 mb-2">As 6 Functions do CSF</h2>
-            <p className="text-slate-500 text-sm max-w-xl mx-auto">Cada Function representa um papel distinto no gerenciamento de riscos. Todas devem ser abordadas, não existe sequência obrigatória.</p>
+            <h2 className="text-2xl sm:text-3xl font-bold text-slate-900 mb-2">As 6 Funções do CSF</h2>
+            <p className="text-slate-500 text-sm max-w-xl mx-auto">Cada Função representa um papel distinto no gerenciamento de riscos. Todas devem ser abordadas, não existe sequência obrigatória.</p>
           </div>
 
           {/* Continuous vs incident-activated */}
@@ -250,7 +250,7 @@ const IntroPage: React.FC = () => {
                       Permeia todas as demais
                     </span>
                   </div>
-                  <p className="text-xs mt-0.5" style={{ color: `${getFnColors('GV').text}90` }}>Define estratégia, políticas, papéis e supervisão. Sem governança, as outras Functions perdem direção.</p>
+                  <p className="text-xs mt-0.5" style={{ color: `${getFnColors('GV').text}90` }}>Define estratégia, políticas, papéis e supervisão. Sem governança, as outras Funções perdem direção.</p>
                 </div>
                 <ArrowRight size={16} className="shrink-0 opacity-40 group-hover:opacity-80 transition-opacity" style={{ color: getFnColors('GV').text }} />
               </div>
@@ -333,7 +333,7 @@ const IntroPage: React.FC = () => {
                     <span className="text-xl font-black opacity-20" style={{ color: level.color }}>{i + 1}</span>
                     <div className="flex-1">
                       <h3 className="text-sm font-bold" style={{ color: level.color }}>{level.role}</h3>
-                      <span className="text-xs font-mono opacity-70" style={{ color: level.color }}>Functions: {level.fn}</span>
+                      <span className="text-xs font-mono opacity-70" style={{ color: level.color }}>Funções: {level.fn}</span>
                     </div>
                   </div>
                   <div className="px-5 py-4 bg-white grid grid-cols-1 sm:grid-cols-2 gap-3">

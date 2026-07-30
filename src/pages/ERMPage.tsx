@@ -33,7 +33,7 @@ const activityPoints = [
     title: 'Estratégia orienta implementação de controles e soluções compartilhadas',
     desc: 'Prioridades e requisitos de risco são incorporados na seleção e implementação de controles técnicos, físicos e administrativos.',
     csf: ['PR', 'DE', 'RS', 'RC'],
-    detail: 'A estratégia de risco e os requisitos das unidades orientam a implementação de controles nas Functions PROTECT, DETECT, RESPOND e RECOVER. Isso garante que os controles não sejam selecionados arbitrariamente, mas fundamentados nos riscos identificados.',
+    detail: 'A estratégia de risco e os requisitos das unidades orientam a implementação de controles nas Funções PROTECT, DETECT, RESPOND e RECOVER. Isso garante que os controles não sejam selecionados arbitrariamente, mas fundamentados nos riscos identificados.',
     questions: [
       'Os controles implementados são fundamentados na estratégia de risco?',
       'Existe alinhamento entre requisitos de negócio e controles técnicos?',
@@ -67,12 +67,12 @@ const activityPoints = [
   {
     n: 6,
     title: 'Resultados combinados mantêm registro de risco empresarial e perfil de risco',
-    desc: 'O Enterprise Risk Register (ERR) e o Enterprise Risk Profile (ERP) consolidam todos os riscos para suportar decisões estratégicas.',
+    desc: 'O Registro de Risco Empresarial (ERR) e o Perfil de Risco Empresarial (ERP) consolidam todos os riscos para suportar decisões estratégicas.',
     csf: ['GV.PO', 'GV.OV'],
-    detail: 'O ciclo culmina com a manutenção do Enterprise Risk Register e Enterprise Risk Profile, visão completa de todos os riscos que informa as decisões de negócio e revisões da estratégia. O CSF ajuda a garantir que líderes tenham as informações necessárias para decisões informadas.',
+    detail: 'O ciclo culmina com a manutenção do Registro de Risco Empresarial e Perfil de Risco Empresarial, visão completa de todos os riscos que informa as decisões de negócio e revisões da estratégia. O CSF ajuda a garantir que líderes tenham as informações necessárias para decisões informadas.',
     questions: [
       'Existe um Enterprise Risk Register atualizado?',
-      'O Enterprise Risk Profile reflete os riscos atuais da organização?',
+      'O Perfil de Risco Empresarial reflete os riscos atuais da organização?',
       'Como os resultados do CSF alimentam as decisões de negócio?',
     ],
   },
@@ -199,7 +199,7 @@ const ERMPage: React.FC = () => {
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
           {[
             { label: 'MONITOR', color: '#0B1F33', items: ['Medir se controles estão implementados e efetivos', 'Medir se controles não prejudicam operações organizacionais'] },
-            { label: 'EVALUATE', color: '#1A7FA8', items: ['Avaliar se controles alcançam os resultados de risco desejados', 'Comparar resultados atuais com o estado-alvo do Organizational Profile'] },
+            { label: 'EVALUATE', color: '#1A7FA8', items: ['Avaliar se controles alcançam os resultados de risco desejados', 'Comparar resultados atuais com o estado-alvo do Perfil Organizacional'] },
             { label: 'ADJUST', color: '#1E9E52', items: ['Implementar controles adicionais quando necessário', 'Implementar controles alternativos para ampliar oportunidades'] },
           ].map(phase => (
             <div key={phase.label} className="rounded-xl p-4 border" style={{ borderColor: `${phase.color}30`, backgroundColor: `${phase.color}06` }}>
@@ -225,7 +225,7 @@ const ERMPage: React.FC = () => {
             { term: 'Risk Appetite', def: 'Expressão geral de como a organização define riscos que pode aceitar, definido pela liderança.' },
             { term: 'Risk Tolerance', def: 'Expressão específica dos riscos que a organização não pode aceitar, tradução operacional do apetite.' },
             { term: 'CSRR', def: 'Cybersecurity Risk Register, repositório de ameaças, vulnerabilidades e respostas a riscos de cibersegurança.' },
-            { term: 'ERR / ERP', def: 'Enterprise Risk Register e Enterprise Risk Profile, visão consolidada de todos os riscos organizacionais.' },
+            { term: 'ERR / ERP', def: 'Registro de Risco Empresarial e Perfil de Risco Empresarial, visão consolidada de todos os riscos organizacionais.' },
             { term: 'Positive Risk', def: 'Oportunidades e pontos fortes, o ERM gerencia tanto riscos negativos quanto positivos.' },
             { term: 'KPI / KRI', def: 'Key Performance Indicators e Key Risk Indicators, métricas para monitorar eficácia e risco residual.' },
           ].map(t => (

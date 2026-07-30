@@ -170,11 +170,11 @@ const SubcategoryPage: React.FC = () => {
             <p className="text-xs font-semibold uppercase tracking-wider text-slate-400 mb-3">Contexto</p>
             <div className="space-y-3 text-sm">
               <div>
-                <p className="text-xs text-slate-400 mb-1">Function</p>
+                <p className="text-xs text-slate-400 mb-1">Função</p>
                 <Link to={`/framework/${fn.id.toLowerCase()}`} className="font-semibold hover:underline" style={{ color: fn.color }}>{fn.nameEn}</Link>
               </div>
               <div>
-                <p className="text-xs text-slate-400 mb-1">Category</p>
+                <p className="text-xs text-slate-400 mb-1">Categoria</p>
                 <Link to={`/category/${cat.id}`} className="font-semibold text-slate-700 hover:underline">{cat.code}, {cat.name}</Link>
               </div>
               <div>
@@ -200,7 +200,7 @@ const SubcategoryPage: React.FC = () => {
 
           {/* Other subcategories */}
           <div className="bg-white rounded-xl border border-slate-200 p-5">
-            <p className="text-xs font-semibold uppercase tracking-wider text-slate-400 mb-3">Outras Subcategories</p>
+            <p className="text-xs font-semibold uppercase tracking-wider text-slate-400 mb-3">Outras Subcategorias</p>
             <div className="space-y-2">
               {sameCatSubs.filter(s => s.id !== sub.id).slice(0, 8).map(s => (
                 <Link key={s.id} to={`/subcategory/${s.id}`} className="flex items-center gap-2 text-xs text-slate-600 hover:text-slate-900 py-0.5">

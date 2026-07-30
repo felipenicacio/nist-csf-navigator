@@ -60,7 +60,7 @@ const ImplementationPage: React.FC = () => {
       />
       {/* Flow diagram */}
       <div className="bg-white rounded-2xl border border-slate-200 p-6 mb-8">
-        <h2 className="text-sm font-bold text-slate-700 mb-5 uppercase tracking-wider">Processo de 5 Etapas. Organizational Profile</h2>
+        <h2 className="text-sm font-bold text-slate-700 mb-5 uppercase tracking-wider">Processo de 5 Etapas — Perfil Organizacional</h2>
         <div className="flex flex-col sm:flex-row items-center gap-2">
           {steps.map((step, i) => (
             <React.Fragment key={step.n}>
@@ -87,7 +87,7 @@ const ImplementationPage: React.FC = () => {
         <div className="flex justify-center mt-3">
           <div className="flex items-center gap-2 text-xs text-slate-400">
             <ArrowDown size={14} />
-            <span className="font-medium">ciclo contínuo, o Profile é atualizado a cada iteração</span>
+            <span className="font-medium">ciclo contínuo: o Perfil Organizacional é atualizado a cada iteração</span>
           </div>
         </div>
       </div>
@@ -126,14 +126,14 @@ const ImplementationPage: React.FC = () => {
             {/* Profile table example (step 3) */}
             {step.table && (
               <div>
-                <p className="text-xs font-bold uppercase tracking-wider text-slate-500 mb-3">Estrutura do Organizational Profile</p>
+                <p className="text-xs font-bold uppercase tracking-wider text-slate-500 mb-3">Estrutura do Perfil Organizacional</p>
                 <div className="overflow-x-auto rounded-xl border border-slate-200">
                   <table className="w-full text-xs">
                     <thead>
                       <tr className="border-b border-slate-200">
                         <th colSpan={2} className="px-3 py-2 text-left font-bold text-slate-600 bg-slate-50">Outcome CSF</th>
-                        <th colSpan={3} className="px-3 py-2 text-left font-bold bg-blue-50 text-blue-700 border-l border-slate-200">Current Profile</th>
-                        <th colSpan={2} className="px-3 py-2 text-left font-bold bg-green-50 text-green-700 border-l border-slate-200">Target Profile</th>
+                        <th colSpan={3} className="px-3 py-2 text-left font-bold bg-blue-50 text-blue-700 border-l border-slate-200">Perfil Atual</th>
+                        <th colSpan={2} className="px-3 py-2 text-left font-bold bg-green-50 text-green-700 border-l border-slate-200">Perfil Alvo</th>
                       </tr>
                       <tr className="border-b border-slate-200 text-slate-500">
                         <th className="px-3 py-2 text-left bg-slate-50">ID</th>
@@ -215,7 +215,7 @@ const ImplementationPage: React.FC = () => {
           {[
             { term: 'Community Profile', def: 'Profile criado para múltiplas organizações de um setor ou tecnologia. Serve como base para o Target Profile organizacional.' },
             { term: 'Informative References', def: 'Mapeamentos entre outcomes do CSF e padrões como NIST SP 800-53, ISO 27001 e CIS Controls. Disponíveis no NIST CPRT.' },
-            { term: 'Implementation Examples', def: 'Exemplos concisos e orientados à ação publicados pelo NIST para cada Subcategory. Ajudam a concretizar os outcomes.' },
+            { term: 'Implementation Examples', def: 'Exemplos concisos e orientados à ação publicados pelo NIST para cada Subcategoria. Ajudam a concretizar os outcomes.' },
             { term: 'KPI / KRI', def: 'Key Performance Indicators e Key Risk Indicators usados para monitorar a eficácia dos controles e o nível de risco residual.' },
           ].map(c => (
             <div key={c.term} className="flex gap-3">
@@ -233,7 +233,7 @@ const ImplementationPage: React.FC = () => {
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
         {[
           { label: 'Organizational Profiles', desc: 'Current, Target e Gap Analysis', to: '/profiles' },
-          { label: 'CSF Tiers', desc: 'Nível de rigor por Function', to: '/tiers' },
+          { label: 'CSF Tiers', desc: 'Nível de rigor por Função', to: '/tiers' },
           { label: 'Consultant View', desc: 'Roteiro de assessment', to: '/consultant' },
         ].map(l => (
           <Link key={l.to} to={l.to} className="flex items-center justify-between bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 hover:bg-white transition-colors group">

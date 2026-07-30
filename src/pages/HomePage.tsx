@@ -69,7 +69,7 @@ const HomePage: React.FC = () => {
             <div className="p-6 space-y-3">
               {[
                 { to: '/map', icon: <Map size={15} />, label: 'Framework Map', desc: 'Visão visual de toda a estrutura' },
-                { to: '/framework', icon: <BookOpen size={15} />, label: 'Explorar Framework', desc: '6 Functions · 17 Categories · 106 Subcategories' },
+                { to: '/framework', icon: <BookOpen size={15} />, label: 'Explorar Framework', desc: '6 Funções · 17 Categorias · 106 Subcategorias' },
                 { to: '/crosswalk', icon: <GitBranch size={15} />, label: 'Crosswalk', desc: 'NIST 800-53, ISO 27002, CIS Controls' },
                 { to: '/frameworks', icon: <ArrowRight size={15} />, label: 'Frameworks Relacionados', desc: '22+ frameworks documentados' },
               ].map(item => (
@@ -121,7 +121,7 @@ const HomePage: React.FC = () => {
       <section className="py-12 px-4 sm:px-6 bg-slate-50 border-y border-slate-200">
         <div className="max-w-screen-xl mx-auto">
           <div className="flex items-center justify-between mb-6">
-            <h2 className="text-lg font-bold text-slate-900">6 Functions · Navegação Rápida</h2>
+            <h2 className="text-lg font-bold text-slate-900">6 Funções · Navegação Rápida</h2>
             <Link to="/map" className="text-sm font-semibold text-teal-600 hover:underline flex items-center gap-1">
               Ver Framework Map <ArrowRight size={14} />
             </Link>
@@ -151,9 +151,9 @@ const HomePage: React.FC = () => {
       <section className="py-14 px-4 sm:px-6 max-w-screen-xl mx-auto">
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 text-center">
           {[
-            { value: '6', label: 'Functions' },
-            { value: '17', label: 'Categories' },
-            { value: '106', label: 'Subcategories' },
+            { value: '6', label: 'Funções' },
+            { value: '17', label: 'Categorias' },
+            { value: '106', label: 'Subcategorias' },
             { value: '22+', label: 'Frameworks Relacionados' },
           ].map(s => (
             <div key={s.label}>

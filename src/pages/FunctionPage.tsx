@@ -29,9 +29,9 @@ const FunctionPage: React.FC = () => {
       </nav>
 
       <PageIntro
-        title="O que é uma Function?"
-        plain="Uma Function é o nível mais alto do CSF, agrupa resultados de cibersegurança relacionados a um mesmo objetivo."
-        detail="Cada Function se divide em Categories, que por sua vez se dividem em Subcategories com resultados específicos."
+        title="O que é uma Função?"
+        plain="Uma Função é o nível mais alto do CSF, agrupa resultados de cibersegurança relacionados a um mesmo objetivo."
+        detail="Cada Função se divide em Categorias, que por sua vez se dividem em Subcategorias com resultados específicos."
       />
       {/* Function header */}
       <div className="rounded-2xl p-8 mb-10 text-white" style={{ background: `linear-gradient(135deg, ${fn.color} 0%, ${fn.color}CC 100%)` }}>
@@ -40,7 +40,7 @@ const FunctionPage: React.FC = () => {
             {fn.code}
           </div>
           <div className="flex-1">
-            <p className="text-white/60 text-sm font-medium uppercase tracking-widest mb-1">Function</p>
+            <p className="text-white/60 text-sm font-medium uppercase tracking-widest mb-1">Função</p>
             <h1 className="text-3xl sm:text-4xl font-bold mb-2">{fn.nameEn}, {fn.name}</h1>
             <p className="text-white/80 text-base leading-relaxed max-w-3xl">{fn.description}</p>
             <div className="flex gap-2 mt-4">
@@ -60,7 +60,7 @@ const FunctionPage: React.FC = () => {
       </Section>
 
       {/* Categories */}
-      <Section title={`Categories (${cats.length})`}>
+      <Section title={`Categorias (${cats.length})`}>
         <div className="space-y-4">
           {cats.map(cat => {
             const subs = allSubcategories.filter(s => s.categoryId === cat.id);

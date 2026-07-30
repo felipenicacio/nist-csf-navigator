@@ -22,9 +22,9 @@ export const glossaryTerms = [
 
   { term: 'Cibersegurança', termEn: 'Cybersecurity', definition: 'Prevenção de danos, proteção e restauração de computadores, sistemas de comunicação eletrônica, serviços de comunicação eletrônica, comunicações com fio e eletrônicas, e as informações contidas nessas tecnologias.' },
   { term: 'Risco de Cibersegurança', termEn: 'Cybersecurity Risk', definition: 'Probabilidade e possível impacto de um evento que explore vulnerabilidades de sistemas de informação para comprometer confidencialidade, integridade ou disponibilidade.' },
-  { term: 'Function', termEn: 'Function', definition: 'Agrupamento de resultados de cibersegurança de alto nível no NIST CSF. O CSF 2.0 possui seis Functions: Govern, Identify, Protect, Detect, Respond e Recover.' },
-  { term: 'Categoria', termEn: 'Category', definition: 'Subdivisão de uma Function em grupos de resultados de cibersegurança estreitamente relacionados. O CSF 2.0 possui 17 Categories distribuídas entre as seis Functions.' },
-  { term: 'Subcategoria', termEn: 'Subcategory', definition: 'Declaração de resultado específico de cibersegurança dentro de uma Category. O CSF 2.0 possui 106 Subcategories.' },
+  { term: 'Função', termEn: 'Function', definition: 'Agrupamento de resultados de cibersegurança de alto nível no NIST CSF. O CSF 2.0 possui seis Functions: Govern, Identify, Protect, Detect, Respond e Recover.' },
+  { term: 'Categoria', termEn: 'Category', definition: 'Subdivisão de uma Função em grupos de resultados de cibersegurança estreitamente relacionados. O CSF 2.0 possui 17 Categorias distribuídas entre as seis Funções.' },
+  { term: 'Subcategoria', termEn: 'Subcategory', definition: 'Declaração de resultado específico de cibersegurança dentro de uma Categoria. O CSF 2.0 possui 106 Subcategorias.' },
   { term: 'Core', termEn: 'Core', definition: 'Conjunto de resultados de cibersegurança desejados organizados em Functions, Categories e Subcategories. É a espinha dorsal do NIST CSF.' },
   { term: 'Perfil Atual', termEn: 'Current Profile', definition: 'Representa os resultados de cibersegurança que a organização está alcançando no momento presente.' },
   { term: 'Perfil Alvo', termEn: 'Target Profile', definition: 'Representa os resultados de cibersegurança que a organização deseja alcançar, com base em seus objetivos e tolerância a riscos.' },

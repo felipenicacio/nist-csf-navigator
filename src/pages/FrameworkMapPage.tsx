@@ -24,7 +24,7 @@ const FrameworkMapPage: React.FC = () => {
           <p className="text-xs font-semibold uppercase tracking-widest mb-2" style={{ color: '#1A7FA8' }}>Visão Geral</p>
           <h1 className="text-3xl sm:text-4xl font-bold text-slate-900 mb-3">Framework Map</h1>
           <p className="text-slate-500 max-w-2xl text-sm">
-            Representação visual da arquitetura do NIST CSF 2.0. Clique em qualquer Function ou Category para navegar ao detalhe.
+            Representação visual da arquitetura do NIST CSF 2.0. Clique em qualquer Função ou Category para navegar ao detalhe.
           </p>
         </div>
 
@@ -36,11 +36,11 @@ const FrameworkMapPage: React.FC = () => {
             <p className="text-xs font-bold uppercase tracking-widest text-slate-400 mb-4">Diagrama Oficial. NIST CSF 2.0</p>
             <img
               src="./assets/csf-wheel.png"
-              alt="NIST CSF 2.0 Wheel, 6 Functions: Govern, Identify, Protect, Detect, Respond, Recover"
+              alt="NIST CSF 2.0 Wheel, 6 Funções: Govern, Identify, Protect, Detect, Respond, Recover"
               className="w-full max-w-xs"
             />
             <p className="text-xs text-slate-400 mt-4 text-center">
-              GOVERN no centro, permeando todas as demais Functions do ciclo de vida
+              GOVERN no centro, permeando todas as demais Funções do ciclo de vida
             </p>
           </div>
 
@@ -69,7 +69,7 @@ const FrameworkMapPage: React.FC = () => {
               </div>
             </Link>
             <p className="px-6 py-3 text-xs text-slate-600 bg-white border-b border-slate-100">
-              Permeia e fundamenta todas as outras Functions, é o ponto de partida do framework.
+              Permeia e fundamenta todas as outras Funções, é o ponto de partida do framework.
             </p>
             {/* GV Categories grid */}
             <div className="grid grid-cols-2 sm:grid-cols-3 gap-px bg-slate-100">
@@ -99,7 +99,7 @@ const FrameworkMapPage: React.FC = () => {
           <div className="flex flex-col items-center">
             <div className="w-0.5 h-5 bg-slate-300" />
             <div className="text-slate-400 text-xs font-semibold tracking-widest px-3 py-1 border border-slate-200 rounded-full bg-white">
-              GOVERN permeia todas as Functions abaixo
+              GOVERN permeia todas as Funções abaixo
             </div>
             <div className="w-0.5 h-5 bg-slate-300" />
           </div>
@@ -194,7 +194,7 @@ const FrameworkMapPage: React.FC = () => {
         {/* ── ECOSYSTEM ── */}
         <div className="bg-white rounded-xl border border-slate-200 p-6">
           <h3 className="text-sm font-bold text-slate-800 mb-1">Ecossistema de Frameworks</h3>
-          <p className="text-xs text-slate-500 mb-5">O NIST CSF 2.0 é o centro, veja como outros frameworks se relacionam com cada Function.</p>
+          <p className="text-xs text-slate-500 mb-5">O NIST CSF 2.0 é o centro, veja como outros frameworks se relacionam com cada Função.</p>
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-5">
             {[
               {

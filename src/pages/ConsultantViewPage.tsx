@@ -50,22 +50,22 @@ const ConsultantViewPage: React.FC = () => {
           </div>
         </div>
         <p className="text-slate-500 max-w-2xl text-sm leading-relaxed">
-          Navegue pelo CSF como um roteiro de assessment. Selecione Function → Category → Subcategory e acesse perguntas de diagnóstico, evidências esperadas, crosswalk e controles aplicáveis, prontos para usar em reuniões com o cliente.
+          Navegue pelo CSF como um roteiro de assessment. Selecione Função → Categoria → Subcategoria e acesse perguntas de diagnóstico, evidências esperadas, crosswalk e controles aplicáveis, prontos para usar em reuniões com o cliente.
         </p>
       </div>
 
       <PageIntro
         title="Como usar o Consultant View?"
-        plain="Navegue por Function → Category → Subcategory e acesse perguntas de diagnóstico para avaliar a maturidade da organização em cada resultado do CSF."
+        plain="Navegue por Função → Categoria → Subcategoria e acesse perguntas de diagnóstico para avaliar a maturidade da organização em cada resultado do CSF."
         detail="Mesmo sem experiência prévia com o NIST, as perguntas guiam a conversa. Use como roteiro em reuniões com o cliente."
-        learnMore={{ label: 'Entender as Functions', to: '/intro#functions' }}
+        learnMore={{ label: 'Entender as Funções', to: '/intro#functions' }}
       />
       {/* Breadcrumb navigator */}
       <div className="flex items-center gap-2 text-sm mb-8 flex-wrap">
         {[
-          { label: 'Function', active: step === 'function', done: !!selectedFn, onClick: () => reset('function') },
+          { label: 'Função', active: step === 'function', done: !!selectedFn, onClick: () => reset('function') },
           { label: fn ? `${fn.code}, ${fn.nameEn}` : 'Category', active: step === 'category', done: !!selectedCat, onClick: () => selectedFn && reset('category') },
-          { label: cat ? cat.code : 'Subcategory', active: step === 'subcategory', done: !!selectedSub, onClick: () => selectedCat && reset('subcategory') },
+          { label: cat ? cat.code : 'Subcategoria', active: step === 'subcategory', done: !!selectedSub, onClick: () => selectedCat && reset('subcategory') },
           { label: sub ? sub.code : 'Diagnóstico', active: step === 'detail', done: false, onClick: () => {} },
         ].map((b, i) => (
           <React.Fragment key={i}>
@@ -91,7 +91,7 @@ const ConsultantViewPage: React.FC = () => {
       {/* ── STEP 1: SELECT FUNCTION ── */}
       {step === 'function' && (
         <div>
-          <p className="text-xs font-semibold uppercase tracking-widest text-slate-400 mb-4">Passo 1. Selecione a Function</p>
+          <p className="text-xs font-semibold uppercase tracking-widest text-slate-400 mb-4">Passo 1. Selecione a Função</p>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {csfFunctions.map(f => {
               const c = getFnColor(f.id);
@@ -130,7 +130,7 @@ const ConsultantViewPage: React.FC = () => {
       {/* ── STEP 2: SELECT CATEGORY ── */}
       {step === 'category' && fn && (
         <div>
-          <p className="text-xs font-semibold uppercase tracking-widest text-slate-400 mb-4">Passo 2. Selecione a Category</p>
+          <p className="text-xs font-semibold uppercase tracking-widest text-slate-400 mb-4">Passo 2. Selecione a Categoria</p>
           <div className="space-y-3">
             {fnCats.map(c => {
               const subCount = allSubcategories.filter(s => s.categoryId === c.id).length;
@@ -162,7 +162,7 @@ const ConsultantViewPage: React.FC = () => {
       {/* ── STEP 3: SELECT SUBCATEGORY ── */}
       {step === 'subcategory' && cat && fn && (
         <div>
-          <p className="text-xs font-semibold uppercase tracking-widest text-slate-400 mb-4">Passo 3. Selecione a Subcategory</p>
+          <p className="text-xs font-semibold uppercase tracking-widest text-slate-400 mb-4">Passo 3. Selecione a Subcategoria</p>
           <div className="space-y-2">
             {catSubs.map(s => {
               const fc = getFnColor(fn.id);

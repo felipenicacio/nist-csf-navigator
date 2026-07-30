@@ -87,7 +87,7 @@ const CategoryPage: React.FC = () => {
           </Section>
 
           {/* Subcategories */}
-          <Section title={`Subcategories (${subs.length})`}>
+          <Section title={`Subcategorias (${subs.length})`}>
             <div className="space-y-3">
               {subs.map(sub => (
                 <Link key={sub.id} to={`/subcategory/${sub.id}`} className="group block">
@@ -113,7 +113,7 @@ const CategoryPage: React.FC = () => {
         <div className="space-y-6">
           {/* Function card */}
           <div className="bg-white rounded-xl border border-slate-200 p-5">
-            <p className="text-xs font-semibold uppercase tracking-wider text-slate-400 mb-3">Function</p>
+            <p className="text-xs font-semibold uppercase tracking-wider text-slate-400 mb-3">Função</p>
             <Link to={`/framework/${fn.id.toLowerCase()}`} className="flex items-center gap-3 group">
               <div className="w-10 h-10 rounded-lg flex items-center justify-center shrink-0" style={{ backgroundColor: fn.colorLight, color: fn.color }}>
                 <span className="text-sm font-bold">{fn.code}</span>
@@ -148,7 +148,7 @@ const CategoryPage: React.FC = () => {
           {/* Other categories */}
           <div className="bg-white rounded-xl border border-slate-200 p-5">
             <p className="text-xs font-semibold uppercase tracking-wider text-slate-400 mb-3">
-              Outras Categories de {fn.nameEn}
+              Outras Categorias de {fn.nameEn}
             </p>
             <div className="space-y-2">
               {sameFnCats.filter(c => c.id !== cat.id).map(c => (
