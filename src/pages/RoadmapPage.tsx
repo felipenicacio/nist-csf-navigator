@@ -197,9 +197,10 @@ const RoadmapPage: React.FC = () => {
       />
 
       {/* Horizontal stepper */}
-      <div className="bg-white rounded-2xl border border-slate-200 p-6 mb-6 overflow-x-auto">
+      <div className="bg-white rounded-2xl border border-slate-200 p-6 mb-6">
         <h2 className="text-sm font-bold uppercase tracking-wider text-slate-400 mb-5">Visão geral das 10 fases — clique para detalhar</h2>
-        <div className="flex items-center gap-1 min-w-max">
+        <div className="overflow-x-auto">
+        <div className="flex items-center justify-center gap-1 min-w-max mx-auto">
           {phases.map((phase, i) => (
             <React.Fragment key={phase.n}>
               <button
@@ -218,6 +219,7 @@ const RoadmapPage: React.FC = () => {
               )}
             </React.Fragment>
           ))}
+        </div>
         </div>
         <div className="flex justify-center mt-4">
           <span className="text-xs text-slate-400 font-medium">↺ Ciclo contínuo: a Fase 10 reinicia a Fase 02</span>
