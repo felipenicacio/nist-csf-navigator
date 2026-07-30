@@ -21,10 +21,10 @@ function App() {
         <Header />
 
         {/* Work in progress banner */}
-        <div className="bg-amber-50 border-b border-amber-200 px-4 py-2">
+        <div style={{ backgroundColor: '#92400E' }} className="px-4 py-2.5">
           <div className="max-w-screen-xl mx-auto flex items-center justify-center gap-2">
-            <span className="text-amber-500 text-sm">🚧</span>
-            <p className="text-xs text-amber-700 font-medium text-center">
+            <span className="text-lg">🚧</span>
+            <p className="text-xs sm:text-sm text-white font-semibold text-center">
               Projeto em construção. Conteúdo e funcionalidades estão sendo adicionados continuamente.
             </p>
           </div>
