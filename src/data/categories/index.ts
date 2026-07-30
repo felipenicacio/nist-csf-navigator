@@ -328,7 +328,7 @@ export const csfCategories: CSFCategory[] = [
     relatedFrameworks: [
       { id: 'iso27001', name: 'ISO/IEC 27001', relevance: 'Cláusula 10 — Melhoria contínua', type: 'direct' },
     ],
-    subcategoryIds: ['ID.IM-01', 'ID.IM-02', 'ID.IM-03'],
+    subcategoryIds: ['ID.IM-01', 'ID.IM-02', 'ID.IM-03', 'ID.IM-04'],
   },
 
   // ── PROTECT ───────────────────────────────────────────────────────────
