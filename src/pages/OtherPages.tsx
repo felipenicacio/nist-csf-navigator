@@ -377,11 +377,6 @@ export const AboutPage: React.FC = () => (
         <p className="text-slate-600 text-sm leading-relaxed">
           O NIST CSF 2.0 Navigator é uma ferramenta educacional open source que transforma o NIST Cybersecurity Framework 2.0 em uma experiência visual, interativa e acessível. O objetivo é facilitar a compreensão do framework, orientar sua implementação e explorar relações com outros frameworks de segurança, risco e continuidade — como NIST SP 800-53, ISO/IEC 27002, CIS Controls e MITRE ATT&CK.
         </p>
-        <div className="mt-4 flex flex-wrap gap-2">
-          {['React', 'TypeScript', 'Vite', 'Tailwind CSS', 'React Router', 'Lucide Icons'].map(t => (
-            <span key={t} className="px-2.5 py-1 bg-slate-100 text-slate-600 rounded-lg text-xs font-medium">{t}</span>
-          ))}
-        </div>
         <a
           href="https://github.com/felipenicacio/nist-csf-navigator"
           target="_blank"
