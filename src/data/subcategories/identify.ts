@@ -25,6 +25,9 @@ export const identifySubcategories: CSFSubcategory[] = [
       'O inventário é atualizado automaticamente?',
     ],
     practiceExamples: [
+      'Manter um inventário de hardware atualizado por meio de ferramentas de descoberta automática e processos de controle de ativos.',
+      'Utilizar soluções de gestão de ativos (ex: CMDB) para rastrear dispositivos em toda a organização.',
+      'Incluir dispositivos móveis, IoT e sistemas OT no escopo do inventário de hardware.',
       'Implementar solução de discovery automático de ativos (ex: Nmap, Nessus, CMDB)',
       'Integrar inventário com processo de aquisição de hardware',
       'Alertar quando novos dispositivos não autorizados aparecem na rede',
@@ -66,6 +69,9 @@ export const identifySubcategories: CSFSubcategory[] = [
       'Os softwares SaaS e de nuvem estão inventariados?',
     ],
     practiceExamples: [
+      'Manter um inventário de software atualizado, incluindo versão, fornecedor, proprietário e status de suporte.',
+      'Utilizar ferramentas de descoberta de software para identificar aplicações instaladas e autorizadas.',
+      'Identificar e tratar software não autorizado (shadow IT) detectado no ambiente da organização.',
       'Usar ferramentas de gestão de ativos de software (SAM)',
       'Manter lista de softwares autorizados (allowlist)',
       'Identificar softwares sem suporte do fabricante',
@@ -107,6 +113,9 @@ export const identifySubcategories: CSFSubcategory[] = [
       'É sabido onde os dados sensíveis trafegam?',
     ],
     practiceExamples: [
+      'Mapear e documentar os fluxos de dados e comunicações de rede, incluindo dados em trânsito internos e com parceiros.',
+      'Utilizar ferramentas de monitoramento de rede para identificar e documentar os fluxos de comunicação.',
+      'Atualizar os mapas de fluxo de dados quando ocorrerem mudanças relevantes na infraestrutura.',
       'Criar diagramas de fluxo de dados (DFDs)',
       'Identificar pontos de saída de dados sensíveis',
       'Revisar fluxos após mudanças de sistemas',
@@ -148,6 +157,8 @@ export const identifySubcategories: CSFSubcategory[] = [
       'É sabido quais dados cada serviço externo acessa?',
     ],
     practiceExamples: [
+      'Catalogar os serviços externos utilizados pela organização, incluindo SaaS, IaaS e APIs de terceiros.',
+      'Avaliar os riscos associados a cada serviço externo e documentar as dependências críticas.',
       'Usar soluções de CASB para descobrir Shadow IT',
       'Incluir serviços externos no processo de aprovação de TI',
       'Revisar periodicamente serviços externos em uso',
@@ -189,6 +200,8 @@ export const identifySubcategories: CSFSubcategory[] = [
       'A classificação informa as prioridades de segurança?',
     ],
     practiceExamples: [
+      'Classificar os ativos por criticidade para o negócio e pela sensibilidade dos dados que processam.',
+      'Utilizar a classificação de criticidade para priorizar controles de segurança e alocação de recursos.',
       'Definir escala de criticidade (crítico, alto, médio, baixo)',
       'Associar cada ativo à sua criticidade para o negócio',
       'Aplicar controles mais rigorosos a ativos críticos',
@@ -230,6 +243,8 @@ export const identifySubcategories: CSFSubcategory[] = [
       'Os dados estão classificados conforme sensibilidade?',
     ],
     practiceExamples: [
+      'Classificar os dados e informações conforme sua sensibilidade e associá-los a proprietários responsáveis.',
+      'Implementar controles proporcionais à classificação dos dados para proteção adequada.',
       'Implementar ferramenta de descoberta e classificação de dados',
       'Mapear dados pessoais para conformidade com LGPD/GDPR',
       'Revisar inventário de dados periodicamente',
@@ -271,6 +286,8 @@ export const identifySubcategories: CSFSubcategory[] = [
       'Ativos em fim de vida são identificados e tratados?',
     ],
     practiceExamples: [
+      'Associar os sistemas e aplicações aos processos de negócio que suportam para compreender as dependências críticas.',
+      'Utilizar o mapeamento de sistemas aos processos de negócio no planejamento de continuidade e gestão de riscos.',
       'Criar política de gestão de ciclo de vida de ativos',
       'Identificar todos os ativos em end-of-life ou end-of-support',
       'Implementar processo de descarte seguro de hardware',
@@ -314,6 +331,10 @@ export const identifySubcategories: CSFSubcategory[] = [
       'As vulnerabilidades identificadas são classificadas e priorizadas?',
     ],
     practiceExamples: [
+      'Realizar varreduras periódicas de vulnerabilidades em sistemas, aplicações e infraestrutura.',
+      'Utilizar ferramentas de gestão de vulnerabilidades (ex: Nessus, Qualys) para identificar e priorizar vulnerabilidades.',
+      'Monitorar continuamente o ambiente para detectar novas vulnerabilidades assim que forem divulgadas.',
+      'Integrar a gestão de vulnerabilidades ao processo de gestão de configuração e patches.',
       'Usar ferramentas como Nessus, Qualys ou OpenVAS',
       'Realizar varreduras semanais ou mensais de vulnerabilidades',
       'Implementar processo de triagem e priorização de vulnerabilidades',
@@ -355,6 +376,9 @@ export const identifySubcategories: CSFSubcategory[] = [
       'Participa de grupos de compartilhamento de informações do setor?',
     ],
     practiceExamples: [
+      'Assinar feeds de inteligência de ameaças relevantes para o setor e perfil de risco da organização.',
+      'Participar de comunidades de compartilhamento de informações de segurança (ex: ISACs, CERT.br).',
+      'Integrar a inteligência de ameaças ao processo de gestão de riscos e atualização de controles.',
       'Assinar serviços de CTI como MISP, VirusTotal, AlienVault OTX',
       'Participar do CERT.br e grupos setoriais',
       'Integrar CTI ao SIEM e ferramentas de detecção',
@@ -396,6 +420,9 @@ export const identifySubcategories: CSFSubcategory[] = [
       'Ameaças internas são consideradas na análise de riscos?',
     ],
     practiceExamples: [
+      'Identificar e analisar ameaças internas e externas relevantes para os ativos e processos da organização.',
+      'Utilizar frameworks de modelagem de ameaças (ex: MITRE ATT&CK) para avaliar vetores de ataque.',
+      'Atualizar a análise de ameaças periodicamente com base em mudanças no cenário de ameaças.',
       'Desenvolver perfis de ameaças específicos ao setor',
       'Usar MITRE ATT&CK para mapear táticas de adversários',
       'Incluir ameaças de insiders nos exercícios de risk assessment',
@@ -437,6 +464,9 @@ export const identifySubcategories: CSFSubcategory[] = [
       'Cada risco identificado tem impacto e probabilidade avaliados?',
     ],
     practiceExamples: [
+      'Estimar o impacto e a probabilidade de ameaças explorarem vulnerabilidades nos ativos da organização.',
+      'Utilizar metodologia formal de avaliação de risco para quantificar e priorizar os riscos identificados.',
+      'Considerar consequências financeiras, operacionais, regulatórias e reputacionais na avaliação de impacto.',
       'Criar matriz de risco (probabilidade × impacto)',
       'Treinar a equipe na metodologia de avaliação',
       'Documentar premissas utilizadas nas avaliações',
@@ -478,6 +508,8 @@ export const identifySubcategories: CSFSubcategory[] = [
       'A priorização considera o apetite a riscos?',
     ],
     practiceExamples: [
+      'Priorizar os riscos de cibersegurança com base em critérios formais de impacto, probabilidade e tolerância a riscos.',
+      'Manter um registro de riscos atualizado que reflita a priorização atual e os planos de tratamento.',
       'Usar Heat Map de riscos para visualizar prioridades',
       'Priorizar riscos críticos e altos para tratamento imediato',
       'Revisar prioridades periodicamente',
@@ -519,6 +551,8 @@ export const identifySubcategories: CSFSubcategory[] = [
       'Os planos de tratamento são documentados e acompanhados?',
     ],
     practiceExamples: [
+      'Selecionar e implementar respostas a riscos (mitigar, transferir, aceitar, evitar) com base no apetite a riscos.',
+      'Documentar as decisões de tratamento de risco e monitorar sua eficácia ao longo do tempo.',
       'Criar registro de tratamento de riscos',
       'Definir responsáveis e prazos para cada ação de tratamento',
       'Reportar status de tratamento periodicamente',
@@ -559,6 +593,8 @@ export const identifySubcategories: CSFSubcategory[] = [
       'Mudanças significativas passam por revisão de segurança antes da aprovação?',
     ],
     practiceExamples: [
+      'Monitorar continuamente os riscos de cibersegurança e atualizar as avaliações quando ocorrerem mudanças.',
+      'Utilizar indicadores de risco (KRIs) para identificar variações no perfil de risco da organização.',
       'Incluir avaliação de risco de segurança no processo de RFC (Request for Change)',
       'Definir critérios de mudanças de alto risco que requerem aprovação de segurança',
       'Realizar revisão pós-mudança para confirmar ausência de novos riscos',
@@ -600,6 +636,9 @@ export const identifySubcategories: CSFSubcategory[] = [
       'Um canal de contato para segurança está disponível publicamente?',
     ],
     practiceExamples: [
+      'Estabelecer e publicar um programa de divulgação coordenada de vulnerabilidades (responsible disclosure).',
+      'Criar canais seguros para receber relatos de vulnerabilidades de pesquisadores e clientes.',
+      'Triar, investigar e responder aos relatos de vulnerabilidades de forma oportuna e documentada.',
       'Publicar política de divulgação responsável (security.txt)',
       'Implementar programa de Bug Bounty',
       'Definir SLAs para resposta a relatórios de vulnerabilidades',
@@ -640,6 +679,8 @@ export const identifySubcategories: CSFSubcategory[] = [
       'O hardware é adquirido de fornecedores confiáveis?',
     ],
     practiceExamples: [
+      'Verificar a autenticidade e integridade de hardware e software antes da aquisição e uso.',
+      'Avaliar os riscos de cibersegurança de produtos e serviços de tecnologia como parte do processo de aquisição.',
       'Verificar checksums e assinaturas digitais de software',
       'Usar secure boot e measured boot em sistemas críticos',
       'Realizar inspeção física de hardware crítico quando aplicável',
@@ -680,6 +721,8 @@ export const identifySubcategories: CSFSubcategory[] = [
       'A avaliação influencia a decisão de seleção?',
     ],
     practiceExamples: [
+      'Avaliar os fornecedores críticos quanto à postura de cibersegurança antes da contratação.',
+      'Revisar periodicamente os controles de segurança de fornecedores críticos durante o relacionamento.',
       'Aplicar questionários de segurança a candidatos a fornecedores críticos',
       'Solicitar evidências de conformidade (ISO 27001, SOC 2)',
       'Incluir critérios de segurança nos processos de RFP',
@@ -723,6 +766,9 @@ export const identifySubcategories: CSFSubcategory[] = [
       'As melhorias identificadas em auditorias são formalmente acompanhadas?',
     ],
     practiceExamples: [
+      'Realizar avaliações periódicas do programa de cibersegurança para identificar lacunas e oportunidades de melhoria.',
+      'Documentar e priorizar melhorias identificadas com base no risco e no impacto para o negócio.',
+      'Implementar um processo formal de melhoria contínua para o programa de cibersegurança.',
       'Contratar testes de penetração externos anuais',
       'Criar registro de ações de melhoria com responsáveis e prazos',
       'Verificar fechamento de vulnerabilidades após implementação de melhorias',
@@ -764,6 +810,9 @@ export const identifySubcategories: CSFSubcategory[] = [
       'Os exercícios resultam em planos de melhoria?',
     ],
     practiceExamples: [
+      'Realizar exercícios e simulações de resposta a incidentes (ex: tabletop exercises) periodicamente.',
+      'Documentar as lições aprendidas dos exercícios e incorporá-las às melhorias do programa.',
+      'Incluir fornecedores e parceiros críticos nos exercícios de resposta a incidentes.',
       'Implementar processo formal de After Action Review (AAR)',
       'Incluir melhoria contínua no ciclo de resposta a incidentes',
       'Compartilhar lições aprendidas com equipes relevantes',
@@ -804,6 +853,9 @@ export const identifySubcategories: CSFSubcategory[] = [
       'Eventos do setor são analisados para identificar melhorias?',
     ],
     practiceExamples: [
+      'Analisar sistematicamente as lições aprendidas de incidentes de cibersegurança para identificar melhorias.',
+      'Incorporar aprendizados de incidentes externos relevantes ao setor nas práticas de cibersegurança.',
+      'Documentar e implementar melhorias com base nas revisões pós-incidente.',
       'Participar de grupos como CERT.br, ISACs setoriais',
       'Analisar relatórios de threat intelligence para identificar melhorias',
       'Implementar melhorias com base em aprendizados de incidentes públicos relevantes',
@@ -846,6 +898,8 @@ export const identifySubcategories: CSFSubcategory[] = [
       'O plano é comunicado e conhecido por todos os que precisam agir durante um incidente?',
     ],
     practiceExamples: [
+      'Documentar, comunicar, manter e melhorar os planos de resposta a incidentes com base em exercícios e eventos reais.',
+      'Alinhar o plano de resposta a incidentes com os planos de continuidade de negócios e recuperação de desastres.',
       'Manter o plano em repositório centralizado e acessível à equipe de resposta',
       'Incluir revisão do plano no processo pós-incidente',
       'Realizar exercícios tabletop para validar o plano ao menos anualmente',
