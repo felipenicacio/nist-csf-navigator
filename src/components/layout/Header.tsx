@@ -1,38 +1,44 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { Link, useNavigate, useLocation } from 'react-router-dom';
-import { Search, Menu, X, ChevronDown, Map, BookOpen, GitBranch, ClipboardList, ArrowRight } from 'lucide-react';
+import { Link, useNavigate } from 'react-router-dom';
+import { Search, Menu, X, ChevronDown } from 'lucide-react';
 import { allSubcategories } from '../../data';
 import { getFnColors } from '../../utils/fnColors';
 import { csfFunctions } from '../../data/functions';
 import { csfCategories } from '../../data/categories';
 
-
-
-const exploreItems = [
-  { label: 'Introdução ao NIST CSF', desc: 'O que é, para que serve, por onde começar', to: '/intro', icon: <BookOpen size={16} /> },
-  { label: 'Framework Map', desc: 'Visão visual completa do CSF 2.0', to: '/map', icon: <Map size={16} /> },
-  { label: 'Explorar Framework', desc: 'Functions, Categories, Subcategories', to: '/framework', icon: <ArrowRight size={16} /> },
-  { label: 'Crosswalk', desc: 'NIST 800-53, ISO 27002, CIS Controls', to: '/crosswalk', icon: <GitBranch size={16} /> },
-  { label: 'Frameworks Relacionados', desc: '22+ frameworks documentados', to: '/frameworks', icon: <ArrowRight size={16} /> },
+const frameworkItems = [
+  { label: 'O que é o NIST CSF 2.0', desc: 'Introdução acessível ao framework', to: '/intro' },
+  { label: 'Framework Map', desc: 'Visão visual de toda a estrutura', to: '/map' },
+  { label: 'Funções e Categorias', desc: '6 Funções, 17 Categorias, 106 Subcategorias', to: '/framework' },
+  { label: 'Tiers', desc: 'Governança e gestão por Função', to: '/tiers' },
+  { label: 'Perfis Organizacionais', desc: 'Current Profile e Target Profile', to: '/profiles' },
 ];
 
 const implementItems = [
-  { label: 'Implementation Roadmap', desc: '10 fases: do zero ao programa completo', to: '/roadmap', icon: <ClipboardList size={16} /> },
-  { label: 'Guia de Implementação', desc: 'Processo de 5 etapas com Perfis', to: '/implementation', icon: <ArrowRight size={16} /> },
-  { label: 'Perfis Organizacionais', desc: 'Perfil Atual, Perfil Alvo, Gap Analysis', to: '/profiles', icon: <ArrowRight size={16} /> },
-  { label: 'CSF Tiers', desc: 'Governança e gestão por Função', to: '/tiers', icon: <ArrowRight size={16} /> },
-  { label: 'Enterprise Risk Management', desc: '6 Activity Points, ERM + CSF', to: '/erm', icon: <ArrowRight size={16} /> },
-  { label: 'C-SCRM', desc: 'Gestão de riscos da cadeia de suprimentos', to: '/cscrm', icon: <ArrowRight size={16} /> },
-  { label: 'Assessment Navigator', desc: 'Perguntas e evidências por Subcategoria', to: '/consultant', icon: <ArrowRight size={16} /> },
+  { label: 'Implementation Roadmap', desc: '10 fases orientativas de implementação', to: '/roadmap' },
+  { label: 'Guia de Implementação', desc: 'Processo de 5 etapas com Perfis', to: '/implementation' },
+  { label: 'Enterprise Risk Management', desc: '6 Activity Points, ERM + CSF', to: '/erm' },
+  { label: 'C-SCRM', desc: 'Gestão de riscos da cadeia de suprimentos', to: '/cscrm' },
+];
+
+const assessItems = [
+  { label: 'Assessment Journey', desc: 'Current Profile → Target → Gap → Ação', to: '/assessment' },
+  { label: 'Assessment Navigator', desc: 'Perguntas e evidências por Subcategoria', to: '/consultant' },
+];
+
+const referenceItems = [
+  { label: 'Frameworks Relacionados', desc: '22+ frameworks documentados', to: '/frameworks' },
+  { label: 'Crosswalk Explorer', desc: 'CSF x NIST 800-53 x ISO 27002 x CIS', to: '/crosswalk' },
+  { label: 'Glossário', desc: 'Termos e definições', to: '/glossary' },
 ];
 
 const DropdownMenu: React.FC<{
   label: string;
-  items: typeof exploreItems;
-  accentColor?: string;
-}> = ({ label, items, accentColor = '#0B1F33' }) => {
+  items: { label: string; desc: string; to: string }[];
+}> = ({ label, items }) => {
   const [open, setOpen] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const handler = (e: MouseEvent) => {
@@ -46,31 +52,22 @@ const DropdownMenu: React.FC<{
     <div ref={ref} className="relative">
       <button
         onClick={() => setOpen(!open)}
-        className="flex items-center gap-1.5 px-3 py-2 text-sm font-medium text-slate-600 hover:text-slate-900 hover:bg-slate-50 rounded-md transition-colors"
+        className="flex items-center gap-1 px-3 py-2 text-sm font-medium text-slate-600 hover:text-slate-900 hover:bg-slate-50 rounded-md transition-colors"
       >
         {label}
         <ChevronDown size={14} className={`transition-transform ${open ? 'rotate-180' : ''}`} />
       </button>
       {open && (
-        <div className="absolute left-0 top-full mt-2 w-72 bg-white rounded-xl shadow-xl border border-slate-200 py-2 z-50 animate-fadeIn">
-          <div className="px-3 py-1.5 mb-1">
-            <p className="text-xs font-bold uppercase tracking-widest" style={{ color: accentColor }}>{label}</p>
-          </div>
+        <div className="absolute top-full left-0 mt-1 w-64 bg-white rounded-xl shadow-xl border border-slate-200 py-2 z-50">
           {items.map(item => (
-            <Link
+            <button
               key={item.to}
-              to={item.to}
-              onClick={() => setOpen(false)}
-              className="flex items-start gap-3 px-4 py-3 hover:bg-slate-50 transition-colors group"
+              onClick={() => { navigate(item.to); setOpen(false); }}
+              className="w-full text-left px-4 py-2.5 hover:bg-slate-50 transition-colors"
             >
-              <div className="w-7 h-7 rounded-lg flex items-center justify-center shrink-0 mt-0.5" style={{ backgroundColor: `${accentColor}15`, color: accentColor }}>
-                {item.icon}
-              </div>
-              <div>
-                <p className="text-sm font-semibold text-slate-800 group-hover:text-slate-900">{item.label}</p>
-                <p className="text-xs text-slate-400 mt-0.5">{item.desc}</p>
-              </div>
-            </Link>
+              <p className="text-sm font-semibold text-slate-800">{item.label}</p>
+              <p className="text-xs text-slate-400 mt-0.5">{item.desc}</p>
+            </button>
           ))}
         </div>
       )}
@@ -84,19 +81,18 @@ const Header: React.FC = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [mobileSection, setMobileSection] = useState<string | null>(null);
   const navigate = useNavigate();
-  const location = useLocation();
   const searchRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const handler = (e: MouseEvent) => {
-      if (searchRef.current && !searchRef.current.contains(e.target as Node)) setSearchOpen(false);
+      if (searchRef.current && !searchRef.current.contains(e.target as Node)) {
+        setSearchOpen(false);
+        setQuery('');
+      }
     };
     document.addEventListener('mousedown', handler);
     return () => document.removeEventListener('mousedown', handler);
   }, []);
-
-  // Close on navigate
-  useEffect(() => { setMobileMenuOpen(false); setSearchOpen(false); }, [location.pathname]);
 
   const results = query.length > 1
     ? [
@@ -116,17 +112,21 @@ const Header: React.FC = () => {
       ]
     : [];
 
+  const mobileGroups = [
+    { key: 'framework',  label: 'Framework',     items: frameworkItems },
+    { key: 'implement',  label: 'Implementação',  items: implementItems },
+    { key: 'assess',     label: 'Assessment',     items: assessItems },
+    { key: 'reference',  label: 'Referências',    items: referenceItems },
+  ];
+
   return (
     <header className="sticky top-0 z-50 bg-white border-b border-slate-200 shadow-sm">
       <div className="max-w-screen-xl mx-auto px-4 sm:px-6">
         <div className="flex items-center justify-between h-16">
+
           {/* Logo */}
           <Link to="/" className="flex items-center gap-2.5 shrink-0">
-            <img
-              src="./assets/csf-wheel.png"
-              alt="NIST CSF 2.0"
-              className="w-8 h-8 object-contain"
-            />
+            <img src="./assets/csf-wheel.png" alt="NIST CSF 2.0" className="w-8 h-8 object-contain" />
             <div className="hidden sm:block">
               <span className="font-bold text-sm" style={{ color: '#0B1F33' }}>NIST CSF 2.0</span>
               <span className="text-xs text-slate-400 block -mt-0.5 font-medium">Navigator</span>
@@ -134,16 +134,16 @@ const Header: React.FC = () => {
           </Link>
 
           {/* Desktop nav */}
-          <nav className="hidden lg:flex items-center gap-1">
-            <DropdownMenu label="Explorar" items={exploreItems} accentColor="#164E73" />
-            <DropdownMenu label="Implementar" items={implementItems} accentColor="#0F766E" />
-            <Link to="/glossary" className="px-3 py-2 text-sm font-medium text-slate-600 hover:text-slate-900 hover:bg-slate-50 rounded-md transition-colors">Glossário</Link>
+          <nav className="hidden lg:flex items-center gap-0.5">
+            <DropdownMenu label="Framework"    items={frameworkItems} />
+            <DropdownMenu label="Implementação" items={implementItems} />
+            <DropdownMenu label="Assessment"   items={assessItems} />
+            <DropdownMenu label="Referências"  items={referenceItems} />
             <Link to="/about" className="px-3 py-2 text-sm font-medium text-slate-600 hover:text-slate-900 hover:bg-slate-50 rounded-md transition-colors">Sobre</Link>
           </nav>
 
           {/* Search + hamburger */}
           <div className="flex items-center gap-2">
-            {/* Search */}
             <div className="relative" ref={searchRef}>
               <button
                 onClick={() => setSearchOpen(!searchOpen)}
@@ -170,19 +170,16 @@ const Header: React.FC = () => {
                             onClick={() => { navigate(r.path); setSearchOpen(false); setQuery(''); }}
                             className="w-full text-left px-3 py-2.5 text-sm rounded-lg hover:bg-slate-50 flex items-center gap-3"
                           >
-                            <span
-                              className="text-xs font-mono font-bold px-1.5 py-0.5 rounded text-white shrink-0"
-                              style={{ backgroundColor: getFnColors(r.fnId).bg }}
-                            >
+                            <span className="text-xs font-mono font-bold px-1.5 py-0.5 rounded shrink-0" style={{ backgroundColor: getFnColors(r.fnId).bg, color: getFnColors(r.fnId).text }}>
                               {r.fnId}
                             </span>
                             <span className="text-slate-700 truncate">{r.label}</span>
                             <span className={`text-xs shrink-0 ml-auto px-1.5 py-0.5 rounded ${
-                              r.type === 'function' ? 'bg-slate-100 text-slate-500'
-                              : r.type === 'category' ? 'bg-teal-50 text-teal-600'
-                              : 'bg-slate-50 text-slate-400'
+                              r.type === 'function' ? 'bg-purple-100 text-purple-700' :
+                              r.type === 'category' ? 'bg-blue-100 text-blue-700' :
+                              'bg-slate-100 text-slate-600'
                             }`}>
-                              {r.type === 'function' ? 'FN' : r.type === 'category' ? 'CAT' : 'SUB'}
+                              {r.type === 'function' ? 'Função' : r.type === 'category' ? 'Categoria' : 'Subcategoria'}
                             </span>
                           </button>
                         </li>
@@ -190,13 +187,12 @@ const Header: React.FC = () => {
                     </ul>
                   )}
                   {query.length > 1 && results.length === 0 && (
-                    <p className="text-sm text-slate-500 mt-2 px-3 py-1">Nenhum resultado encontrado.</p>
+                    <p className="text-xs text-slate-400 text-center py-4">Nenhum resultado encontrado.</p>
                   )}
                 </div>
               )}
             </div>
 
-            {/* Mobile hamburger */}
             <button
               className="lg:hidden p-2 text-slate-500 hover:text-slate-900 hover:bg-slate-100 rounded-lg"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -211,47 +207,33 @@ const Header: React.FC = () => {
       {/* Mobile menu */}
       {mobileMenuOpen && (
         <div className="lg:hidden border-t border-slate-100 bg-white px-4 py-4 space-y-2 max-h-[80vh] overflow-y-auto">
-          {/* Explorar section */}
-          <button
-            onClick={() => setMobileSection(mobileSection === 'explore' ? null : 'explore')}
-            className="w-full flex items-center justify-between px-3 py-2 text-sm font-bold text-slate-800 hover:bg-slate-50 rounded-lg"
-          >
-            <span style={{ color: '#164E73' }}>EXPLORAR</span>
-            <ChevronDown size={14} className={`transition-transform ${mobileSection === 'explore' ? 'rotate-180' : ''}`} />
-          </button>
-          {mobileSection === 'explore' && (
-            <div className="pl-3 space-y-1">
-              {exploreItems.map(item => (
-                <Link key={item.to} to={item.to} className="flex items-center gap-2 px-3 py-2 text-sm text-slate-700 hover:bg-slate-50 rounded-lg">
-                  <span className="text-slate-400">{item.icon}</span>
-                  {item.label}
-                </Link>
-              ))}
+          {mobileGroups.map(group => (
+            <div key={group.key}>
+              <button
+                onClick={() => setMobileSection(mobileSection === group.key ? null : group.key)}
+                className="w-full flex items-center justify-between px-3 py-2 text-sm font-bold text-slate-800 hover:bg-slate-50 rounded-lg"
+              >
+                <span>{group.label}</span>
+                <ChevronDown size={14} className={`transition-transform ${mobileSection === group.key ? 'rotate-180' : ''}`} />
+              </button>
+              {mobileSection === group.key && (
+                <div className="pl-3 space-y-1 mt-1">
+                  {group.items.map(item => (
+                    <Link
+                      key={item.to}
+                      to={item.to}
+                      onClick={() => setMobileMenuOpen(false)}
+                      className="block px-3 py-2 text-sm text-slate-700 hover:bg-slate-50 rounded-lg"
+                    >
+                      {item.label}
+                    </Link>
+                  ))}
+                </div>
+              )}
             </div>
-          )}
-
-          {/* Implementar section */}
-          <button
-            onClick={() => setMobileSection(mobileSection === 'implement' ? null : 'implement')}
-            className="w-full flex items-center justify-between px-3 py-2 text-sm font-bold text-slate-800 hover:bg-slate-50 rounded-lg"
-          >
-            <span style={{ color: '#0F766E' }}>IMPLEMENTAR</span>
-            <ChevronDown size={14} className={`transition-transform ${mobileSection === 'implement' ? 'rotate-180' : ''}`} />
-          </button>
-          {mobileSection === 'implement' && (
-            <div className="pl-3 space-y-1">
-              {implementItems.map(item => (
-                <Link key={item.to} to={item.to} className="flex items-center gap-2 px-3 py-2 text-sm text-slate-700 hover:bg-slate-50 rounded-lg">
-                  <span className="text-slate-400">{item.icon}</span>
-                  {item.label}
-                </Link>
-              ))}
-            </div>
-          )}
-
-          <div className="pt-1 border-t border-slate-100 space-y-1">
-            <Link to="/glossary" className="block px-3 py-2 text-sm font-medium text-slate-700 hover:bg-slate-50 rounded-lg">Glossário</Link>
-            <Link to="/about" className="block px-3 py-2 text-sm font-medium text-slate-700 hover:bg-slate-50 rounded-lg">Sobre</Link>
+          ))}
+          <div className="pt-1 border-t border-slate-100">
+            <Link to="/about" onClick={() => setMobileMenuOpen(false)} className="block px-3 py-2 text-sm font-medium text-slate-700 hover:bg-slate-50 rounded-lg">Sobre</Link>
           </div>
         </div>
       )}

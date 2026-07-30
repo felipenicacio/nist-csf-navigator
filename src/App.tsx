@@ -12,6 +12,7 @@ import ConsultantViewPage from './pages/ConsultantViewPage';
 import ERMPage from './pages/ERMPage';
 import RoadmapPage from './pages/RoadmapPage';
 import CSCRMPage from './pages/CSCRMPage';
+import AssessmentPage from './pages/AssessmentPage';
 import { TiersPage, ProfilesPage, CrosswalkPage, FrameworksPage, GlossaryPage, AboutPage } from './pages/OtherPages';
 
 function App() {
@@ -44,6 +45,7 @@ function App() {
             <Route path="/roadmap" element={<RoadmapPage />} />
             <Route path="/erm" element={<ERMPage />} />
             <Route path="/cscrm" element={<CSCRMPage />} />
+            <Route path="/assessment" element={<AssessmentPage />} />
             <Route path="/tiers" element={<TiersPage />} />
             <Route path="/profiles" element={<ProfilesPage />} />
             <Route path="/crosswalk" element={<CrosswalkPage />} />
