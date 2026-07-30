@@ -107,24 +107,30 @@ const CSCRMPage: React.FC = () => {
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-5">
           {/* Activity selector */}
           <div className="space-y-3">
-            {activities.map(act => (
+            {activities.map(act => {
+              const fnC = getFnColorsFromCode(act.csf);
+              const isActive = activeActivity === act.n;
+              return (
               <button
                 key={act.n}
                 onClick={() => setActiveActivity(act.n)}
-                className={`w-full text-left rounded-xl border-2 p-4 transition-all ${activeActivity === act.n ? 'border-slate-900 bg-slate-900 text-white' : 'border-slate-200 bg-white hover:bg-slate-50'}`}
+                className="w-full text-left rounded-xl border-2 p-4 transition-all hover:opacity-90"
+                style={{
+                  borderColor: isActive ? fnC.text : '#E2E8F0',
+                  backgroundColor: isActive ? fnC.bg : '#fff',
+                }}
               >
                 <div className="flex items-center gap-2 mb-1">
-                  <span className={`text-lg font-black ${activeActivity === act.n ? 'text-white/20' : 'text-slate-100'}`}>{act.n}</span>
+                  <span className="text-lg font-black" style={{ color: isActive ? `${fnC.text}40` : '#F1F5F9' }}>{act.n}</span>
                   <span
                     className="text-xs font-mono font-bold px-2 py-0.5 rounded"
-                    style={activeActivity === act.n
-                      ? { backgroundColor: 'rgba(255,255,255,0.2)', color: '#fff' }
-                      : { backgroundColor: getFnColorsFromCode(act.csf).bg, color: getFnColorsFromCode(act.csf).text }}
+                    style={{ backgroundColor: isActive ? `${fnC.text}20` : fnC.bg, color: isActive ? fnC.text : fnC.text }}
                   >{act.csf}</span>
                 </div>
-                <p className={`text-sm font-semibold ${activeActivity === act.n ? 'text-white' : 'text-slate-800'}`}>{act.title}</p>
+                <p className="text-sm font-semibold" style={{ color: isActive ? fnC.text : '#1E293B' }}>{act.title}</p>
               </button>
-            ))}
+              );
+            })}
           </div>
 
           {/* Checklist */}
@@ -134,7 +140,7 @@ const CSCRMPage: React.FC = () => {
               return (
                 <div className="bg-white rounded-xl border border-slate-200 p-6 h-full">
                   <div className="flex items-center gap-3 mb-5">
-                    <div className="w-8 h-8 rounded-lg bg-slate-900 flex items-center justify-center text-white font-black text-sm">{act.n}</div>
+                    <div className="w-8 h-8 rounded-lg flex items-center justify-center font-black text-sm" style={{ backgroundColor: getFnColorsFromCode(act.csf).bg, color: getFnColorsFromCode(act.csf).text }}>{act.n}</div>
                     <div>
                       <p className="text-xs font-mono font-bold px-2 py-0.5 rounded inline-block mb-1" style={{ backgroundColor: getFnColorsFromCode(act.csf).bg, color: getFnColorsFromCode(act.csf).text }}>{act.csf}</p>
                       <h3 className="text-sm font-bold text-slate-900">{act.title}</h3>
