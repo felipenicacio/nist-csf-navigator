@@ -37,7 +37,7 @@ export const governSubcategories: CSFSubcategory[] = [
       iso27002: [{ id: '5.1', name: 'Políticas de segurança da informação', type: 'related' }],
       cisControls: [],
     },
-    relatedFrameworks: [{ id: 'iso27001', name: 'ISO/IEC 27001', relevance: 'Cláusula 4 — Contexto da organização', type: 'related' }],
+    relatedFrameworks: [{ id: 'iso27001', name: 'ISO/IEC 27001', relevance: 'Cláusula 4. Contexto da organização', type: 'related' }],
     keywords: ['missão', 'objetivos', 'estratégia', 'alinhamento', 'negócio'],
   },
   {
@@ -75,7 +75,7 @@ export const governSubcategories: CSFSubcategory[] = [
       iso27002: [{ id: '5.31', name: 'Requisitos legais, estatutários, regulatórios e contratuais', type: 'direct' }],
       cisControls: [],
     },
-    relatedFrameworks: [{ id: 'iso27001', name: 'ISO/IEC 27001', relevance: 'Cláusula 4.2 — Partes interessadas', type: 'direct' }],
+    relatedFrameworks: [{ id: 'iso27001', name: 'ISO/IEC 27001', relevance: 'Cláusula 4.2. Partes interessadas', type: 'direct' }],
     keywords: ['requisitos', 'legal', 'regulatório', 'contratual', 'conformidade', 'compliance'],
   },
   {
@@ -150,7 +150,7 @@ export const governSubcategories: CSFSubcategory[] = [
       iso27002: [{ id: '5.1', name: 'Políticas de segurança da informação', type: 'related' }],
       cisControls: [],
     },
-    relatedFrameworks: [{ id: 'iso27001', name: 'ISO/IEC 27001', relevance: 'Cláusula 4.2 — Partes interessadas', type: 'direct' }],
+    relatedFrameworks: [{ id: 'iso27001', name: 'ISO/IEC 27001', relevance: 'Cláusula 4.2. Partes interessadas', type: 'direct' }],
     keywords: ['partes interessadas', 'stakeholders', 'comunicação', 'expectativas'],
   },
   {
@@ -240,7 +240,7 @@ export const governSubcategories: CSFSubcategory[] = [
     code: 'GV.RM-02',
     name: 'Prioridades e restrições organizacionais',
     description: 'As prioridades, restrições, premissas e incertezas de risco da organização são estabelecidas, comunicadas e atualizadas.',
-    whatItMeans: 'A estratégia de gestão de riscos deve refletir as restrições reais da organização — orçamento, capacidade, regulações — e ser atualizada conforme o contexto muda.',
+    whatItMeans: 'A estratégia de gestão de riscos deve refletir as restrições reais da organização, orçamento, capacidade, regulações, e ser atualizada conforme o contexto muda.',
     howToImplement: [
       'Identificar restrições operacionais e financeiras relevantes para cibersegurança',
       'Documentar premissas utilizadas na gestão de riscos',
@@ -420,7 +420,7 @@ export const governSubcategories: CSFSubcategory[] = [
       iso27002: [{ id: '5.1', name: 'Políticas de segurança da informação', type: 'direct' }],
       cisControls: [],
     },
-    relatedFrameworks: [{ id: 'iso27001', name: 'ISO/IEC 27001', relevance: 'Cláusula 6 — Planejamento e riscos', type: 'direct' }],
+    relatedFrameworks: [{ id: 'iso27001', name: 'ISO/IEC 27001', relevance: 'Cláusula 6. Planejamento e riscos', type: 'direct' }],
     keywords: ['política', 'gestão de riscos', 'cibersegurança', 'framework'],
   },
   {
@@ -469,7 +469,7 @@ export const governSubcategories: CSFSubcategory[] = [
     code: 'GV.RR-01',
     name: 'Responsabilidade da liderança',
     description: 'A liderança organizacional é responsável pela gestão de riscos de cibersegurança e está informada sobre riscos atuais.',
-    whatItMeans: 'A alta direção deve assumir responsabilidade ativa pela cibersegurança — não apenas delegar tecnicamente, mas entender os riscos e responder por eles.',
+    whatItMeans: 'A alta direção deve assumir responsabilidade ativa pela cibersegurança, não apenas delegar tecnicamente, mas entender os riscos e responder por eles.',
     howToImplement: [
       'Definir a responsabilidade da liderança pela cibersegurança formalmente',
       'Garantir que a alta direção receba treinamento básico sobre riscos de cibersegurança',
@@ -496,7 +496,7 @@ export const governSubcategories: CSFSubcategory[] = [
       iso27002: [{ id: '5.1', name: 'Políticas de segurança da informação', type: 'related' }],
       cisControls: [],
     },
-    relatedFrameworks: [{ id: 'iso27001', name: 'ISO/IEC 27001', relevance: 'Cláusula 5.1 — Liderança e comprometimento', type: 'direct' }],
+    relatedFrameworks: [{ id: 'iso27001', name: 'ISO/IEC 27001', relevance: 'Cláusula 5.1. Liderança e comprometimento', type: 'direct' }],
     keywords: ['liderança', 'responsabilidade', 'alta direção', 'conselho', 'accountability'],
   },
   {
@@ -534,7 +534,7 @@ export const governSubcategories: CSFSubcategory[] = [
       iso27002: [{ id: '5.2', name: 'Papéis e responsabilidades pela segurança', type: 'direct' }],
       cisControls: [{ id: 'CIS-17', name: 'Incident Response Management', type: 'related' }],
     },
-    relatedFrameworks: [{ id: 'iso27001', name: 'ISO/IEC 27001', relevance: 'Cláusula 5.3 — Papéis e responsabilidades', type: 'direct' }],
+    relatedFrameworks: [{ id: 'iso27001', name: 'ISO/IEC 27001', relevance: 'Cláusula 5.3. Papéis e responsabilidades', type: 'direct' }],
     keywords: ['papéis', 'responsabilidades', 'autoridades', 'função', 'cargo'],
   },
   {
@@ -572,7 +572,7 @@ export const governSubcategories: CSFSubcategory[] = [
       iso27002: [{ id: '5.1', name: 'Políticas de segurança da informação', type: 'related' }],
       cisControls: [],
     },
-    relatedFrameworks: [{ id: 'iso27001', name: 'ISO/IEC 27001', relevance: 'Cláusula 7 — Suporte e recursos', type: 'direct' }],
+    relatedFrameworks: [{ id: 'iso27001', name: 'ISO/IEC 27001', relevance: 'Cláusula 7. Suporte e recursos', type: 'direct' }],
     keywords: ['recursos', 'orçamento', 'equipe', 'investimento', 'capacidade'],
   },
   {
@@ -582,7 +582,7 @@ export const governSubcategories: CSFSubcategory[] = [
     code: 'GV.RR-04',
     name: 'Cibersegurança na gestão de riscos organizacionais',
     description: 'A cibersegurança é incluída explicitamente nos processos de gestão de riscos humanos da organização.',
-    whatItMeans: 'Os riscos humanos associados à cibersegurança — como engenharia social, insiders e erros humanos — devem ser considerados nos processos de RH e gestão de pessoas.',
+    whatItMeans: 'Os riscos humanos associados à cibersegurança, como engenharia social, insiders e erros humanos, devem ser considerados nos processos de RH e gestão de pessoas.',
     howToImplement: [
       'Incluir verificação de antecedentes no processo de contratação',
       'Integrar cibersegurança ao processo de desligamento',
@@ -606,7 +606,7 @@ export const governSubcategories: CSFSubcategory[] = [
     ],
     layers: ['strategic', 'tactical'],
     mappings: {
-      nist80053: [{ id: 'PS-1', name: 'Policy and Procedures — Personnel Security', type: 'direct' }],
+      nist80053: [{ id: 'PS-1', name: 'Policy and Procedures. Personnel Security', type: 'direct' }],
       iso27002: [{ id: '6.1', name: 'Triagem', type: 'direct' }, { id: '6.5', name: 'Responsabilidades após encerramento do contrato', type: 'direct' }],
       cisControls: [],
     },
@@ -650,7 +650,7 @@ export const governSubcategories: CSFSubcategory[] = [
       iso27002: [{ id: '5.1', name: 'Políticas de segurança da informação', type: 'direct' }],
       cisControls: [],
     },
-    relatedFrameworks: [{ id: 'iso27001', name: 'ISO/IEC 27001', relevance: 'Cláusula 5.2 — Política do SGSI', type: 'direct' }],
+    relatedFrameworks: [{ id: 'iso27001', name: 'ISO/IEC 27001', relevance: 'Cláusula 5.2. Política do SGSI', type: 'direct' }],
     keywords: ['política', 'cibersegurança', 'diretrizes', 'princípios', 'segurança'],
   },
   {
@@ -728,7 +728,7 @@ export const governSubcategories: CSFSubcategory[] = [
       iso27002: [{ id: '5.35', name: 'Análise crítica independente de segurança', type: 'related' }],
       cisControls: [],
     },
-    relatedFrameworks: [{ id: 'iso27001', name: 'ISO/IEC 27001', relevance: 'Cláusula 9.3 — Análise crítica pela direção', type: 'direct' }],
+    relatedFrameworks: [{ id: 'iso27001', name: 'ISO/IEC 27001', relevance: 'Cláusula 9.3. Análise crítica pela direção', type: 'direct' }],
     keywords: ['revisão', 'liderança', 'análise crítica', 'supervisão', 'governança'],
   },
   {
@@ -738,7 +738,7 @@ export const governSubcategories: CSFSubcategory[] = [
     code: 'GV.OV-02',
     name: 'Monitoramento e ajuste de objetivos de cibersegurança',
     description: 'A estratégia de cibersegurança é monitorada e ajustada conforme necessário para alcançar os objetivos organizacionais.',
-    whatItMeans: 'A estratégia de cibersegurança não é estática — deve ser monitorada continuamente e ajustada conforme o ambiente de ameaças, o contexto organizacional e os resultados obtidos.',
+    whatItMeans: 'A estratégia de cibersegurança não é estática, deve ser monitorada continuamente e ajustada conforme o ambiente de ameaças, o contexto organizacional e os resultados obtidos.',
     howToImplement: [
       'Estabelecer KPIs para monitorar a eficácia da estratégia de cibersegurança',
       'Revisar KPIs periodicamente e ajustar estratégia quando necessário',
@@ -765,7 +765,7 @@ export const governSubcategories: CSFSubcategory[] = [
       iso27002: [{ id: '5.36', name: 'Conformidade com políticas', type: 'related' }],
       cisControls: [],
     },
-    relatedFrameworks: [{ id: 'iso27001', name: 'ISO/IEC 27001', relevance: 'Cláusula 9 — Avaliação de desempenho', type: 'direct' }],
+    relatedFrameworks: [{ id: 'iso27001', name: 'ISO/IEC 27001', relevance: 'Cláusula 9. Avaliação de desempenho', type: 'direct' }],
     keywords: ['monitoramento', 'KPI', 'ajuste', 'estratégia', 'desempenho'],
   },
   {
@@ -775,7 +775,7 @@ export const governSubcategories: CSFSubcategory[] = [
     code: 'GV.OV-03',
     name: 'Processo de gestão de riscos revisado',
     description: 'Os resultados organizacionais da gestão de riscos de cibersegurança são analisados e utilizados para informar e melhorar o programa.',
-    whatItMeans: 'Os resultados da gestão de riscos devem ser analisados para melhorar continuamente o programa — não apenas para cumprir um processo, mas para aprender e evoluir.',
+    whatItMeans: 'Os resultados da gestão de riscos devem ser analisados para melhorar continuamente o programa, não apenas para cumprir um processo, mas para aprender e evoluir.',
     howToImplement: [
       'Analisar periodicamente os resultados da gestão de riscos',
       'Identificar oportunidades de melhoria no processo',
@@ -802,7 +802,7 @@ export const governSubcategories: CSFSubcategory[] = [
       iso27002: [{ id: '5.1', name: 'Políticas de segurança da informação', type: 'related' }],
       cisControls: [],
     },
-    relatedFrameworks: [{ id: 'iso27001', name: 'ISO/IEC 27001', relevance: 'Cláusula 10 — Melhoria contínua', type: 'direct' }],
+    relatedFrameworks: [{ id: 'iso27001', name: 'ISO/IEC 27001', relevance: 'Cláusula 10. Melhoria contínua', type: 'direct' }],
     keywords: ['melhoria contínua', 'processo', 'resultados', 'análise', 'aprendizado'],
   },
 
@@ -838,7 +838,7 @@ export const governSubcategories: CSFSubcategory[] = [
     ],
     layers: ['strategic'],
     mappings: {
-      nist80053: [{ id: 'SR-1', name: 'Policy and Procedures — Supply Chain Risk Management', type: 'direct' }],
+      nist80053: [{ id: 'SR-1', name: 'Policy and Procedures. Supply Chain Risk Management', type: 'direct' }],
       iso27002: [{ id: '5.19', name: 'Segurança da informação em relacionamentos com fornecedores', type: 'direct' }],
       cisControls: [],
     },
@@ -1074,7 +1074,7 @@ export const governSubcategories: CSFSubcategory[] = [
     code: 'GV.SC-08',
     name: 'Responsividade de fornecedores em incidentes',
     description: 'Fornecedores e parceiros relevantes são incluídos nos planos de resposta a incidentes e recuperação.',
-    whatItMeans: 'Quando ocorrem incidentes que envolvem ou impactam fornecedores, é necessário coordenar respostas — e isso deve ser planejado previamente.',
+    whatItMeans: 'Quando ocorrem incidentes que envolvem ou impactam fornecedores, é necessário coordenar respostas, e isso deve ser planejado previamente.',
     howToImplement: [
       'Incluir fornecedores críticos nos planos de resposta a incidentes',
       'Estabelecer procedimentos de comunicação com fornecedores durante incidentes',
@@ -1111,7 +1111,7 @@ export const governSubcategories: CSFSubcategory[] = [
     code: 'GV.SC-09',
     name: 'Práticas de segurança de fornecedores monitoradas',
     description: 'O desempenho de segurança de fornecedores é avaliado periodicamente e o desempenho é comunicado aos responsáveis relevantes.',
-    whatItMeans: 'Avaliar a segurança de fornecedores apenas na contratação não é suficiente — é necessário monitoramento contínuo durante o relacionamento.',
+    whatItMeans: 'Avaliar a segurança de fornecedores apenas na contratação não é suficiente, é necessário monitoramento contínuo durante o relacionamento.',
     howToImplement: [
       'Estabelecer processo de avaliação periódica de segurança de fornecedores',
       'Definir métricas de desempenho de segurança para fornecedores',
@@ -1148,7 +1148,7 @@ export const governSubcategories: CSFSubcategory[] = [
     code: 'GV.SC-10',
     name: 'Gestão de riscos de hardware e software',
     description: 'Os riscos de cibersegurança associados a produtos e serviços de hardware e software são avaliados antes da aquisição e uso.',
-    whatItMeans: 'Produtos de hardware e software podem conter vulnerabilidades, backdoors ou componentes não confiáveis — a organização deve avaliar esses riscos antes de adotar novos produtos.',
+    whatItMeans: 'Produtos de hardware e software podem conter vulnerabilidades, backdoors ou componentes não confiáveis, a organização deve avaliar esses riscos antes de adotar novos produtos.',
     howToImplement: [
       'Avaliar riscos de segurança de novos produtos de hardware e software',
       'Verificar a reputação e o histórico de segurança de fabricantes',

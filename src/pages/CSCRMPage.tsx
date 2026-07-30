@@ -44,12 +44,12 @@ const activities = [
 ];
 
 const supplierRequirements = [
-  { category: 'GOVERN', items: ['GV.OC-03 — Requisitos legais, regulatórios e contratuais de cibersegurança', 'GV.RR-02 — Papéis e responsabilidades de cibersegurança', 'GV.SC — Toda a categoria de C-SCRM'] },
-  { category: 'IDENTIFY', items: ['ID.RA-09 — Integridade de hardware e software verificada antes da aquisição', 'ID.RA-10 — Fornecedores críticos avaliados antes da contratação', 'ID.IM-02 — Melhorias identificadas em exercícios com fornecedores e terceiros'] },
-  { category: 'PROTECT', items: ['PR.AA-01 — Identidades e credenciais de usuários autorizados gerenciadas', 'PR.AT-02 — Indivíduos em funções especializadas treinados'] },
-  { category: 'DETECT', items: ['DE.CM-03 — Atividades de pessoal e tecnologia monitoradas'] },
-  { category: 'RESPOND', items: ['RS.MA-04 — Incidentes escalados quando necessário', 'RS.CO-02 — Partes internas e externas notificadas sobre incidentes'] },
-  { category: 'RECOVER', items: ['RC.RP-03 — Comunicação sobre atividades de recuperação', 'RC.CO-03 — Progresso de recuperação comunicado a stakeholders designados'] },
+  { category: 'GOVERN', items: ['GV.OC-03. Requisitos legais, regulatórios e contratuais de cibersegurança', 'GV.RR-02. Papéis e responsabilidades de cibersegurança', 'GV.SC. Toda a categoria de C-SCRM'] },
+  { category: 'IDENTIFY', items: ['ID.RA-09. Integridade de hardware e software verificada antes da aquisição', 'ID.RA-10. Fornecedores críticos avaliados antes da contratação', 'ID.IM-02. Melhorias identificadas em exercícios com fornecedores e terceiros'] },
+  { category: 'PROTECT', items: ['PR.AA-01. Identidades e credenciais de usuários autorizados gerenciadas', 'PR.AT-02. Indivíduos em funções especializadas treinados'] },
+  { category: 'DETECT', items: ['DE.CM-03. Atividades de pessoal e tecnologia monitoradas'] },
+  { category: 'RESPOND', items: ['RS.MA-04. Incidentes escalados quando necessário', 'RS.CO-02. Partes internas e externas notificadas sobre incidentes'] },
+  { category: 'RECOVER', items: ['RC.RP-03. Comunicação sobre atividades de recuperação', 'RC.CO-03. Progresso de recuperação comunicado a stakeholders designados'] },
 ];
 
 
@@ -62,16 +62,16 @@ const CSCRMPage: React.FC = () => {
     <div className="max-w-screen-xl mx-auto px-4 sm:px-6 py-10 animate-fadeIn">
       {/* Header */}
       <div className="mb-8">
-        <p className="text-xs font-semibold uppercase tracking-widest mb-2" style={{ color: '#0F766E' }}>NIST CSF 2.0 — NIST SP 1305</p>
+        <p className="text-xs font-semibold uppercase tracking-widest mb-2" style={{ color: '#0F766E' }}>NIST CSF 2.0. NIST SP 1305</p>
         <h1 className="text-3xl sm:text-4xl font-bold text-slate-900 mb-3">Cybersecurity Supply Chain Risk Management (C-SCRM)</h1>
         <p className="text-slate-500 max-w-2xl text-sm leading-relaxed">
-          C-SCRM é o processo sistemático de gerenciar exposição a riscos de cibersegurança em toda a cadeia de suprimentos — identificando, avaliando e mitigando riscos de produtos e serviços de TI/OT adquiridos.
+          C-SCRM é o processo sistemático de gerenciar exposição a riscos de cibersegurança em toda a cadeia de suprimentos, identificando, avaliando e mitigando riscos de produtos e serviços de TI/OT adquiridos.
         </p>
       </div>
 
       <PageIntro
         title="O que é C-SCRM?"
-        plain="C-SCRM é a gestão de riscos de cibersegurança na cadeia de suprimentos — ou seja, os riscos introduzidos por fornecedores, softwares, hardwares e serviços que sua organização compra e usa."
+        plain="C-SCRM é a gestão de riscos de cibersegurança na cadeia de suprimentos, ou seja, os riscos introduzidos por fornecedores, softwares, hardwares e serviços que sua organização compra e usa."
         detail="Um ataque pode entrar pela cadeia de suprimentos mesmo que seus sistemas internos estejam protegidos. Por isso o CSF dedica uma Category inteira a este tema: GV.SC."
         learnMore={{ label: 'Ver GV.SC no Framework', to: '/category/GV.SC' }}
       />
@@ -190,13 +190,13 @@ const CSCRMPage: React.FC = () => {
                 </div>
                 <div className="p-5 space-y-2">
                   {fn.items.map((item, i) => {
-                    const [code, ...rest] = item.split(' — ');
+                    const [code, ...rest] = item.split(', ');
                     return (
                       <div key={i} className="flex gap-3 text-sm">
                         <Link to={`/subcategory/${code}`} className="font-mono font-bold shrink-0 hover:underline" style={{ color: colors.color }}>
                           {code}
                         </Link>
-                        <span className="text-slate-600">{rest.join(' — ')}</span>
+                        <span className="text-slate-600">{rest.join(', ')}</span>
                       </div>
                     );
                   })}

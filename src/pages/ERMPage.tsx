@@ -21,7 +21,7 @@ const activityPoints = [
     title: 'Gestores interpretam o apetite em orientações específicas',
     desc: 'Gerentes traduzem o apetite a riscos em tolerância e requisitos de segurança e privacidade para as unidades organizacionais.',
     csf: ['GV.RR', 'GV.PO', 'ID.RA'],
-    detail: 'O apetite definido pela liderança é convertido em tolerância a riscos específica — limites operacionais para cada unidade. Os managers criam declarações de tolerância e métricas, definindo o estado-alvo que os controles devem alcançar.',
+    detail: 'O apetite definido pela liderança é convertido em tolerância a riscos específica, limites operacionais para cada unidade. Os managers criam declarações de tolerância e métricas, definindo o estado-alvo que os controles devem alcançar.',
     questions: [
       'Como o apetite a riscos é traduzido em tolerância para as áreas operacionais?',
       'Os gestores têm orientações claras sobre os níveis de risco aceitáveis?',
@@ -45,7 +45,7 @@ const activityPoints = [
     title: 'Resultados são refletidos como risco residual nos registros de risco',
     desc: 'Os resultados da resposta a riscos são documentados como risco residual nos registros de risco de sistemas, com monitoramento contínuo.',
     csf: ['ID.RA', 'ID.IM', 'GV.OV'],
-    detail: 'Após implementar controles, o risco residual — o risco que permanece após o tratamento — é registrado e monitorado. Avaliações de risco (ID.RA) e atividades de melhoria (ID.IM) alimentam a supervisão contínua (GV.OV).',
+    detail: 'Após implementar controles, o risco residual, o risco que permanece após o tratamento, é registrado e monitorado. Avaliações de risco (ID.RA) e atividades de melhoria (ID.IM) alimentam a supervisão contínua (GV.OV).',
     questions: [
       'O risco residual está documentado nos registros de risco?',
       'Existe monitoramento contínuo do risco residual?',
@@ -69,7 +69,7 @@ const activityPoints = [
     title: 'Resultados combinados mantêm registro de risco empresarial e perfil de risco',
     desc: 'O Enterprise Risk Register (ERR) e o Enterprise Risk Profile (ERP) consolidam todos os riscos para suportar decisões estratégicas.',
     csf: ['GV.PO', 'GV.OV'],
-    detail: 'O ciclo culmina com a manutenção do Enterprise Risk Register e Enterprise Risk Profile — visão completa de todos os riscos que informa as decisões de negócio e revisões da estratégia. O CSF ajuda a garantir que líderes tenham as informações necessárias para decisões informadas.',
+    detail: 'O ciclo culmina com a manutenção do Enterprise Risk Register e Enterprise Risk Profile, visão completa de todos os riscos que informa as decisões de negócio e revisões da estratégia. O CSF ajuda a garantir que líderes tenham as informações necessárias para decisões informadas.',
     questions: [
       'Existe um Enterprise Risk Register atualizado?',
       'O Enterprise Risk Profile reflete os riscos atuais da organização?',
@@ -87,16 +87,16 @@ const ERMPage: React.FC = () => {
     <div className="max-w-screen-xl mx-auto px-4 sm:px-6 py-10 animate-fadeIn">
       {/* Header */}
       <div className="mb-8">
-        <p className="text-xs font-semibold uppercase tracking-widest mb-2" style={{ color: '#0F766E' }}>NIST CSF 2.0 — NIST SP 1303</p>
+        <p className="text-xs font-semibold uppercase tracking-widest mb-2" style={{ color: '#0F766E' }}>NIST CSF 2.0. NIST SP 1303</p>
         <h1 className="text-3xl sm:text-4xl font-bold text-slate-900 mb-3">Enterprise Risk Management (ERM)</h1>
         <p className="text-slate-500 max-w-2xl text-sm leading-relaxed">
-          O NIST CSF 2.0 suporta a integração da gestão de riscos de cibersegurança ao programa de Enterprise Risk Management. O ERM existe no topo da hierarquia organizacional e abrange todos os riscos — missão, financeiro, reputação e tecnologia.
+          O NIST CSF 2.0 suporta a integração da gestão de riscos de cibersegurança ao programa de Enterprise Risk Management. O ERM existe no topo da hierarquia organizacional e abrange todos os riscos, missão, financeiro, reputação e tecnologia.
         </p>
       </div>
 
       <PageIntro
         title="O que é Enterprise Risk Management (ERM)?"
-        plain="ERM é a gestão de todos os riscos da organização — financeiro, reputação, tecnologia, cadeia de suprimentos. A cibersegurança é um subconjunto do ERM."
+        plain="ERM é a gestão de todos os riscos da organização, financeiro, reputação, tecnologia, cadeia de suprimentos. A cibersegurança é um subconjunto do ERM."
         detail="O NIST CSF ajuda a integrar os riscos de cibersegurança ao programa de ERM, usando uma linguagem que executivos entendem."
         learnMore={{ label: 'Entender o CSF', to: '/intro' }}
       />
@@ -107,7 +107,7 @@ const ERMPage: React.FC = () => {
           {[
             { label: 'Enterprise Risk Management (ERM)', sub: 'Missão, financeiro, reputação, tecnologia', color: '#0B1F33', w: 'w-full' },
             { label: 'ICT Risk Management', sub: 'TI, OT, IoT, IA, privacidade, cadeia de suprimentos', color: '#1A7FA8', w: 'w-5/6' },
-            { label: 'Cybersecurity Risk Management (CSRM)', sub: 'Confidencialidade, integridade, disponibilidade — suportado pelo CSF 2.0', color: '#1E9E52', w: 'w-4/6' },
+            { label: 'Cybersecurity Risk Management (CSRM)', sub: 'Confidencialidade, integridade, disponibilidade, suportado pelo CSF 2.0', color: '#1E9E52', w: 'w-4/6' },
           ].map((level, i) => (
             <div key={i} className={`${level.w} rounded-xl px-5 py-3 text-center text-white`} style={{ backgroundColor: level.color }}>
               <p className="text-sm font-bold">{level.label}</p>
@@ -120,7 +120,7 @@ const ERMPage: React.FC = () => {
 
       {/* 6 Activity Points */}
       <div className="mb-6">
-        <h2 className="text-sm font-bold uppercase tracking-wider text-slate-500 mb-4">6 Activity Points — CSF 2.0 no ERM</h2>
+        <h2 className="text-sm font-bold uppercase tracking-wider text-slate-500 mb-4">6 Activity Points. CSF 2.0 no ERM</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
           {activityPoints.map(ap => (
             <button
@@ -195,7 +195,7 @@ const ERMPage: React.FC = () => {
 
       {/* MEA Cycle */}
       <div className="bg-white rounded-xl border border-slate-200 p-6 mb-6">
-        <h2 className="text-sm font-bold uppercase tracking-wider text-slate-500 mb-4">Ciclo Monitor — Evaluate — Adjust (MEA)</h2>
+        <h2 className="text-sm font-bold uppercase tracking-wider text-slate-500 mb-4">Ciclo Monitor. Evaluate. Adjust (MEA)</h2>
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
           {[
             { label: 'MONITOR', color: '#0B1F33', items: ['Medir se controles estão implementados e efetivos', 'Medir se controles não prejudicam operações organizacionais'] },
@@ -222,12 +222,12 @@ const ERMPage: React.FC = () => {
         <h2 className="text-sm font-bold uppercase tracking-wider text-slate-500 mb-4">Termos-chave do ERM</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
           {[
-            { term: 'Risk Appetite', def: 'Expressão geral de como a organização define riscos que pode aceitar — definido pela liderança.' },
-            { term: 'Risk Tolerance', def: 'Expressão específica dos riscos que a organização não pode aceitar — tradução operacional do apetite.' },
-            { term: 'CSRR', def: 'Cybersecurity Risk Register — repositório de ameaças, vulnerabilidades e respostas a riscos de cibersegurança.' },
-            { term: 'ERR / ERP', def: 'Enterprise Risk Register e Enterprise Risk Profile — visão consolidada de todos os riscos organizacionais.' },
-            { term: 'Positive Risk', def: 'Oportunidades e pontos fortes — o ERM gerencia tanto riscos negativos quanto positivos.' },
-            { term: 'KPI / KRI', def: 'Key Performance Indicators e Key Risk Indicators — métricas para monitorar eficácia e risco residual.' },
+            { term: 'Risk Appetite', def: 'Expressão geral de como a organização define riscos que pode aceitar, definido pela liderança.' },
+            { term: 'Risk Tolerance', def: 'Expressão específica dos riscos que a organização não pode aceitar, tradução operacional do apetite.' },
+            { term: 'CSRR', def: 'Cybersecurity Risk Register, repositório de ameaças, vulnerabilidades e respostas a riscos de cibersegurança.' },
+            { term: 'ERR / ERP', def: 'Enterprise Risk Register e Enterprise Risk Profile, visão consolidada de todos os riscos organizacionais.' },
+            { term: 'Positive Risk', def: 'Oportunidades e pontos fortes, o ERM gerencia tanto riscos negativos quanto positivos.' },
+            { term: 'KPI / KRI', def: 'Key Performance Indicators e Key Risk Indicators, métricas para monitorar eficácia e risco residual.' },
           ].map(t => (
             <div key={t.term} className="flex gap-3">
               <div className="w-1 rounded-full bg-slate-900 shrink-0" />

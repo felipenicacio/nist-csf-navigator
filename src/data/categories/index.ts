@@ -33,7 +33,7 @@ export const csfCategories: CSFCategory[] = [
       'Atas de reuniões de alinhamento estratégico',
     ],
     relatedFrameworks: [
-      { id: 'iso27001', name: 'ISO/IEC 27001', relevance: 'Cláusula 4 — Contexto da organização', type: 'direct' },
+      { id: 'iso27001', name: 'ISO/IEC 27001', relevance: 'Cláusula 4. Contexto da organização', type: 'direct' },
       { id: 'iso31000', name: 'ISO 31000', relevance: 'Estabelecimento do contexto para gestão de riscos', type: 'direct' },
       { id: 'coso-erm', name: 'COSO ERM', relevance: 'Contexto organizacional como base da gestão de riscos corporativos', type: 'related' },
     ],
@@ -108,8 +108,8 @@ export const csfCategories: CSFCategory[] = [
       'Comunicações formais de designação de responsabilidades',
     ],
     relatedFrameworks: [
-      { id: 'iso27001', name: 'ISO/IEC 27001', relevance: 'Cláusula 5 — Liderança e responsabilidades', type: 'direct' },
-      { id: 'nist-sp800-53', name: 'NIST SP 800-53', relevance: 'Família PM — Program Management', type: 'related' },
+      { id: 'iso27001', name: 'ISO/IEC 27001', relevance: 'Cláusula 5. Liderança e responsabilidades', type: 'direct' },
+      { id: 'nist-sp800-53', name: 'NIST SP 800-53', relevance: 'Família PM. Program Management', type: 'related' },
     ],
     subcategoryIds: ['GV.RR-01', 'GV.RR-02', 'GV.RR-03', 'GV.RR-04'],
   },
@@ -144,8 +144,8 @@ export const csfCategories: CSFCategory[] = [
       'Relatórios de conformidade com políticas',
     ],
     relatedFrameworks: [
-      { id: 'iso27001', name: 'ISO/IEC 27001', relevance: 'Cláusula 5.2 — Política de segurança da informação', type: 'direct' },
-      { id: 'cis-controls', name: 'CIS Controls', relevance: 'Controle 3 — Data Protection Policy', type: 'related' },
+      { id: 'iso27001', name: 'ISO/IEC 27001', relevance: 'Cláusula 5.2. Política de segurança da informação', type: 'direct' },
+      { id: 'cis-controls', name: 'CIS Controls', relevance: 'Controle 3. Data Protection Policy', type: 'related' },
     ],
     subcategoryIds: ['GV.PO-01', 'GV.PO-02'],
   },
@@ -180,7 +180,7 @@ export const csfCategories: CSFCategory[] = [
       'Registros de decisões sobre cibersegurança',
     ],
     relatedFrameworks: [
-      { id: 'iso27001', name: 'ISO/IEC 27001', relevance: 'Cláusula 9.3 — Análise crítica pela direção', type: 'direct' },
+      { id: 'iso27001', name: 'ISO/IEC 27001', relevance: 'Cláusula 9.3. Análise crítica pela direção', type: 'direct' },
       { id: 'coso-erm', name: 'COSO ERM', relevance: 'Supervisão e governança de riscos', type: 'related' },
     ],
     subcategoryIds: ['GV.OV-01', 'GV.OV-02', 'GV.OV-03'],
@@ -217,7 +217,7 @@ export const csfCategories: CSFCategory[] = [
     ],
     relatedFrameworks: [
       { id: 'nist-sp800-161', name: 'NIST SP 800-161', relevance: 'Gestão de riscos de cibersegurança na cadeia de suprimentos', type: 'direct' },
-      { id: 'iso27001', name: 'ISO/IEC 27001', relevance: 'Anexo A — Segurança em relacionamentos com fornecedores', type: 'direct' },
+      { id: 'iso27001', name: 'ISO/IEC 27001', relevance: 'Anexo A. Segurança em relacionamentos com fornecedores', type: 'direct' },
     ],
     subcategoryIds: ['GV.SC-01', 'GV.SC-02', 'GV.SC-03', 'GV.SC-04', 'GV.SC-05', 'GV.SC-06', 'GV.SC-07', 'GV.SC-08', 'GV.SC-09', 'GV.SC-10'],
   },
@@ -254,7 +254,7 @@ export const csfCategories: CSFCategory[] = [
       'Mapeamento de fluxos de dados',
     ],
     relatedFrameworks: [
-      { id: 'cis-controls', name: 'CIS Controls', relevance: 'Controles 1 e 2 — Inventário de hardware e software', type: 'direct' },
+      { id: 'cis-controls', name: 'CIS Controls', relevance: 'Controles 1 e 2. Inventário de hardware e software', type: 'direct' },
       { id: 'iso27002', name: 'ISO/IEC 27002', relevance: 'Controles de gestão de ativos', type: 'direct' },
     ],
     subcategoryIds: ['ID.AM-01', 'ID.AM-02', 'ID.AM-03', 'ID.AM-04', 'ID.AM-05', 'ID.AM-07', 'ID.AM-08'],
@@ -326,7 +326,7 @@ export const csfCategories: CSFCategory[] = [
       'Revisões periódicas do programa de cibersegurança',
     ],
     relatedFrameworks: [
-      { id: 'iso27001', name: 'ISO/IEC 27001', relevance: 'Cláusula 10 — Melhoria contínua', type: 'direct' },
+      { id: 'iso27001', name: 'ISO/IEC 27001', relevance: 'Cláusula 10. Melhoria contínua', type: 'direct' },
     ],
     subcategoryIds: ['ID.IM-01', 'ID.IM-02', 'ID.IM-03', 'ID.IM-04'],
   },
@@ -363,8 +363,8 @@ export const csfCategories: CSFCategory[] = [
       'Logs de autenticação',
     ],
     relatedFrameworks: [
-      { id: 'cis-controls', name: 'CIS Controls', relevance: 'Controles 5 e 6 — Gestão de contas e controle de acesso', type: 'direct' },
-      { id: 'nist-sp800-53', name: 'NIST SP 800-53', relevance: 'Família AC — Access Control', type: 'direct' },
+      { id: 'cis-controls', name: 'CIS Controls', relevance: 'Controles 5 e 6. Gestão de contas e controle de acesso', type: 'direct' },
+      { id: 'nist-sp800-53', name: 'NIST SP 800-53', relevance: 'Família AC. Access Control', type: 'direct' },
       { id: 'iso27002', name: 'ISO/IEC 27002', relevance: 'Controles de acesso e gestão de identidades', type: 'direct' },
     ],
     subcategoryIds: ['PR.AA-01', 'PR.AA-02', 'PR.AA-03', 'PR.AA-04', 'PR.AA-05', 'PR.AA-06'],
@@ -400,8 +400,8 @@ export const csfCategories: CSFCategory[] = [
       'Métricas de participação e eficácia',
     ],
     relatedFrameworks: [
-      { id: 'cis-controls', name: 'CIS Controls', relevance: 'Controle 14 — Conscientização e treinamento', type: 'direct' },
-      { id: 'nist-sp800-53', name: 'NIST SP 800-53', relevance: 'Família AT — Awareness and Training', type: 'direct' },
+      { id: 'cis-controls', name: 'CIS Controls', relevance: 'Controle 14. Conscientização e treinamento', type: 'direct' },
+      { id: 'nist-sp800-53', name: 'NIST SP 800-53', relevance: 'Família AT. Awareness and Training', type: 'direct' },
     ],
     subcategoryIds: ['PR.AT-01', 'PR.AT-02'],
   },
@@ -436,8 +436,8 @@ export const csfCategories: CSFCategory[] = [
       'Logs de acesso a dados sensíveis',
     ],
     relatedFrameworks: [
-      { id: 'cis-controls', name: 'CIS Controls', relevance: 'Controle 3 — Proteção de dados', type: 'direct' },
-      { id: 'nist-sp800-53', name: 'NIST SP 800-53', relevance: 'Família SC — System and Communications Protection', type: 'direct' },
+      { id: 'cis-controls', name: 'CIS Controls', relevance: 'Controle 3. Proteção de dados', type: 'direct' },
+      { id: 'nist-sp800-53', name: 'NIST SP 800-53', relevance: 'Família SC. System and Communications Protection', type: 'direct' },
       { id: 'iso27002', name: 'ISO/IEC 27002', relevance: 'Controles de segurança de dados', type: 'direct' },
     ],
     subcategoryIds: ['PR.DS-01', 'PR.DS-02', 'PR.DS-10', 'PR.DS-11'],
@@ -473,8 +473,8 @@ export const csfCategories: CSFCategory[] = [
       'Política de gestão de vulnerabilidades',
     ],
     relatedFrameworks: [
-      { id: 'cis-controls', name: 'CIS Controls', relevance: 'Controles 4, 7 e 8 — Configuração, patches e malware', type: 'direct' },
-      { id: 'nist-sp800-53', name: 'NIST SP 800-53', relevance: 'Família SI — System and Information Integrity', type: 'direct' },
+      { id: 'cis-controls', name: 'CIS Controls', relevance: 'Controles 4, 7 e 8. Configuração, patches e malware', type: 'direct' },
+      { id: 'nist-sp800-53', name: 'NIST SP 800-53', relevance: 'Família SI. System and Information Integrity', type: 'direct' },
     ],
     subcategoryIds: ['PR.PS-01', 'PR.PS-02', 'PR.PS-03', 'PR.PS-04', 'PR.PS-05', 'PR.PS-06'],
   },
@@ -548,7 +548,7 @@ export const csfCategories: CSFCategory[] = [
     ],
     relatedFrameworks: [
       { id: 'nist-sp800-137', name: 'NIST SP 800-137', relevance: 'Monitoramento contínuo de segurança da informação', type: 'direct' },
-      { id: 'cis-controls', name: 'CIS Controls', relevance: 'Controle 8 — Gerenciamento de logs de auditoria', type: 'direct' },
+      { id: 'cis-controls', name: 'CIS Controls', relevance: 'Controle 8. Gerenciamento de logs de auditoria', type: 'direct' },
     ],
     subcategoryIds: ['DE.CM-01', 'DE.CM-02', 'DE.CM-03', 'DE.CM-06', 'DE.CM-09'],
   },

@@ -4,7 +4,7 @@ import { ArrowRight, ChevronDown, ChevronUp, BookOpen, Target, MessageSquare, Ch
 import { getFnColors } from '../utils/fnColors';
 
 const fns = [
-  { id: 'GV', name: 'Governar', verb: 'Estabelecer e monitorar', role: 'prevenir + detectar', desc: 'Define a estratégia, as políticas e a supervisão. É a base de tudo — sem governança, as demais Functions perdem direção.', always: true },
+  { id: 'GV', name: 'Governar', verb: 'Estabelecer e monitorar', role: 'prevenir + detectar', desc: 'Define a estratégia, as políticas e a supervisão. É a base de tudo, sem governança, as demais Functions perdem direção.', always: true },
   { id: 'ID', name: 'Identificar', verb: 'Compreender', role: 'prevenir', desc: 'Entender o que a organização tem (ativos, dados, pessoas, fornecedores) e quais são os riscos associados.', always: true },
   { id: 'PR', name: 'Proteger', verb: 'Usar salvaguardas', role: 'prevenir', desc: 'Colocar controles para reduzir a chance de ataques acontecerem ou limitarem seu impacto.', always: true },
   { id: 'DE', name: 'Detectar', verb: 'Identificar e analisar', role: 'detectar', desc: 'Monitorar continuamente para encontrar ataques em andamento antes que causem dano maior.', always: true },
@@ -19,7 +19,7 @@ const faqs = [
   },
   {
     q: 'Preciso implementar tudo de uma vez?',
-    a: 'Não. O CSF é flexível — você começa pelo que faz mais sentido para o seu contexto e risco. Algumas organizações começam pelo GOVERN para estruturar a governança; outras começam pelo IDENTIFY para entender o que têm. Não existe sequência obrigatória.',
+    a: 'Não. O CSF é flexível, você começa pelo que faz mais sentido para o seu contexto e risco. Algumas organizações começam pelo GOVERN para estruturar a governança; outras começam pelo IDENTIFY para entender o que têm. Não existe sequência obrigatória.',
   },
   {
     q: 'O CSF substitui a ISO 27001 ou o CIS Controls?',
@@ -27,7 +27,7 @@ const faqs = [
   },
   {
     q: 'Como o CSF se aplica à minha organização se sou uma empresa pequena?',
-    a: 'O CSF foi criado para ser adaptado a qualquer organização, independente de tamanho, setor ou maturidade técnica. Uma empresa pequena não precisa implementar todas as 106 Subcategories — começa pelos resultados mais críticos para o seu negócio e expande progressivamente.',
+    a: 'O CSF foi criado para ser adaptado a qualquer organização, independente de tamanho, setor ou maturidade técnica. Uma empresa pequena não precisa implementar todas as 106 Subcategories, começa pelos resultados mais críticos para o seu negócio e expande progressivamente.',
   },
   {
     q: 'Qual é a diferença entre Function, Category e Subcategory?',
@@ -66,7 +66,7 @@ const IntroPage: React.FC = () => {
             O que é o NIST<br />Cybersecurity Framework?
           </h1>
           <p className="text-white/70 text-base sm:text-lg max-w-2xl mx-auto leading-relaxed mb-8">
-            Um guia criado pelo governo dos Estados Unidos para ajudar qualquer organização a entender, gerenciar e reduzir seus riscos de cibersegurança — independente do tamanho, setor ou nível técnico.
+            Um guia criado pelo governo dos Estados Unidos para ajudar qualquer organização a entender, gerenciar e reduzir seus riscos de cibersegurança, independente do tamanho, setor ou nível técnico.
           </p>
           <div className="flex flex-wrap justify-center gap-3">
             <Link to="/map" className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-semibold bg-white/10 text-white border border-white/20 hover:bg-white/20 transition-colors">
@@ -81,7 +81,7 @@ const IntroPage: React.FC = () => {
 
       <div className="max-w-screen-lg mx-auto px-4 sm:px-6">
 
-        {/* Por onde começar — onboarding */}
+        {/* Por onde começar, onboarding */}
         <section className="py-14">
           <div className="text-center mb-8">
             <h2 className="text-2xl sm:text-3xl font-bold text-slate-900 mb-2">Por onde você quer começar?</h2>
@@ -113,12 +113,12 @@ const IntroPage: React.FC = () => {
                   {
                     icon: '📋',
                     title: 'Uma taxonomia de resultados',
-                    desc: 'O CSF descreve o que sua organização deve ser capaz de fazer em cibersegurança — não como fazer. Ele define resultados desejados, organizados em Functions, Categories e Subcategories.',
+                    desc: 'O CSF descreve o que sua organização deve ser capaz de fazer em cibersegurança, não como fazer. Ele define resultados desejados, organizados em Functions, Categories e Subcategories.',
                   },
                   {
                     icon: '🏢',
                     title: 'Para qualquer organização',
-                    desc: 'Criado para indústria, governo, academia e ONGs de qualquer tamanho e setor. A taxonomia é neutra em tecnologia, país e setor — adapte ao seu contexto.',
+                    desc: 'Criado para indústria, governo, academia e ONGs de qualquer tamanho e setor. A taxonomia é neutra em tecnologia, país e setor, adapte ao seu contexto.',
                   },
                   {
                     icon: '🔧',
@@ -128,7 +128,7 @@ const IntroPage: React.FC = () => {
                   {
                     icon: '🌐',
                     title: 'Linguagem comum',
-                    desc: 'Permite que executivos, gestores, técnicos e fornecedores falem sobre cibersegurança usando a mesma estrutura — facilitando decisões e comunicação interna e externa.',
+                    desc: 'Permite que executivos, gestores, técnicos e fornecedores falem sobre cibersegurança usando a mesma estrutura, facilitando decisões e comunicação interna e externa.',
                   },
                 ].map(item => (
                   <div key={item.title} className="flex gap-4">
@@ -208,7 +208,7 @@ const IntroPage: React.FC = () => {
               ))}
             </div>
             <p className="text-xs text-slate-400 bg-slate-50 rounded-lg px-4 py-3 border border-slate-200">
-              A escolha depende do nível de risco, do custo do tratamento e do apetite a riscos da organização — definido na Function <strong className="text-slate-600">GOVERN</strong>.
+              A escolha depende do nível de risco, do custo do tratamento e do apetite a riscos da organização, definido na Function <strong className="text-slate-600">GOVERN</strong>.
             </p>
           </div>
         </section>
@@ -217,7 +217,7 @@ const IntroPage: React.FC = () => {
         <section className="pb-14">
           <div className="text-center mb-8">
             <h2 className="text-2xl sm:text-3xl font-bold text-slate-900 mb-2">As 6 Functions do CSF</h2>
-            <p className="text-slate-500 text-sm max-w-xl mx-auto">Cada Function representa um papel distinto no gerenciamento de riscos. Todas devem ser abordadas — não existe sequência obrigatória.</p>
+            <p className="text-slate-500 text-sm max-w-xl mx-auto">Cada Function representa um papel distinto no gerenciamento de riscos. Todas devem ser abordadas, não existe sequência obrigatória.</p>
           </div>
 
           {/* Continuous vs incident-activated */}
@@ -225,7 +225,7 @@ const IntroPage: React.FC = () => {
             <div className="bg-slate-50 border border-slate-200 rounded-xl p-4">
               <div className="flex items-center gap-2 mb-2">
                 <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
-                <span className="text-xs font-bold text-slate-700 uppercase tracking-wide">Contínuas — acontecem sempre</span>
+                <span className="text-xs font-bold text-slate-700 uppercase tracking-wide">Contínuas, acontecem sempre</span>
               </div>
               <p className="text-xs text-slate-500">GV · ID · PR · DE devem operar continuamente, antes, durante e depois de qualquer incidente.</p>
             </div>
@@ -245,7 +245,7 @@ const IntroPage: React.FC = () => {
                 <span className="text-2xl font-black opacity-30 font-mono" style={{ color: getFnColors('GV').text }}>GV</span>
                 <div className="flex-1">
                   <div className="flex items-center gap-2 flex-wrap">
-                    <h3 className="text-base font-bold" style={{ color: getFnColors('GV').text }}>GOVERN — Governar</h3>
+                    <h3 className="text-base font-bold" style={{ color: getFnColors('GV').text }}>GOVERN. Governar</h3>
                     <span className="text-xs px-2 py-0.5 rounded-full font-semibold" style={{ backgroundColor: `${getFnColors('GV').text}15`, color: getFnColors('GV').text }}>
                       Permeia todas as demais
                     </span>
@@ -299,11 +299,11 @@ const IntroPage: React.FC = () => {
           </div>
         </section>
 
-        {/* Quem faz o quê — fluxo hierárquico */}
+        {/* Quem faz o quê, fluxo hierárquico */}
         <section className="pb-14">
           <div className="bg-white rounded-2xl border border-slate-200 p-8">
             <h2 className="text-xl font-bold text-slate-900 mb-2">Quem faz o quê no CSF?</h2>
-            <p className="text-slate-500 text-sm mb-6">O CSF funciona como uma linguagem comum entre três níveis da organização. A informação flui em duas direções — de cima para baixo (estratégia) e de baixo para cima (resultados e riscos).</p>
+            <p className="text-slate-500 text-sm mb-6">O CSF funciona como uma linguagem comum entre três níveis da organização. A informação flui em duas direções, de cima para baixo (estratégia) e de baixo para cima (resultados e riscos).</p>
             <div className="space-y-3">
               {[
                 {
@@ -355,7 +355,7 @@ const IntroPage: React.FC = () => {
             </div>
             <div className="mt-4 flex items-center justify-center gap-2 text-xs text-slate-400">
               <span>↕</span>
-              <span>Fluxo bidirecional — estratégia desce, resultados e riscos sobem</span>
+              <span>Fluxo bidirecional, estratégia desce, resultados e riscos sobem</span>
             </div>
           </div>
         </section>

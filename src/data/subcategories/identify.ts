@@ -123,7 +123,7 @@ export const identifySubcategories: CSFSubcategory[] = [
     code: 'ID.AM-04',
     name: 'Inventário de serviços externos',
     description: 'Inventários de serviços e sistemas externos são mantidos.',
-    whatItMeans: 'Serviços externos — nuvem, APIs, SaaS, parceiros — expandem a superfície de ataque. Conhecê-los é o primeiro passo para gerenciá-los.',
+    whatItMeans: 'Serviços externos, nuvem, APIs, SaaS, parceiros, expandem a superfície de ataque. Conhecê-los é o primeiro passo para gerenciá-los.',
     howToImplement: [
       'Inventariar todos os serviços e sistemas externos utilizados',
       'Identificar os dados e acessos que cada serviço tem',
@@ -237,7 +237,7 @@ export const identifySubcategories: CSFSubcategory[] = [
     code: 'ID.AM-08',
     name: 'Sistemas e serviços em ciclo de vida',
     description: 'Sistemas, hardware, software, serviços e dados são gerenciados durante seus ciclos de vida para compreender os riscos de segurança.',
-    whatItMeans: 'A segurança deve ser considerada em todas as fases do ciclo de vida dos ativos — da aquisição ao descarte — pois cada fase apresenta riscos específicos.',
+    whatItMeans: 'A segurança deve ser considerada em todas as fases do ciclo de vida dos ativos, da aquisição ao descarte, pois cada fase apresenta riscos específicos.',
     howToImplement: [
       'Incorporar segurança nos processos de aquisição, desenvolvimento e descarte',
       'Identificar e tratar riscos de ativos em fim de vida',
@@ -315,7 +315,7 @@ export const identifySubcategories: CSFSubcategory[] = [
     code: 'ID.RA-02',
     name: 'Inteligência de ameaças e vulnerabilidades compartilhada',
     description: 'Informações sobre ameaças cibernéticas e vulnerabilidades são recebidas de fóruns e fontes de compartilhamento de informações.',
-    whatItMeans: 'A organização não deve depender apenas de conhecimento interno — deve se conectar a fontes externas de inteligência de ameaças para antecipar riscos.',
+    whatItMeans: 'A organização não deve depender apenas de conhecimento interno, deve se conectar a fontes externas de inteligência de ameaças para antecipar riscos.',
     howToImplement: [
       'Assinar feeds de inteligência de ameaças (CTI)',
       'Participar de ISACs ou grupos de compartilhamento do setor',
@@ -353,7 +353,7 @@ export const identifySubcategories: CSFSubcategory[] = [
     code: 'ID.RA-03',
     name: 'Ameaças internas e externas identificadas',
     description: 'Ameaças internas e externas à organização são identificadas e registradas.',
-    whatItMeans: 'A organização deve manter um entendimento claro das ameaças que enfrenta — tanto de agentes externos (hackers, grupos criminosos) quanto internos (funcionários, contratados).',
+    whatItMeans: 'A organização deve manter um entendimento claro das ameaças que enfrenta, tanto de agentes externos (hackers, grupos criminosos) quanto internos (funcionários, contratados).',
     howToImplement: [
       'Realizar análise de ameaças relevantes ao setor e à organização',
       'Incluir ameaças internas (insiders) na análise',
@@ -467,7 +467,7 @@ export const identifySubcategories: CSFSubcategory[] = [
     code: 'ID.RA-06',
     name: 'Respostas a riscos selecionadas e priorizadas',
     description: 'Respostas a riscos são selecionadas, priorizadas, planejadas, rastreadas e comunicadas.',
-    whatItMeans: 'Para cada risco identificado e priorizado, a organização deve definir como irá responder — tratar, aceitar, transferir ou evitar — e acompanhar a implementação.',
+    whatItMeans: 'Para cada risco identificado e priorizado, a organização deve definir como irá responder, tratar, aceitar, transferir ou evitar, e acompanhar a implementação.',
     howToImplement: [
       'Definir resposta para cada risco (tratar, aceitar, transferir, evitar)',
       'Desenvolver planos de tratamento para riscos que serão mitigados',
@@ -505,7 +505,7 @@ export const identifySubcategories: CSFSubcategory[] = [
     code: 'ID.RA-07',
     name: 'Mudanças e requisitos avaliados quanto ao risco',
     description: 'Mudanças nos sistemas de informação e no ambiente operacional são avaliadas quanto ao risco de cibersegurança antes de serem implementadas.',
-    whatItMeans: 'Toda mudança significativa nos sistemas ou no ambiente pode introduzir novos riscos — é necessário avaliá-los antes de implementar.',
+    whatItMeans: 'Toda mudança significativa nos sistemas ou no ambiente pode introduzir novos riscos, é necessário avaliá-los antes de implementar.',
     howToImplement: [
       'Integrar avaliação de riscos ao processo de gestão de mudanças',
       'Definir critérios de mudanças que requerem avaliação de segurança',
@@ -542,7 +542,7 @@ export const identifySubcategories: CSFSubcategory[] = [
     code: 'ID.RA-08',
     name: 'Processos para receber relatórios de vulnerabilidades',
     description: 'Processos para receber, analisar e responder a relatórios de vulnerabilidades de fontes internas e externas são estabelecidos.',
-    whatItMeans: 'A organização deve ter canais e processos definidos para receber relatórios de vulnerabilidades — de pesquisadores, usuários, parceiros e internamente.',
+    whatItMeans: 'A organização deve ter canais e processos definidos para receber relatórios de vulnerabilidades, de pesquisadores, usuários, parceiros e internamente.',
     howToImplement: [
       'Criar processo formal de divulgação responsável de vulnerabilidades (VDP)',
       'Estabelecer canal para recebimento de relatórios externos',
@@ -656,7 +656,7 @@ export const identifySubcategories: CSFSubcategory[] = [
     code: 'ID.IM-01',
     name: 'Melhorias identificadas de avaliações',
     description: 'Melhorias são identificadas a partir de avaliações de cibersegurança, como testes de penetração, exercícios de red team e auditorias.',
-    whatItMeans: 'Avaliações técnicas e auditorias produzem oportunidades concretas de melhoria — a organização deve capturar e implementar essas oportunidades sistematicamente.',
+    whatItMeans: 'Avaliações técnicas e auditorias produzem oportunidades concretas de melhoria, a organização deve capturar e implementar essas oportunidades sistematicamente.',
     howToImplement: [
       'Realizar testes de penetração e exercícios de red team periodicamente',
       'Realizar auditorias internas e externas de cibersegurança',
@@ -732,7 +732,7 @@ export const identifySubcategories: CSFSubcategory[] = [
     code: 'ID.IM-03',
     name: 'Melhorias de informações compartilhadas',
     description: 'Melhorias são identificadas a partir do compartilhamento de informações com parceiros e análise de eventos de cibersegurança.',
-    whatItMeans: 'A organização deve aproveitar o conhecimento externo — de parceiros, comunidades e análises de eventos do setor — para melhorar continuamente.',
+    whatItMeans: 'A organização deve aproveitar o conhecimento externo, de parceiros, comunidades e análises de eventos do setor, para melhorar continuamente.',
     howToImplement: [
       'Participar de comunidades de compartilhamento de informações de segurança',
       'Analisar eventos e incidentes do setor para identificar melhorias',
@@ -769,7 +769,7 @@ export const identifySubcategories: CSFSubcategory[] = [
     code: 'ID.IM-04',
     name: 'Planos de resposta a incidentes estabelecidos e mantidos',
     description: 'Planos de resposta a incidentes e outros planos de cibersegurança que afetam as operações são estabelecidos, comunicados, mantidos e melhorados.',
-    whatItMeans: 'O plano de resposta a incidentes não é um documento estático — precisa ser estabelecido formalmente, comunicado a quem precisa agir, mantido atualizado e continuamente melhorado com base em exercícios e lições aprendidas.',
+    whatItMeans: 'O plano de resposta a incidentes não é um documento estático, precisa ser estabelecido formalmente, comunicado a quem precisa agir, mantido atualizado e continuamente melhorado com base em exercícios e lições aprendidas.',
     howToImplement: [
       'Desenvolver e documentar formalmente o Plano de Resposta a Incidentes',
       'Comunicar o plano a todas as partes envolvidas na resposta',

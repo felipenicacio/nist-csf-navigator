@@ -7,7 +7,7 @@ import { allSubcategories } from '../data';
 import { MappingTypeBadge } from '../components/ui';
 import PageIntro from '../components/ui/PageIntro';
 
-// Derived from csfFunctions — single source of truth for colors
+// Derived from csfFunctions, single source of truth for colors
 const getFnColor = (id: string) => {
   const f = csfFunctions.find(fn => fn.id === id);
   return { bg: f?.colorHex ?? '#E2E8F0', light: f?.colorLight ?? '#F8FAFC', text: f?.color ?? '#334155' };
@@ -50,7 +50,7 @@ const ConsultantViewPage: React.FC = () => {
           </div>
         </div>
         <p className="text-slate-500 max-w-2xl text-sm leading-relaxed">
-          Navegue pelo CSF como um roteiro de assessment. Selecione Function → Category → Subcategory e acesse perguntas de diagnóstico, evidências esperadas, crosswalk e controles aplicáveis — prontos para usar em reuniões com o cliente.
+          Navegue pelo CSF como um roteiro de assessment. Selecione Function → Category → Subcategory e acesse perguntas de diagnóstico, evidências esperadas, crosswalk e controles aplicáveis, prontos para usar em reuniões com o cliente.
         </p>
       </div>
 
@@ -64,7 +64,7 @@ const ConsultantViewPage: React.FC = () => {
       <div className="flex items-center gap-2 text-sm mb-8 flex-wrap">
         {[
           { label: 'Function', active: step === 'function', done: !!selectedFn, onClick: () => reset('function') },
-          { label: fn ? `${fn.code} — ${fn.nameEn}` : 'Category', active: step === 'category', done: !!selectedCat, onClick: () => selectedFn && reset('category') },
+          { label: fn ? `${fn.code}, ${fn.nameEn}` : 'Category', active: step === 'category', done: !!selectedCat, onClick: () => selectedFn && reset('category') },
           { label: cat ? cat.code : 'Subcategory', active: step === 'subcategory', done: !!selectedSub, onClick: () => selectedCat && reset('subcategory') },
           { label: sub ? sub.code : 'Diagnóstico', active: step === 'detail', done: false, onClick: () => {} },
         ].map((b, i) => (
@@ -91,7 +91,7 @@ const ConsultantViewPage: React.FC = () => {
       {/* ── STEP 1: SELECT FUNCTION ── */}
       {step === 'function' && (
         <div>
-          <p className="text-xs font-semibold uppercase tracking-widest text-slate-400 mb-4">Passo 1 — Selecione a Function</p>
+          <p className="text-xs font-semibold uppercase tracking-widest text-slate-400 mb-4">Passo 1. Selecione a Function</p>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {csfFunctions.map(f => {
               const c = getFnColor(f.id);
@@ -130,7 +130,7 @@ const ConsultantViewPage: React.FC = () => {
       {/* ── STEP 2: SELECT CATEGORY ── */}
       {step === 'category' && fn && (
         <div>
-          <p className="text-xs font-semibold uppercase tracking-widest text-slate-400 mb-4">Passo 2 — Selecione a Category</p>
+          <p className="text-xs font-semibold uppercase tracking-widest text-slate-400 mb-4">Passo 2. Selecione a Category</p>
           <div className="space-y-3">
             {fnCats.map(c => {
               const subCount = allSubcategories.filter(s => s.categoryId === c.id).length;
@@ -162,7 +162,7 @@ const ConsultantViewPage: React.FC = () => {
       {/* ── STEP 3: SELECT SUBCATEGORY ── */}
       {step === 'subcategory' && cat && fn && (
         <div>
-          <p className="text-xs font-semibold uppercase tracking-widest text-slate-400 mb-4">Passo 3 — Selecione a Subcategory</p>
+          <p className="text-xs font-semibold uppercase tracking-widest text-slate-400 mb-4">Passo 3. Selecione a Subcategory</p>
           <div className="space-y-2">
             {catSubs.map(s => {
               const fc = getFnColor(fn.id);

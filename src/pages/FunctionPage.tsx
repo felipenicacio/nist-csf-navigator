@@ -30,7 +30,7 @@ const FunctionPage: React.FC = () => {
 
       <PageIntro
         title="O que é uma Function?"
-        plain="Uma Function é o nível mais alto do CSF — agrupa resultados de cibersegurança relacionados a um mesmo objetivo."
+        plain="Uma Function é o nível mais alto do CSF, agrupa resultados de cibersegurança relacionados a um mesmo objetivo."
         detail="Cada Function se divide em Categories, que por sua vez se dividem em Subcategories com resultados específicos."
       />
       {/* Function header */}
@@ -41,7 +41,7 @@ const FunctionPage: React.FC = () => {
           </div>
           <div className="flex-1">
             <p className="text-white/60 text-sm font-medium uppercase tracking-widest mb-1">Function</p>
-            <h1 className="text-3xl sm:text-4xl font-bold mb-2">{fn.nameEn} — {fn.name}</h1>
+            <h1 className="text-3xl sm:text-4xl font-bold mb-2">{fn.nameEn}, {fn.name}</h1>
             <p className="text-white/80 text-base leading-relaxed max-w-3xl">{fn.description}</p>
             <div className="flex gap-2 mt-4">
               {fn.layers.map(l => (

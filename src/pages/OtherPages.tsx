@@ -88,7 +88,7 @@ export const TiersPage: React.FC = () => {
   return (
     <div className="max-w-screen-xl mx-auto px-4 sm:px-6 py-10 animate-fadeIn">
       <div className="mb-8">
-        <p className="text-xs font-semibold uppercase tracking-widest mb-2" style={{ color: '#0F766E' }}>NIST CSF 2.0 — NIST SP 1302</p>
+        <p className="text-xs font-semibold uppercase tracking-widest mb-2" style={{ color: '#0F766E' }}>NIST CSF 2.0. NIST SP 1302</p>
         <h1 className="text-3xl sm:text-4xl font-bold text-slate-900 mb-3">CSF Tiers</h1>
         <p className="text-slate-500 max-w-2xl leading-relaxed text-sm">
           Os Tiers caracterizam o rigor das práticas de gestão de riscos de cibersegurança de uma organização. Cada Tier possui dois componentes distintos: <strong className="text-slate-700">Governance</strong> (relativo ao GOVERN) e <strong className="text-slate-700">Management</strong> (relativo às outras 5 Functions).
@@ -97,8 +97,8 @@ export const TiersPage: React.FC = () => {
 
       <PageIntro
         title="O que são os Tiers?"
-        plain="Os Tiers descrevem o quão rigorosa é a gestão de riscos de cibersegurança da organização — do ad hoc (Tier 1) ao adaptativo (Tier 4)."
-        detail="Não são etapas que precisam ser seguidas em ordem. O objetivo não é atingir o Tier 4 — é identificar o nível adequado ao seu contexto e risco."
+        plain="Os Tiers descrevem o quão rigorosa é a gestão de riscos de cibersegurança da organização, do ad hoc (Tier 1) ao adaptativo (Tier 4)."
+        detail="Não são etapas que precisam ser seguidas em ordem. O objetivo não é atingir o Tier 4, é identificar o nível adequado ao seu contexto e risco."
         learnMore={{ label: 'Voltar à introdução', to: '/intro' }}
       />
       {/* Key notes */}
@@ -212,7 +212,7 @@ export const ProfilesPage: React.FC = () => {
   return (
     <div className="max-w-screen-xl mx-auto px-4 sm:px-6 py-10 animate-fadeIn">
       <div className="mb-8">
-        <p className="text-xs font-semibold uppercase tracking-widest mb-2" style={{ color: '#0F766E' }}>NIST CSF 2.0 — NIST SP 1301</p>
+        <p className="text-xs font-semibold uppercase tracking-widest mb-2" style={{ color: '#0F766E' }}>NIST CSF 2.0. NIST SP 1301</p>
         <h1 className="text-3xl sm:text-4xl font-bold text-slate-900 mb-3">Organizational Profiles</h1>
         <p className="text-slate-500 max-w-2xl text-sm leading-relaxed">
           Profiles são o mecanismo central do CSF 2.0 para descrever o estado atual e desejado da cibersegurança. São criados selecionando e priorizando outcomes do CSF Core relevantes ao contexto organizacional.
@@ -336,12 +336,12 @@ export const ProfilesPage: React.FC = () => {
           <div className="bg-white rounded-xl border border-slate-200 p-6">
             <h2 className="text-sm font-bold uppercase tracking-wider text-slate-500 mb-3">O que são Community Profiles</h2>
             <p className="text-sm text-slate-600 leading-relaxed mb-4">
-              Um Community Profile é um baseline de outcomes do CSF criado para múltiplas organizações com interesses e objetivos comuns — geralmente um setor, subssetor, tipo de tecnologia ou caso de uso específico.
+              Um Community Profile é um baseline de outcomes do CSF criado para múltiplas organizações com interesses e objetivos comuns, geralmente um setor, subssetor, tipo de tecnologia ou caso de uso específico.
             </p>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {[
                 { title: 'Base para o Target Profile', desc: 'Uma organização pode copiar um Community Profile relevante como ponto de partida para seu próprio Target Profile.' },
-                { title: 'Adaptável', desc: 'O Community Profile pode ser ajustado — alterando prioridades, adicionando Subcategories ou Informative References específicos.' },
+                { title: 'Adaptável', desc: 'O Community Profile pode ser ajustado, alterando prioridades, adicionando Subcategories ou Informative References específicos.' },
                 { title: 'Criado por setores', desc: 'Setores como saúde, financeiro, energia e manufatura publicam Community Profiles específicos para suas necessidades.' },
                 { title: 'Disponível no NIST', desc: 'O NIST mantém repositório de Community Profiles públicos em csrc.nist.gov/projects/cybersecurity-framework.' },
               ].map(item => (
@@ -365,13 +365,13 @@ export const ProfilesPage: React.FC = () => {
           <div className="bg-white rounded-xl border border-slate-200 p-6">
             <h2 className="text-sm font-bold uppercase tracking-wider text-slate-500 mb-3">Informative References</h2>
             <p className="text-sm text-slate-600 leading-relaxed mb-4">
-              Informative References são os mapeamentos formais entre os outcomes do CSF e outros documentos — padrões, diretrizes, regulações e boas práticas. Eles ajudam a entender como alcançar cada outcome do CSF usando referências que a organização já conhece ou utiliza.
+              Informative References são os mapeamentos formais entre os outcomes do CSF e outros documentos, padrões, diretrizes, regulações e boas práticas. Eles ajudam a entender como alcançar cada outcome do CSF usando referências que a organização já conhece ou utiliza.
             </p>
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-4">
               {[
-                { fw: 'NIST SP 800-53', desc: 'Catálogo de controles de segurança e privacidade — referência mais completa para implementação técnica.' },
-                { fw: 'ISO/IEC 27001', desc: 'Requisitos para SGSI — complementar ao CSF para organizações que buscam certificação.' },
-                { fw: 'CIS Controls v8', desc: 'Controles priorizados e práticos — ideal para organizações que precisam de guidance direto e acionável.' },
+                { fw: 'NIST SP 800-53', desc: 'Catálogo de controles de segurança e privacidade, referência mais completa para implementação técnica.' },
+                { fw: 'ISO/IEC 27001', desc: 'Requisitos para SGSI, complementar ao CSF para organizações que buscam certificação.' },
+                { fw: 'CIS Controls v8', desc: 'Controles priorizados e práticos, ideal para organizações que precisam de guidance direto e acionável.' },
               ].map(item => (
                 <div key={item.fw} className="bg-slate-50 rounded-xl p-4">
                   <p className="text-sm font-bold text-slate-800 mb-1">{item.fw}</p>
@@ -384,7 +384,7 @@ export const ProfilesPage: React.FC = () => {
           <div className="bg-white rounded-xl border border-slate-200 p-6">
             <h2 className="text-sm font-bold uppercase tracking-wider text-slate-500 mb-3">NIST Cybersecurity & Privacy Reference Tool (CPRT)</h2>
             <p className="text-sm text-slate-600 leading-relaxed mb-4">
-              O CPRT é a ferramenta oficial do NIST para acessar, navegar e baixar os mapeamentos entre o CSF e outros frameworks. É a fonte autorizada para Informative References — sempre atualizada pelo NIST.
+              O CPRT é a ferramenta oficial do NIST para acessar, navegar e baixar os mapeamentos entre o CSF e outros frameworks. É a fonte autorizada para Informative References, sempre atualizada pelo NIST.
             </p>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-4">
               {[
@@ -436,7 +436,7 @@ export const CrosswalkPage: React.FC = () => {
 
       <PageIntro
         title="O que é um Crosswalk?"
-        plain="Crosswalk é o mapeamento entre os resultados do CSF e outros frameworks e padrões — como NIST SP 800-53, ISO/IEC 27002 e CIS Controls."
+        plain="Crosswalk é o mapeamento entre os resultados do CSF e outros frameworks e padrões, como NIST SP 800-53, ISO/IEC 27002 e CIS Controls."
         detail="Esses mapeamentos mostram quais controles de outros frameworks contribuem para alcançar cada resultado do CSF. São orientativos, não equivalências 1:1."
       />
       <div className="bg-amber-50 border border-amber-200 rounded-xl p-4 mb-8">
@@ -456,7 +456,7 @@ export const CrosswalkPage: React.FC = () => {
               ? { backgroundColor: f.color, color: 'white', borderColor: f.color }
               : { backgroundColor: 'white', color: f.color, borderColor: f.color }}
           >
-            {f.code} — {f.nameEn}
+            {f.code}, {f.nameEn}
           </button>
         ))}
       </div>
@@ -664,7 +664,7 @@ export const AboutPage: React.FC = () => (
       <div className="bg-white rounded-xl border border-slate-200 p-6">
         <p className="text-xs font-bold uppercase tracking-widest text-slate-400 mb-4">Sobre o projeto</p>
         <p className="text-slate-600 text-sm leading-relaxed">
-          O NIST CSF 2.0 Navigator é uma ferramenta educacional open source que transforma o NIST Cybersecurity Framework 2.0 em uma experiência visual, interativa e acessível. O objetivo é facilitar a compreensão do framework, orientar sua implementação e explorar relações com outros frameworks de segurança, risco e continuidade — como NIST SP 800-53, ISO/IEC 27002, CIS Controls e MITRE ATT&CK.
+          O NIST CSF 2.0 Navigator é uma ferramenta educacional open source que transforma o NIST Cybersecurity Framework 2.0 em uma experiência visual, interativa e acessível. O objetivo é facilitar a compreensão do framework, orientar sua implementação e explorar relações com outros frameworks de segurança, risco e continuidade, como NIST SP 800-53, ISO/IEC 27002, CIS Controls e MITRE ATT&CK.
         </p>
         <a
           href="https://github.com/felipenicacio/nist-csf-navigator"

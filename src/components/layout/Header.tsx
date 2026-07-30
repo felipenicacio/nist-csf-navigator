@@ -17,10 +17,10 @@ const exploreItems = [
 ];
 
 const implementItems = [
-  { label: 'Guia de Implementação', desc: 'Processo de 5 etapas — Profiles', to: '/implementation', icon: <ClipboardList size={16} /> },
+  { label: 'Guia de Implementação', desc: 'Processo de 5 etapas. Profiles', to: '/implementation', icon: <ClipboardList size={16} /> },
   { label: 'Organizational Profiles', desc: 'Current, Target e Gap Analysis', to: '/profiles', icon: <ArrowRight size={16} /> },
   { label: 'CSF Tiers', desc: 'Governance e Management por Function', to: '/tiers', icon: <ArrowRight size={16} /> },
-  { label: 'Enterprise Risk Management', desc: '6 Activity Points — ERM + CSF', to: '/erm', icon: <ArrowRight size={16} /> },
+  { label: 'Enterprise Risk Management', desc: '6 Activity Points. ERM + CSF', to: '/erm', icon: <ArrowRight size={16} /> },
   { label: 'C-SCRM', desc: 'Gestão de riscos da cadeia de suprimentos', to: '/cscrm', icon: <ArrowRight size={16} /> },
   { label: 'Consultant View', desc: 'Roteiro de assessment por subcategory', to: '/consultant', icon: <ArrowRight size={16} /> },
 ];
@@ -102,16 +102,16 @@ const Header: React.FC = () => {
         ...csfFunctions.filter(f =>
           f.name.toLowerCase().includes(query.toLowerCase()) ||
           f.nameEn.toLowerCase().includes(query.toLowerCase())
-        ).slice(0, 2).map(f => ({ type: 'function' as const, id: f.id, label: `${f.code} — ${f.name}`, path: `/framework/${f.id.toLowerCase()}`, fnId: f.id })),
+        ).slice(0, 2).map(f => ({ type: 'function' as const, id: f.id, label: `${f.code}, ${f.name}`, path: `/framework/${f.id.toLowerCase()}`, fnId: f.id })),
         ...csfCategories.filter(c =>
           c.name.toLowerCase().includes(query.toLowerCase()) ||
           c.code.toLowerCase().includes(query.toLowerCase())
-        ).slice(0, 3).map(c => ({ type: 'category' as const, id: c.id, label: `${c.code} — ${c.name}`, path: `/category/${c.id}`, fnId: c.functionId })),
+        ).slice(0, 3).map(c => ({ type: 'category' as const, id: c.id, label: `${c.code}, ${c.name}`, path: `/category/${c.id}`, fnId: c.functionId })),
         ...allSubcategories.filter(s =>
           s.name.toLowerCase().includes(query.toLowerCase()) ||
           s.code.toLowerCase().includes(query.toLowerCase()) ||
           s.keywords.some(k => k.toLowerCase().includes(query.toLowerCase()))
-        ).slice(0, 5).map(s => ({ type: 'subcategory' as const, id: s.id, label: `${s.code} — ${s.name}`, path: `/subcategory/${s.id}`, fnId: s.functionId })),
+        ).slice(0, 5).map(s => ({ type: 'subcategory' as const, id: s.id, label: `${s.code}, ${s.name}`, path: `/subcategory/${s.id}`, fnId: s.functionId })),
       ]
     : [];
 

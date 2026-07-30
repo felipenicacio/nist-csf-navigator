@@ -8,7 +8,7 @@ const steps = [
   { n: 1, phase: 'Escopo', fnId: 'GV',
     title: 'Definir o escopo do Profile',
     desc: 'Determinar quais divisões, ativos, sistemas, parceiros e tipos de ameaças serão cobertos.',
-    detail: 'Cada Profile pode ter um escopo diferente — por tecnologia (IT, OT), tipo de dado (PII, PHI), usuários (internos, terceiros) ou unidade de negócio. Uma organização pode ter múltiplos Profiles simultâneos.',
+    detail: 'Cada Profile pode ter um escopo diferente, por tecnologia (IT, OT), tipo de dado (PII, PHI), usuários (internos, terceiros) ou unidade de negócio. Uma organização pode ter múltiplos Profiles simultâneos.',
     questions: ['Qual é o motivo para criar este Profile?','O Profile cobre toda a organização ou apenas parte dela?','Quais tipos de ameaças e vulnerabilidades serão incluídos?','Quem será responsável por desenvolver, revisar e operacionalizar o Profile?'],
   },
   { n: 2, phase: 'Informações', fnId: 'ID',
@@ -45,22 +45,22 @@ const ImplementationPage: React.FC = () => {
     <div className="max-w-screen-xl mx-auto px-4 sm:px-6 py-10 animate-fadeIn">
       {/* Header */}
       <div className="mb-8">
-        <p className="text-xs font-semibold uppercase tracking-widest mb-2" style={{ color: '#0F766E' }}>Guia de Implementação — NIST SP 1301</p>
+        <p className="text-xs font-semibold uppercase tracking-widest mb-2" style={{ color: '#0F766E' }}>Guia de Implementação. NIST SP 1301</p>
         <h1 className="text-3xl sm:text-4xl font-bold text-slate-900 mb-3">Como Implementar o NIST CSF 2.0</h1>
         <p className="text-slate-500 max-w-2xl leading-relaxed text-sm">
-          O NIST CSF 2.0 define um processo de 5 etapas para criação e uso de Organizational Profiles — o mecanismo central de implementação do framework. Esta jornada é orientativa e pode ser adaptada ao contexto de cada organização.
+          O NIST CSF 2.0 define um processo de 5 etapas para criação e uso de Organizational Profiles, o mecanismo central de implementação do framework. Esta jornada é orientativa e pode ser adaptada ao contexto de cada organização.
         </p>
       </div>
 
       <PageIntro
         title="Por onde começar na implementação?"
-        plain="O NIST define um processo de 5 etapas para implementar o CSF por meio de Organizational Profiles — o mecanismo central do framework."
+        plain="O NIST define um processo de 5 etapas para implementar o CSF por meio de Organizational Profiles, o mecanismo central do framework."
         detail="Você não precisa fazer tudo de uma vez. Comece definindo o escopo, avalie onde está (Current Profile) e onde quer chegar (Target Profile)."
         learnMore={{ label: 'Entender o que é o CSF', to: '/intro' }}
       />
       {/* Flow diagram */}
       <div className="bg-white rounded-2xl border border-slate-200 p-6 mb-8">
-        <h2 className="text-sm font-bold text-slate-700 mb-5 uppercase tracking-wider">Processo de 5 Etapas — Organizational Profile</h2>
+        <h2 className="text-sm font-bold text-slate-700 mb-5 uppercase tracking-wider">Processo de 5 Etapas. Organizational Profile</h2>
         <div className="flex flex-col sm:flex-row items-center gap-2">
           {steps.map((step, i) => (
             <React.Fragment key={step.n}>
@@ -87,7 +87,7 @@ const ImplementationPage: React.FC = () => {
         <div className="flex justify-center mt-3">
           <div className="flex items-center gap-2 text-xs text-slate-400">
             <ArrowDown size={14} />
-            <span className="font-medium">ciclo contínuo — o Profile é atualizado a cada iteração</span>
+            <span className="font-medium">ciclo contínuo, o Profile é atualizado a cada iteração</span>
           </div>
         </div>
       </div>

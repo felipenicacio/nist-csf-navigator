@@ -52,4 +52,4 @@ O NIST CSF 2.0 é desenvolvido pelo NIST. Este Navigator é uma ferramenta educa
 
 ## Licença
 
-MIT License — veja [LICENSE](LICENSE)
+MIT License, veja [LICENSE](LICENSE)

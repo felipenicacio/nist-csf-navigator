@@ -170,12 +170,12 @@ const CategoryPage: React.FC = () => {
       <div className="flex justify-between mt-10 pt-6 border-t border-slate-200">
         {prev ? (
           <Link to={`/category/${prev.id}`} className="flex items-center gap-2 text-sm font-medium text-slate-500 hover:text-slate-800">
-            <ChevronLeft size={16} /> {prev.code} — {prev.name}
+            <ChevronLeft size={16} /> {prev.code}, {prev.name}
           </Link>
         ) : <div />}
         {next ? (
           <Link to={`/category/${next.id}`} className="flex items-center gap-2 text-sm font-medium text-slate-500 hover:text-slate-800">
-            {next.code} — {next.name} <ChevronRight size={16} />
+            {next.code}, {next.name} <ChevronRight size={16} />
           </Link>
         ) : <div />}
       </div>

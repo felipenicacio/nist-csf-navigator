@@ -33,10 +33,10 @@ const FrameworkMapPage: React.FC = () => {
 
           {/* Official wheel image */}
           <div className="bg-white rounded-2xl border border-slate-200 p-8 flex flex-col items-center justify-center">
-            <p className="text-xs font-bold uppercase tracking-widest text-slate-400 mb-4">Diagrama Oficial — NIST CSF 2.0</p>
+            <p className="text-xs font-bold uppercase tracking-widest text-slate-400 mb-4">Diagrama Oficial. NIST CSF 2.0</p>
             <img
               src="./assets/csf-wheel.png"
-              alt="NIST CSF 2.0 Wheel — 6 Functions: Govern, Identify, Protect, Detect, Respond, Recover"
+              alt="NIST CSF 2.0 Wheel, 6 Functions: Govern, Identify, Protect, Detect, Respond, Recover"
               className="w-full max-w-xs"
             />
             <p className="text-xs text-slate-400 mt-4 text-center">
@@ -58,7 +58,7 @@ const FrameworkMapPage: React.FC = () => {
                 <span className="text-3xl font-black opacity-30 font-mono">GV</span>
                 <div>
                   <h3 className="text-xl font-bold text-slate-900">GOVERN</h3>
-                  <p className="text-slate-700 text-sm">Governar — Camada Estratégica</p>
+                  <p className="text-slate-700 text-sm">Governar. Camada Estratégica</p>
                 </div>
               </div>
               <div className="flex items-center gap-4">
@@ -69,7 +69,7 @@ const FrameworkMapPage: React.FC = () => {
               </div>
             </Link>
             <p className="px-6 py-3 text-xs text-slate-600 bg-white border-b border-slate-100">
-              Permeia e fundamenta todas as outras Functions — é o ponto de partida do framework.
+              Permeia e fundamenta todas as outras Functions, é o ponto de partida do framework.
             </p>
             {/* GV Categories grid */}
             <div className="grid grid-cols-2 sm:grid-cols-3 gap-px bg-slate-100">
@@ -187,14 +187,14 @@ const FrameworkMapPage: React.FC = () => {
         <div className="flex justify-center mb-8">
           <div className="flex items-center gap-2 px-4 py-2 rounded-full border border-slate-200 bg-white">
             <span className="text-slate-400">↺</span>
-            <span className="text-xs font-semibold text-slate-500 uppercase tracking-widest">Melhoria Contínua — ID.IM</span>
+            <span className="text-xs font-semibold text-slate-500 uppercase tracking-widest">Melhoria Contínua. ID.IM</span>
           </div>
         </div>
 
         {/* ── ECOSYSTEM ── */}
         <div className="bg-white rounded-xl border border-slate-200 p-6">
           <h3 className="text-sm font-bold text-slate-800 mb-1">Ecossistema de Frameworks</h3>
-          <p className="text-xs text-slate-500 mb-5">O NIST CSF 2.0 é o centro — veja como outros frameworks se relacionam com cada Function.</p>
+          <p className="text-xs text-slate-500 mb-5">O NIST CSF 2.0 é o centro, veja como outros frameworks se relacionam com cada Function.</p>
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-5">
             {[
               {

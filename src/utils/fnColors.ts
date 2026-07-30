@@ -4,9 +4,9 @@ import { csfFunctions } from '../data/functions';
  * Single source of truth for Function colors.
  * All pages must use these helpers instead of hardcoded color maps.
  *
- * colorHex  — official NIST wheel fill (used on badges/cards backgrounds)
- * color     — darker shade for text on light backgrounds
- * colorLight — light tint for card/section backgrounds
+ * colorHex , official NIST wheel fill (used on badges/cards backgrounds)
+ * color    , darker shade for text on light backgrounds
+ * colorLight, light tint for card/section backgrounds
  */
 
 export const getFnById = (id: string) =>
@@ -31,7 +31,7 @@ export const getFnColorsFromCode = (code: string) => {
   return getFnColors(id);
 };
 
-/** Map of Function name (full uppercase) to Function ID — for pages that key by name */
+/** Map of Function name (full uppercase) to Function ID, for pages that key by name */
 export const fnNameToId: Record<string, string> = {
   GOVERN: 'GV',
   IDENTIFY: 'ID',

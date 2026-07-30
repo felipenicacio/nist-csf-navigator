@@ -10,9 +10,9 @@ export interface CSFFunction {
   description: string;
   objective: string;
   layers: OrganizationalLayer[];
-  color: string;       // darker shade — for text on light bg
-  colorLight: string;  // light tint — for backgrounds
-  colorHex: string;    // official wheel color — for bold fills
+  color: string;       // darker shade, for text on light bg
+  colorLight: string;  // light tint, for backgrounds
+  colorHex: string;    // official wheel color, for bold fills
   icon: string;
   categoryIds: string[];
 }

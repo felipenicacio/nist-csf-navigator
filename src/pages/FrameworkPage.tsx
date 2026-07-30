@@ -35,13 +35,13 @@ const FrameworkPage: React.FC = () => {
         <p className="text-xs font-semibold uppercase tracking-widest text-teal-600 mb-2">NIST CSF 2.0</p>
         <h1 className="text-3xl sm:text-4xl font-bold text-slate-900 mb-4">Framework Core</h1>
         <p className="text-slate-500 max-w-2xl leading-relaxed">
-          Navegue pela estrutura completa do NIST CSF 2.0 — seis Functions, dezessete Categories e cento e seis Subcategories organizadas por resultados de cibersegurança.
+          Navegue pela estrutura completa do NIST CSF 2.0, seis Functions, dezessete Categories e cento e seis Subcategories organizadas por resultados de cibersegurança.
         </p>
       </div>
 
       <PageIntro
         title="O que é o CSF Core?"
-        plain="O Core é o coração do NIST CSF — uma lista de resultados de cibersegurança organizados em 6 Functions, 17 Categories e 106 Subcategories."
+        plain="O Core é o coração do NIST CSF, uma lista de resultados de cibersegurança organizados em 6 Functions, 17 Categories e 106 Subcategories."
         detail="Não é uma lista de tarefas obrigatórias. Cada organização seleciona os resultados mais relevantes para o seu contexto e risco."
         learnMore={{ label: 'Entender melhor', to: '/intro' }}
       />
@@ -83,7 +83,7 @@ const FrameworkPage: React.FC = () => {
                       {fn.layers.map(l => <LayerBadge key={l} layer={l} />)}
                     </div>
                     <h2 className="text-xl font-bold text-slate-900">
-                      {fn.nameEn} — <span className="text-slate-500 font-semibold">{fn.name}</span>
+                      {fn.nameEn}, <span className="text-slate-500 font-semibold">{fn.name}</span>
                     </h2>
                     <p className="text-sm text-slate-500 mt-1 line-clamp-1">{fn.description}</p>
                   </div>
