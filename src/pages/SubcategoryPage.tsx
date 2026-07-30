@@ -21,7 +21,6 @@ function parseRefs(refs: string[]): RefGroup[] {
   const nist    = new Set<string>();
   const iso_mc  = new Set<string>(); // Mandatory Clause
   const iso_a   = new Set<string>(); // Annex A Controls
-  const iso_c   = new Set<string>(); // Individual Controls (5.x, 6.x, 7.x, 8.x)
   const cis     = new Set<string>();
 
   for (const ref of refs) {
@@ -40,11 +39,6 @@ function parseRefs(refs: string[]): RefGroup[] {
     if (ref.startsWith('ISO/IEC 27001:2022: Annex A Controls:')) {
       const code = ref.replace('ISO/IEC 27001:2022: Annex A Controls:', '').trim();
       if (code) iso_a.add(code);
-      continue;
-    }
-    if (ref.startsWith('ISO/IEC 27001:2022: Control')) {
-      const code = ref.replace(/^ISO\/IEC 27001:2022: Control\s+/, '').trim();
-      if (code) iso_c.add(code);
       continue;
     }
     // CIS Controls — deduplicate across v8.0 and v8.1
@@ -76,13 +70,6 @@ function parseRefs(refs: string[]): RefGroup[] {
       label: 'ISO/IEC 27001 — Controles Anexo A',
       color: 'text-teal-700', bg: 'bg-teal-50', dot: 'bg-teal-500',
       codes: [...iso_a].sort(),
-    });
-  }
-  if (iso_c.size > 0) {
-    groups.push({
-      label: 'ISO/IEC 27001 — Controles',
-      color: 'text-teal-700', bg: 'bg-teal-50', dot: 'bg-teal-500',
-      codes: [...iso_c].sort(),
     });
   }
   if (cis.size > 0) {
