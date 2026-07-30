@@ -141,23 +141,23 @@ const SubcategoryPage: React.FC = () => {
             <p className="text-slate-600 leading-relaxed">{sub.whatItMeans}</p>
           </Section>
 
-          <Section title="Como implementar">
-            <ul className="space-y-2">
-              {sub.howToImplement.map((h, i) => (
-                <li key={i} className="flex gap-3 text-sm text-slate-600">
-                  <span className="shrink-0 w-5 h-5 rounded-full flex items-center justify-center text-xs font-bold text-white mt-0.5" style={{ backgroundColor: fn.color }}>{i + 1}</span>
-                  {h}
-                </li>
-              ))}
-            </ul>
-          </Section>
-
           <Section title="Perguntas Orientativas">
             <ul className="space-y-3">
               {sub.guidingQuestions.map((q, i) => (
                 <li key={i} className="flex gap-3 text-sm">
                   <span className="text-slate-400 font-bold shrink-0">Q{i + 1}</span>
                   <span className="text-slate-600">{q}</span>
+                </li>
+              ))}
+            </ul>
+          </Section>
+
+          <Section title="Como implementar">
+            <ul className="space-y-2">
+              {sub.howToImplement.map((h, i) => (
+                <li key={i} className="flex gap-3 text-sm text-slate-600">
+                  <span className="shrink-0 w-5 h-5 rounded-full flex items-center justify-center text-xs font-bold text-white mt-0.5" style={{ backgroundColor: fn.color }}>{i + 1}</span>
+                  {h}
                 </li>
               ))}
             </ul>
