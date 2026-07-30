@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
-import { Shield, Search, Menu, X, ChevronDown, Map, BookOpen, GitBranch, ClipboardList, ArrowRight } from 'lucide-react';
+import { Search, Menu, X, ChevronDown, Map, BookOpen, GitBranch, ClipboardList, ArrowRight } from 'lucide-react';
 import { allSubcategories } from '../../data';
 import { csfFunctions } from '../../data/functions';
 import { csfCategories } from '../../data/categories';
@@ -119,9 +119,11 @@ const Header: React.FC = () => {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-2.5 shrink-0">
-            <div className="w-8 h-8 rounded-lg flex items-center justify-center" style={{ backgroundColor: '#0B1F33' }}>
-              <Shield size={16} color="white" />
-            </div>
+            <img
+              src="./assets/csf-wheel.png"
+              alt="NIST CSF 2.0"
+              className="w-8 h-8 object-contain"
+            />
             <div className="hidden sm:block">
               <span className="font-bold text-sm" style={{ color: '#0B1F33' }}>NIST CSF 2.0</span>
               <span className="text-xs text-slate-400 block -mt-0.5 font-medium">Navigator</span>
