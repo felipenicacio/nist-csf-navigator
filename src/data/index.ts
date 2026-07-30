@@ -4,6 +4,22 @@ export { allSubcategories, getSubcategoryById, getSubcategoriesByCategory, getSu
 export { frameworks, getFrameworkById, getFrameworksByCategory } from './frameworks';
 
 export const glossaryTerms = [
+  { term: 'Risco', termEn: 'Risk', definition: 'A combinação da probabilidade de um evento adverso ocorrer e do impacto que causaria. Gerenciar riscos significa reduzir probabilidade, impacto, ou ambos.' },
+  { term: 'Ativo', termEn: 'Asset', definition: 'Qualquer coisa de valor para a organização: dados, sistemas, hardware, software, pessoas, instalações ou serviços.' },
+  { term: 'Controle', termEn: 'Control', definition: 'Medida técnica, administrativa ou física implementada para reduzir riscos de segurança. Exemplos: autenticação multifator, firewall, política de senhas.' },
+  { term: 'Apetite a Riscos', termEn: 'Risk Appetite', definition: 'O nível geral de risco que a organização está disposta a aceitar em busca de seus objetivos. Definido pela alta direção.' },
+  { term: 'Tolerância a Riscos', termEn: 'Risk Tolerance', definition: 'Os limites operacionais específicos aceitáveis em torno do apetite a riscos. Mais concreto e mensurável que o apetite.' },
+  { term: 'Incidente de Segurança', termEn: 'Security Incident', definition: 'Evento que compromete ou ameaça comprometer a confidencialidade, integridade ou disponibilidade de informações ou sistemas.' },
+  { term: 'Confidencialidade', termEn: 'Confidentiality', definition: 'Garantia de que as informações só são acessíveis a quem tem autorização. Violada por vazamentos e acessos não autorizados.' },
+  { term: 'Integridade', termEn: 'Integrity', definition: 'Garantia de que as informações não foram alteradas de forma não autorizada. Violada por modificações indevidas de dados.' },
+  { term: 'Disponibilidade', termEn: 'Availability', definition: 'Garantia de que sistemas e informações estão acessíveis quando necessário. Violada por ataques de negação de serviço (DDoS) ou falhas.' },
+  { term: 'Vulnerabilidade', termEn: 'Vulnerability', definition: 'Fraqueza em um sistema, processo ou controle que pode ser explorada por uma ameaça para causar dano.' },
+  { term: 'Ameaça', termEn: 'Threat', definition: 'Agente ou evento com potencial de explorar uma vulnerabilidade e causar dano. Pode ser externa (hackers) ou interna (erros humanos, insiders).' },
+  { term: 'Ransomware', termEn: 'Ransomware', definition: 'Tipo de malware que criptografa os dados da vítima e exige pagamento (resgate) para restaurar o acesso. Um dos ataques mais comuns e impactantes atualmente.' },
+  { term: 'Autenticação Multifator (MFA)', termEn: 'Multi-Factor Authentication', definition: 'Método de verificação de identidade que exige dois ou mais fatores: algo que você sabe (senha), tem (token) ou é (biometria).' },
+  { term: 'Postura de Cibersegurança', termEn: 'Cybersecurity Posture', definition: 'Estado geral da capacidade de uma organização de prevenir, detectar e responder a riscos de cibersegurança.' },
+  { term: 'Cadeia de Suprimentos', termEn: 'Supply Chain', definition: 'Conjunto de fornecedores, parceiros e terceiros que fornecem produtos, softwares ou serviços à organização. Cada um pode introduzir riscos de cibersegurança.' },
+
   { term: 'Cibersegurança', termEn: 'Cybersecurity', definition: 'Prevenção de danos, proteção e restauração de computadores, sistemas de comunicação eletrônica, serviços de comunicação eletrônica, comunicações com fio e eletrônicas, e as informações contidas nessas tecnologias.' },
   { term: 'Risco de Cibersegurança', termEn: 'Cybersecurity Risk', definition: 'Probabilidade e possível impacto de um evento que explore vulnerabilidades de sistemas de informação para comprometer confidencialidade, integridade ou disponibilidade.' },
   { term: 'Function', termEn: 'Function', definition: 'Agrupamento de resultados de cibersegurança de alto nível no NIST CSF. O CSF 2.0 possui seis Functions: Govern, Identify, Protect, Detect, Respond e Recover.' },

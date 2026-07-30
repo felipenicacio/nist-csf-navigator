@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import PageIntro from '../components/ui/PageIntro';
 import { getFnColorsFromCode } from '../utils/fnColors';
 
 const activityPoints = [
@@ -93,6 +94,12 @@ const ERMPage: React.FC = () => {
         </p>
       </div>
 
+      <PageIntro
+        title="O que é Enterprise Risk Management (ERM)?"
+        plain="ERM é a gestão de todos os riscos da organização — financeiro, reputação, tecnologia, cadeia de suprimentos. A cibersegurança é um subconjunto do ERM."
+        detail="O NIST CSF ajuda a integrar os riscos de cibersegurança ao programa de ERM, usando uma linguagem que executivos entendem."
+        learnMore={{ label: 'Entender o CSF', to: '/intro' }}
+      />
       {/* Hierarchy */}
       <div className="bg-white rounded-2xl border border-slate-200 p-6 mb-8">
         <h2 className="text-sm font-bold uppercase tracking-wider text-slate-500 mb-5">Hierarquia de Gestão de Riscos</h2>

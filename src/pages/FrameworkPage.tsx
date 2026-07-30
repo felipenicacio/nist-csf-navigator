@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { Shield, Search, Lock, Eye, Zap, RefreshCw, ArrowRight, ChevronRight } from 'lucide-react';
 import { csfFunctions } from '../data/functions';
 import { csfCategories } from '../data/categories';
+import PageIntro from '../components/ui/PageIntro';
 import { allSubcategories } from '../data';
 import { LayerBadge } from '../components/ui';
 
@@ -38,6 +39,12 @@ const FrameworkPage: React.FC = () => {
         </p>
       </div>
 
+      <PageIntro
+        title="O que é o CSF Core?"
+        plain="O Core é o coração do NIST CSF — uma lista de resultados de cibersegurança organizados em 6 Functions, 17 Categories e 106 Subcategories."
+        detail="Não é uma lista de tarefas obrigatórias. Cada organização seleciona os resultados mais relevantes para o seu contexto e risco."
+        learnMore={{ label: 'Entender melhor', to: '/intro' }}
+      />
       {/* Filter */}
       <div className="flex flex-wrap gap-2 mb-10">
         {layers.map(l => (

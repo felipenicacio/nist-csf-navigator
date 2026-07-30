@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { getFnColorsByName, getFnColorsFromCode } from '../utils/fnColors';
 import { CheckSquare, ChevronRight } from 'lucide-react';
+import PageIntro from '../components/ui/PageIntro';
 
 const activities = [
   {
@@ -68,6 +69,12 @@ const CSCRMPage: React.FC = () => {
         </p>
       </div>
 
+      <PageIntro
+        title="O que é C-SCRM?"
+        plain="C-SCRM é a gestão de riscos de cibersegurança na cadeia de suprimentos — ou seja, os riscos introduzidos por fornecedores, softwares, hardwares e serviços que sua organização compra e usa."
+        detail="Um ataque pode entrar pela cadeia de suprimentos mesmo que seus sistemas internos estejam protegidos. Por isso o CSF dedica uma Category inteira a este tema: GV.SC."
+        learnMore={{ label: 'Ver GV.SC no Framework', to: '/category/GV.SC' }}
+      />
       {/* Intro card */}
       <div className="bg-white rounded-xl border border-slate-200 p-6 mb-6">
         <h2 className="text-sm font-bold text-slate-800 mb-3">O ecossistema da cadeia de suprimentos</h2>

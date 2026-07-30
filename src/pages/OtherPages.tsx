@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import PageIntro from '../components/ui/PageIntro';
 import { getFnColors } from '../utils/fnColors';
 import { Link } from 'react-router-dom';
 import { ChevronRight } from 'lucide-react';
@@ -94,6 +95,12 @@ export const TiersPage: React.FC = () => {
         </p>
       </div>
 
+      <PageIntro
+        title="O que são os Tiers?"
+        plain="Os Tiers descrevem o quão rigorosa é a gestão de riscos de cibersegurança da organização — do ad hoc (Tier 1) ao adaptativo (Tier 4)."
+        detail="Não são etapas que precisam ser seguidas em ordem. O objetivo não é atingir o Tier 4 — é identificar o nível adequado ao seu contexto e risco."
+        learnMore={{ label: 'Voltar à introdução', to: '/intro' }}
+      />
       {/* Key notes */}
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-8">
         {[
@@ -212,6 +219,12 @@ export const ProfilesPage: React.FC = () => {
         </p>
       </div>
 
+      <PageIntro
+        title="O que são os Organizational Profiles?"
+        plain="Um Profile descreve a postura de cibersegurança atual ou desejada da organização usando os resultados do CSF Core."
+        detail="O Current Profile mostra onde você está. O Target Profile mostra onde quer chegar. A diferença entre eles é o Gap Analysis."
+        learnMore={{ label: 'Voltar à introdução', to: '/intro' }}
+      />
       {/* Three cards */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-5 mb-8">
         {[
@@ -421,6 +434,11 @@ export const CrosswalkPage: React.FC = () => {
         </p>
       </div>
 
+      <PageIntro
+        title="O que é um Crosswalk?"
+        plain="Crosswalk é o mapeamento entre os resultados do CSF e outros frameworks e padrões — como NIST SP 800-53, ISO/IEC 27002 e CIS Controls."
+        detail="Esses mapeamentos mostram quais controles de outros frameworks contribuem para alcançar cada resultado do CSF. São orientativos, não equivalências 1:1."
+      />
       <div className="bg-amber-50 border border-amber-200 rounded-xl p-4 mb-8">
         <p className="text-sm text-amber-700">
           <strong>Importante:</strong> Os mapeamentos abaixo são orientativos. Frameworks têm objetivos diferentes e um controle pode atender parcialmente a múltiplos resultados. O contexto organizacional deve sempre ser considerado.
@@ -594,6 +612,12 @@ export const GlossaryPage: React.FC = () => {
         </p>
       </div>
 
+      <PageIntro
+        title="Novo no NIST CSF?"
+        plain="Este glossário explica os termos técnicos usados no framework em linguagem acessível."
+        detail="Se quiser entender o CSF do zero, comece pela Introdução."
+        learnMore={{ label: 'Ver Introdução ao NIST CSF', to: '/intro' }}
+      />
       <div className="mb-8">
         <input
           type="text"

@@ -9,8 +9,9 @@ import { csfCategories } from '../../data/categories';
 
 
 const exploreItems = [
+  { label: 'Introdução ao NIST CSF', desc: 'O que é, para que serve, por onde começar', to: '/intro', icon: <BookOpen size={16} /> },
   { label: 'Framework Map', desc: 'Visão visual completa do CSF 2.0', to: '/map', icon: <Map size={16} /> },
-  { label: 'Explorar Framework', desc: 'Functions, Categories, Subcategories', to: '/framework', icon: <BookOpen size={16} /> },
+  { label: 'Explorar Framework', desc: 'Functions, Categories, Subcategories', to: '/framework', icon: <ArrowRight size={16} /> },
   { label: 'Crosswalk', desc: 'NIST 800-53, ISO 27002, CIS Controls', to: '/crosswalk', icon: <GitBranch size={16} /> },
   { label: 'Frameworks Relacionados', desc: '22+ frameworks documentados', to: '/frameworks', icon: <ArrowRight size={16} /> },
 ];

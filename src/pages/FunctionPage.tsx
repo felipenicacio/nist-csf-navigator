@@ -5,6 +5,7 @@ import { csfFunctions } from '../data/functions';
 import { csfCategories } from '../data/categories';
 import { allSubcategories } from '../data';
 import { LayerBadge, Section } from '../components/ui';
+import PageIntro from '../components/ui/PageIntro';
 
 const FunctionPage: React.FC = () => {
   const { id } = useParams<{ id: string }>();
@@ -27,6 +28,11 @@ const FunctionPage: React.FC = () => {
         <span className="font-semibold" style={{ color: fn.color }}>{fn.nameEn}</span>
       </nav>
 
+      <PageIntro
+        title="O que é uma Function?"
+        plain="Uma Function é o nível mais alto do CSF — agrupa resultados de cibersegurança relacionados a um mesmo objetivo."
+        detail="Cada Function se divide em Categories, que por sua vez se dividem em Subcategories com resultados específicos."
+      />
       {/* Function header */}
       <div className="rounded-2xl p-8 mb-10 text-white" style={{ background: `linear-gradient(135deg, ${fn.color} 0%, ${fn.color}CC 100%)` }}>
         <div className="flex items-start gap-4">

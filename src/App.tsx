@@ -1,6 +1,7 @@
 import { HashRouter as Router, Routes, Route } from 'react-router-dom';
 import { Header } from './components/layout';
 import HomePage from './pages/HomePage';
+import IntroPage from './pages/IntroPage';
 import FrameworkPage from './pages/FrameworkPage';
 import FrameworkMapPage from './pages/FrameworkMapPage';
 import FunctionPage from './pages/FunctionPage';
@@ -20,6 +21,7 @@ function App() {
         <main className="flex-1">
           <Routes>
             <Route path="/" element={<HomePage />} />
+            <Route path="/intro" element={<IntroPage />} />
             <Route path="/map" element={<FrameworkMapPage />} />
             <Route path="/framework" element={<FrameworkPage />} />
             <Route path="/framework/:id" element={<FunctionPage />} />

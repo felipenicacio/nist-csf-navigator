@@ -5,6 +5,7 @@ import { csfFunctions } from '../data/functions';
 import { csfCategories } from '../data/categories';
 import { allSubcategories } from '../data';
 import { MappingTypeBadge } from '../components/ui';
+import PageIntro from '../components/ui/PageIntro';
 
 // Derived from csfFunctions — single source of truth for colors
 const getFnColor = (id: string) => {
@@ -53,6 +54,12 @@ const ConsultantViewPage: React.FC = () => {
         </p>
       </div>
 
+      <PageIntro
+        title="Como usar o Consultant View?"
+        plain="Navegue por Function → Category → Subcategory e acesse perguntas de diagnóstico para avaliar a maturidade da organização em cada resultado do CSF."
+        detail="Mesmo sem experiência prévia com o NIST, as perguntas guiam a conversa. Use como roteiro em reuniões com o cliente."
+        learnMore={{ label: 'Entender as Functions', to: '/intro#functions' }}
+      />
       {/* Breadcrumb navigator */}
       <div className="flex items-center gap-2 text-sm mb-8 flex-wrap">
         {[

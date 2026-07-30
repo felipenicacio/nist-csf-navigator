@@ -8,6 +8,18 @@ import { csfCategories } from '../data/categories';
 const HomePage: React.FC = () => {
   return (
     <div className="animate-fadeIn">
+      {/* Beginner onboarding banner */}
+      <div className="bg-blue-700 px-4 py-2.5">
+        <div className="max-w-screen-xl mx-auto flex items-center justify-between gap-4">
+          <p className="text-white/90 text-xs sm:text-sm font-medium">
+            Novo no NIST CSF 2.0? Comece por aqui.
+          </p>
+          <Link to="/intro" className="shrink-0 text-xs font-bold px-3 py-1.5 bg-white text-blue-700 rounded-lg hover:bg-blue-50 transition-colors whitespace-nowrap">
+            Ver Introdução →
+          </Link>
+        </div>
+      </div>
+
       {/* Hero */}
       <section className="relative overflow-hidden" style={{ background: 'linear-gradient(135deg, #0B1F33 0%, #164E73 60%, #0F766E 100%)' }}>
         <div className="absolute inset-0 opacity-10">

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { getFnColors } from '../utils/fnColors';
 import { ChevronRight, ArrowRight, ArrowDown, CheckSquare, FileText, AlertTriangle, TrendingUp } from 'lucide-react';
+import PageIntro from '../components/ui/PageIntro';
 import { Link } from 'react-router-dom';
 
 const steps = [
@@ -51,6 +52,12 @@ const ImplementationPage: React.FC = () => {
         </p>
       </div>
 
+      <PageIntro
+        title="Por onde começar na implementação?"
+        plain="O NIST define um processo de 5 etapas para implementar o CSF por meio de Organizational Profiles — o mecanismo central do framework."
+        detail="Você não precisa fazer tudo de uma vez. Comece definindo o escopo, avalie onde está (Current Profile) e onde quer chegar (Target Profile)."
+        learnMore={{ label: 'Entender o que é o CSF', to: '/intro' }}
+      />
       {/* Flow diagram */}
       <div className="bg-white rounded-2xl border border-slate-200 p-6 mb-8">
         <h2 className="text-sm font-bold text-slate-700 mb-5 uppercase tracking-wider">Processo de 5 Etapas — Organizational Profile</h2>
