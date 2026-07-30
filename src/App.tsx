@@ -10,6 +10,7 @@ import SubcategoryPage from './pages/SubcategoryPage';
 import ImplementationPage from './pages/ImplementationPage';
 import ConsultantViewPage from './pages/ConsultantViewPage';
 import ERMPage from './pages/ERMPage';
+import RoadmapPage from './pages/RoadmapPage';
 import CSCRMPage from './pages/CSCRMPage';
 import { TiersPage, ProfilesPage, CrosswalkPage, FrameworksPage, GlossaryPage, AboutPage } from './pages/OtherPages';
 
@@ -29,6 +30,7 @@ function App() {
             <Route path="/subcategory/:id" element={<SubcategoryPage />} />
             <Route path="/implementation" element={<ImplementationPage />} />
             <Route path="/consultant" element={<ConsultantViewPage />} />
+            <Route path="/roadmap" element={<RoadmapPage />} />
             <Route path="/erm" element={<ERMPage />} />
             <Route path="/cscrm" element={<CSCRMPage />} />
             <Route path="/tiers" element={<TiersPage />} />

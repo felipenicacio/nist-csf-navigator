@@ -102,7 +102,7 @@ const SubcategoryPage: React.FC = () => {
 
           {/* Crosswalk */}
           {(hasNist || hasIso || hasCis) && (
-            <Section title="Crosswalk. Mapeamentos">
+            <Section title="Crosswalk: Mapeamentos">
               <div className="space-y-6">
                 {hasNist && (
                   <div>

@@ -46,7 +46,7 @@ const ConsultantViewPage: React.FC = () => {
           </div>
           <div>
             <p className="text-xs font-semibold uppercase tracking-widest text-teal-600">Modo Consultor</p>
-            <h1 className="text-2xl sm:text-3xl font-bold text-slate-900">Consultant View</h1>
+            <h1 className="text-2xl sm:text-3xl font-bold text-slate-900">Assessment Navigator</h1>
           </div>
         </div>
         <p className="text-slate-500 max-w-2xl text-sm leading-relaxed">
@@ -55,7 +55,7 @@ const ConsultantViewPage: React.FC = () => {
       </div>
 
       <PageIntro
-        title="Como usar o Consultant View?"
+        title="Como usar o Assessment Navigator?"
         plain="Navegue por Função → Categoria → Subcategoria e acesse perguntas de diagnóstico para avaliar a maturidade da organização em cada resultado do CSF."
         detail="Mesmo sem experiência prévia com o NIST, as perguntas guiam a conversa. Use como roteiro em reuniões com o cliente."
         learnMore={{ label: 'Entender as Funções', to: '/intro#functions' }}
