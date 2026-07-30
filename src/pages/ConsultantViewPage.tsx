@@ -6,13 +6,10 @@ import { csfCategories } from '../data/categories';
 import { allSubcategories } from '../data';
 import { MappingTypeBadge } from '../components/ui';
 
-const fnColors: Record<string, { bg: string; light: string; text: string }> = {
-  GV: { bg: '#0B1F33', light: '#FFF9C4', text: '#1a1a1a' },
-  ID: { bg: '#164E73', light: '#E0F4FB', text: '#1a1a1a' },
-  PR: { bg: '#0F766E', light: '#EEECFB', text: '#1a1a1a' },
-  DE: { bg: '#D97706', light: '#FFF3DC', text: '#1a1a1a' },
-  RS: { bg: '#DC2626', light: '#FFE8E7', text: '#1a1a1a' },
-  RC: { bg: '#16A34A', light: '#E2FAF0', text: '#1a1a1a' },
+// Derived from csfFunctions — single source of truth for colors
+const getFnColor = (id: string) => {
+  const f = csfFunctions.find(fn => fn.id === id);
+  return { bg: f?.colorHex ?? '#E2E8F0', light: f?.colorLight ?? '#F8FAFC', text: f?.color ?? '#334155' };
 };
 
 type Step = 'function' | 'category' | 'subcategory' | 'detail';
@@ -90,7 +87,7 @@ const ConsultantViewPage: React.FC = () => {
           <p className="text-xs font-semibold uppercase tracking-widest text-slate-400 mb-4">Passo 1 — Selecione a Function</p>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {csfFunctions.map(f => {
-              const c = fnColors[f.id];
+              const c = getFnColor(f.id);
               const catCount = csfCategories.filter(cat => cat.functionId === f.id).length;
               const subCount = allSubcategories.filter(s => s.functionId === f.id).length;
               return (
@@ -130,7 +127,7 @@ const ConsultantViewPage: React.FC = () => {
           <div className="space-y-3">
             {fnCats.map(c => {
               const subCount = allSubcategories.filter(s => s.categoryId === c.id).length;
-              const fc = fnColors[fn.id];
+              const fc = getFnColor(fn.id);
               return (
                 <button
                   key={c.id}
@@ -161,7 +158,7 @@ const ConsultantViewPage: React.FC = () => {
           <p className="text-xs font-semibold uppercase tracking-widest text-slate-400 mb-4">Passo 3 — Selecione a Subcategory</p>
           <div className="space-y-2">
             {catSubs.map(s => {
-              const fc = fnColors[fn.id];
+              const fc = getFnColor(fn.id);
               return (
                 <button
                   key={s.id}
@@ -191,7 +188,7 @@ const ConsultantViewPage: React.FC = () => {
           {/* Sub header */}
           <div className="bg-white rounded-xl border border-slate-200 p-6 mb-6">
             <div className="flex items-start gap-4">
-              <span className="text-sm font-mono font-bold px-3 py-1.5 rounded-lg shrink-0" style={{ backgroundColor: fnColors[fn.id].light, color: fnColors[fn.id].bg }}>
+              <span className="text-sm font-mono font-bold px-3 py-1.5 rounded-lg shrink-0" style={{ backgroundColor: getFnColor(fn.id).light, color: getFnColor(fn.id).bg }}>
                 {sub.code}
               </span>
               <div className="flex-1">
@@ -236,7 +233,7 @@ const ConsultantViewPage: React.FC = () => {
                 <div className="space-y-4">
                   {sub.guidingQuestions.map((q, i) => (
                     <div key={i} className="flex gap-4 p-4 bg-slate-50 rounded-xl border border-slate-100">
-                      <div className="w-7 h-7 rounded-full flex items-center justify-center text-xs font-bold text-white shrink-0 mt-0.5" style={{ backgroundColor: fnColors[fn.id].bg }}>
+                      <div className="w-7 h-7 rounded-full flex items-center justify-center text-xs font-bold text-white shrink-0 mt-0.5" style={{ backgroundColor: getFnColor(fn.id).bg }}>
                         {i + 1}
                       </div>
                       <div className="flex-1">
@@ -339,7 +336,7 @@ const ConsultantViewPage: React.FC = () => {
                 <div className="space-y-3 mb-6">
                   {sub.howToImplement.map((h, i) => (
                     <div key={i} className="flex gap-3 p-4 bg-slate-50 rounded-xl border border-slate-100">
-                      <span className="w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold text-white shrink-0" style={{ backgroundColor: fnColors[fn.id].bg }}>{i + 1}</span>
+                      <span className="w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold text-white shrink-0" style={{ backgroundColor: getFnColor(fn.id).bg }}>{i + 1}</span>
                       <p className="text-sm text-slate-700">{h}</p>
                     </div>
                   ))}
@@ -370,7 +367,7 @@ const ConsultantViewPage: React.FC = () => {
             <Link
               to={`/subcategory/${sub.id}`}
               className="flex items-center gap-2 text-sm font-semibold px-4 py-2 rounded-lg text-white transition-colors"
-              style={{ backgroundColor: fnColors[fn.id].bg }}
+              style={{ backgroundColor: getFnColor(fn.id).bg }}
             >
               Ver página completa <ChevronRight size={14} />
             </Link>
