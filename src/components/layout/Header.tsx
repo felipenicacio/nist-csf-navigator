@@ -112,22 +112,6 @@ const ImplementationDropdown: React.FC<{ active?: boolean }> = ({ active }) => {
             <p className="text-xs font-bold uppercase tracking-widest text-slate-400">5 Etapas do NIST</p>
           </div>
           <div className="px-3 pb-2">
-            <div className="grid grid-cols-5 gap-1.5 mb-2">
-              {implementSteps.map((step) => (
-                <button
-                  key={step.to}
-                  onClick={() => { navigate(step.to); setOpen(false); }}
-                  className="flex flex-col items-center rounded-xl border-2 py-2 px-1 transition-all hover:scale-105"
-                  style={{ borderColor: step.color, backgroundColor: step.bg }}
-                  title={step.label}
-                >
-                  <span className="text-xs font-black" style={{ color: step.color }}>{step.n}</span>
-                  <span className="text-xs font-bold text-center leading-tight mt-0.5" style={{ color: step.color }}>
-                    {step.label.split(' ')[0]}
-                  </span>
-                </button>
-              ))}
-            </div>
             {implementSteps.map(step => (
               <button
                 key={step.to + '-row'}
