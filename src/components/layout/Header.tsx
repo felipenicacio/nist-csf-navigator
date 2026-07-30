@@ -17,12 +17,13 @@ const exploreItems = [
 ];
 
 const implementItems = [
-  { label: 'Guia de Implementação', desc: 'Processo de 5 etapas. Profiles', to: '/implementation', icon: <ClipboardList size={16} /> },
-  { label: 'Organizational Profiles', desc: 'Current, Target e Gap Analysis', to: '/profiles', icon: <ArrowRight size={16} /> },
-  { label: 'CSF Tiers', desc: 'Governança e Gestão por Função', to: '/tiers', icon: <ArrowRight size={16} /> },
-  { label: 'Enterprise Risk Management', desc: '6 Activity Points. ERM + CSF', to: '/erm', icon: <ArrowRight size={16} /> },
+  { label: 'Implementation Roadmap', desc: '10 fases: do zero ao programa completo', to: '/roadmap', icon: <ClipboardList size={16} /> },
+  { label: 'Guia de Implementação', desc: 'Processo de 5 etapas com Perfis', to: '/implementation', icon: <ArrowRight size={16} /> },
+  { label: 'Perfis Organizacionais', desc: 'Perfil Atual, Perfil Alvo, Gap Analysis', to: '/profiles', icon: <ArrowRight size={16} /> },
+  { label: 'CSF Tiers', desc: 'Governança e gestão por Função', to: '/tiers', icon: <ArrowRight size={16} /> },
+  { label: 'Enterprise Risk Management', desc: '6 Activity Points, ERM + CSF', to: '/erm', icon: <ArrowRight size={16} /> },
   { label: 'C-SCRM', desc: 'Gestão de riscos da cadeia de suprimentos', to: '/cscrm', icon: <ArrowRight size={16} /> },
-  { label: 'Consultant View', desc: 'Roteiro de assessment por subcategory', to: '/consultant', icon: <ArrowRight size={16} /> },
+  { label: 'Assessment Navigator', desc: 'Perguntas e evidências por Subcategoria', to: '/consultant', icon: <ArrowRight size={16} /> },
 ];
 
 const DropdownMenu: React.FC<{
