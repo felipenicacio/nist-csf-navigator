@@ -1,41 +1,45 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useNavigate, useLocation } from 'react-router-dom';
 import { Search, Menu, X, ChevronDown } from 'lucide-react';
 import { allSubcategories } from '../../data';
 import { getFnColors } from '../../utils/fnColors';
 import { csfFunctions } from '../../data/functions';
 import { csfCategories } from '../../data/categories';
 
+// ── Nav items ────────────────────────────────────────────────────────────────
+
 const frameworkItems = [
-  { label: 'O que é o NIST CSF 2.0', desc: 'Introdução acessível ao framework', to: '/intro' },
   { label: 'Framework Map', desc: 'Visão visual de toda a estrutura', to: '/map' },
   { label: 'Funções e Categorias', desc: '6 Funções, 17 Categorias, 106 Subcategorias', to: '/framework' },
   { label: 'Tiers', desc: 'Governança e gestão por Função', to: '/tiers' },
   { label: 'Perfis Organizacionais', desc: 'Current Profile e Target Profile', to: '/profiles' },
+  { label: 'Crosswalk', desc: 'CSF x NIST 800-53 x ISO 27002 x CIS', to: '/crosswalk' },
+  { label: 'Frameworks Relacionados', desc: '22+ frameworks documentados', to: '/frameworks' },
+  { label: 'Glossário', desc: 'Termos e definições', to: '/glossary' },
 ];
 
-const implementItems = [
-  { label: 'Implementation Roadmap', desc: '10 fases orientativas de implementação', to: '/roadmap' },
-  { label: 'Guia de Implementação', desc: 'Processo de 5 etapas com Perfis', to: '/implementation' },
-  { label: 'Enterprise Risk Management', desc: '6 Activity Points, ERM + CSF', to: '/erm' },
+// 5 etapas do NIST como sub-itens de Implementação
+const implementSteps = [
+  { n: '01', label: 'Escopo', desc: 'Contexto organizacional e definição do escopo', to: '/implementation#escopo' },
+  { n: '02', label: 'Reunir Informações', desc: 'Políticas, riscos, requisitos e Community Profiles', to: '/implementation#informacoes' },
+  { n: '03', label: 'Criar Perfil', desc: 'Perfil Atual e Perfil Alvo', to: '/implementation#perfil' },
+  { n: '04', label: 'Analisar Lacunas + Plano de Ação', desc: 'Gap Analysis e Action Plan priorizado', to: '/implementation#lacunas' },
+  { n: '05', label: 'Implementar + Atualizar', desc: 'Executar, monitorar e melhorar continuamente', to: '/implementation#implementar' },
+];
+
+const implementExtras = [
+  { label: 'ERM', desc: 'Enterprise Risk Management', to: '/erm' },
   { label: 'C-SCRM', desc: 'Gestão de riscos da cadeia de suprimentos', to: '/cscrm' },
-];
-
-const assessItems = [
-  { label: 'Assessment Journey', desc: 'Current Profile → Target → Gap → Ação', to: '/assessment' },
   { label: 'Assessment Navigator', desc: 'Perguntas e evidências por Subcategoria', to: '/consultant' },
 ];
 
-const referenceItems = [
-  { label: 'Frameworks Relacionados', desc: '22+ frameworks documentados', to: '/frameworks' },
-  { label: 'Crosswalk Explorer', desc: 'CSF x NIST 800-53 x ISO 27002 x CIS', to: '/crosswalk' },
-  { label: 'Glossário', desc: 'Termos e definições', to: '/glossary' },
-];
+// ── DropdownMenu ─────────────────────────────────────────────────────────────
 
 const DropdownMenu: React.FC<{
   label: string;
   items: { label: string; desc: string; to: string }[];
-}> = ({ label, items }) => {
+  active?: boolean;
+}> = ({ label, items, active }) => {
   const [open, setOpen] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
   const navigate = useNavigate();
@@ -52,13 +56,14 @@ const DropdownMenu: React.FC<{
     <div ref={ref} className="relative">
       <button
         onClick={() => setOpen(!open)}
-        className="flex items-center gap-1 px-3 py-2 text-sm font-medium text-slate-600 hover:text-slate-900 hover:bg-slate-50 rounded-md transition-colors"
+        className={`flex items-center gap-1 px-3 py-2 text-sm font-medium rounded-md transition-colors
+          ${active ? 'text-slate-900 bg-slate-100' : 'text-slate-600 hover:text-slate-900 hover:bg-slate-50'}`}
       >
         {label}
         <ChevronDown size={14} className={`transition-transform ${open ? 'rotate-180' : ''}`} />
       </button>
       {open && (
-        <div className="absolute top-full left-0 mt-1 w-64 bg-white rounded-xl shadow-xl border border-slate-200 py-2 z-50">
+        <div className="absolute top-full left-0 mt-1 w-72 bg-white rounded-xl shadow-xl border border-slate-200 py-2 z-50">
           {items.map(item => (
             <button
               key={item.to}
@@ -75,48 +80,119 @@ const DropdownMenu: React.FC<{
   );
 };
 
+// ── ImplementationDropdown — shows 5 steps + extras ─────────────────────────
+
+const ImplementationDropdown: React.FC<{ active?: boolean }> = ({ active }) => {
+  const [open, setOpen] = useState(false);
+  const ref = useRef<HTMLDivElement>(null);
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    const handler = (e: MouseEvent) => {
+      if (ref.current && !ref.current.contains(e.target as Node)) setOpen(false);
+    };
+    document.addEventListener('mousedown', handler);
+    return () => document.removeEventListener('mousedown', handler);
+  }, []);
+
+  return (
+    <div ref={ref} className="relative">
+      <button
+        onClick={() => setOpen(!open)}
+        className={`flex items-center gap-1 px-3 py-2 text-sm font-medium rounded-md transition-colors
+          ${active ? 'text-slate-900 bg-slate-100' : 'text-slate-600 hover:text-slate-900 hover:bg-slate-50'}`}
+      >
+        Implementação
+        <ChevronDown size={14} className={`transition-transform ${open ? 'rotate-180' : ''}`} />
+      </button>
+      {open && (
+        <div className="absolute top-full left-0 mt-1 w-80 bg-white rounded-xl shadow-xl border border-slate-200 py-2 z-50">
+          {/* 5 etapas */}
+          <div className="px-4 py-1.5">
+            <p className="text-xs font-bold uppercase tracking-widest text-slate-400">5 Etapas do NIST</p>
+          </div>
+          {implementSteps.map(step => (
+            <button
+              key={step.to}
+              onClick={() => { navigate(step.to); setOpen(false); }}
+              className="w-full text-left px-4 py-2 hover:bg-slate-50 transition-colors flex items-start gap-3"
+            >
+              <span className="text-xs font-black text-slate-300 font-mono shrink-0 mt-0.5">{step.n}</span>
+              <div>
+                <p className="text-sm font-semibold text-slate-800">{step.label}</p>
+                <p className="text-xs text-slate-400">{step.desc}</p>
+              </div>
+            </button>
+          ))}
+          {/* Extras */}
+          <div className="px-4 pt-2 pb-1 mt-1 border-t border-slate-100">
+            <p className="text-xs font-bold uppercase tracking-widest text-slate-400">Ferramentas</p>
+          </div>
+          {implementExtras.map(item => (
+            <button
+              key={item.to}
+              onClick={() => { navigate(item.to); setOpen(false); }}
+              className="w-full text-left px-4 py-2 hover:bg-slate-50 transition-colors"
+            >
+              <p className="text-sm font-semibold text-slate-800">{item.label}</p>
+              <p className="text-xs text-slate-400">{item.desc}</p>
+            </button>
+          ))}
+        </div>
+      )}
+    </div>
+  );
+};
+
+// ── Header ───────────────────────────────────────────────────────────────────
+
 const Header: React.FC = () => {
   const [searchOpen, setSearchOpen] = useState(false);
   const [query, setQuery] = useState('');
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [mobileSection, setMobileSection] = useState<string | null>(null);
   const navigate = useNavigate();
+  const location = useLocation();
   const searchRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const handler = (e: MouseEvent) => {
       if (searchRef.current && !searchRef.current.contains(e.target as Node)) {
-        setSearchOpen(false);
-        setQuery('');
+        setSearchOpen(false); setQuery('');
       }
     };
     document.addEventListener('mousedown', handler);
     return () => document.removeEventListener('mousedown', handler);
   }, []);
 
-  const results = query.length > 1
-    ? [
-        ...csfFunctions.filter(f =>
-          f.name.toLowerCase().includes(query.toLowerCase()) ||
-          f.nameEn.toLowerCase().includes(query.toLowerCase())
-        ).slice(0, 2).map(f => ({ type: 'function' as const, id: f.id, label: `${f.code}, ${f.name}`, path: `/framework/${f.id.toLowerCase()}`, fnId: f.id })),
-        ...csfCategories.filter(c =>
-          c.name.toLowerCase().includes(query.toLowerCase()) ||
-          c.code.toLowerCase().includes(query.toLowerCase())
-        ).slice(0, 3).map(c => ({ type: 'category' as const, id: c.id, label: `${c.code}, ${c.name}`, path: `/category/${c.id}`, fnId: c.functionId })),
-        ...allSubcategories.filter(s =>
-          s.name.toLowerCase().includes(query.toLowerCase()) ||
-          s.code.toLowerCase().includes(query.toLowerCase()) ||
-          s.keywords.some(k => k.toLowerCase().includes(query.toLowerCase()))
-        ).slice(0, 5).map(s => ({ type: 'subcategory' as const, id: s.id, label: `${s.code}, ${s.name}`, path: `/subcategory/${s.id}`, fnId: s.functionId })),
-      ]
-    : [];
+  const results = query.length > 1 ? [
+    ...csfFunctions.filter(f =>
+      f.name.toLowerCase().includes(query.toLowerCase()) ||
+      f.nameEn.toLowerCase().includes(query.toLowerCase())
+    ).slice(0, 2).map(f => ({ type: 'function' as const, id: f.id, label: `${f.code}, ${f.name}`, path: `/framework/${f.id.toLowerCase()}`, fnId: f.id })),
+    ...csfCategories.filter(c =>
+      c.name.toLowerCase().includes(query.toLowerCase()) ||
+      c.code.toLowerCase().includes(query.toLowerCase())
+    ).slice(0, 3).map(c => ({ type: 'category' as const, id: c.id, label: `${c.code}, ${c.name}`, path: `/category/${c.id}`, fnId: c.functionId })),
+    ...allSubcategories.filter(s =>
+      s.name.toLowerCase().includes(query.toLowerCase()) ||
+      s.code.toLowerCase().includes(query.toLowerCase()) ||
+      s.keywords.some(k => k.toLowerCase().includes(query.toLowerCase()))
+    ).slice(0, 5).map(s => ({ type: 'subcategory' as const, id: s.id, label: `${s.code}, ${s.name}`, path: `/subcategory/${s.id}`, fnId: s.functionId })),
+  ] : [];
+
+  const isFramework = ['/map', '/framework', '/tiers', '/profiles', '/crosswalk', '/frameworks', '/glossary'].some(p => location.pathname.startsWith(p));
+  const isImplement = ['/implementation', '/roadmap', '/assessment', '/erm', '/cscrm', '/consultant'].some(p => location.pathname.startsWith(p));
 
   const mobileGroups = [
-    { key: 'framework',  label: 'Framework',     items: frameworkItems },
-    { key: 'implement',  label: 'Implementação',  items: implementItems },
-    { key: 'assess',     label: 'Assessment',     items: assessItems },
-    { key: 'reference',  label: 'Referências',    items: referenceItems },
+    { key: 'framework', label: 'Framework', items: frameworkItems },
+    {
+      key: 'implement', label: 'Implementação',
+      items: [
+        ...implementSteps.map(s => ({ label: `${s.n}. ${s.label}`, desc: s.desc, to: s.to })),
+        ...implementExtras,
+      ]
+    },
   ];
 
   return (
@@ -135,11 +211,22 @@ const Header: React.FC = () => {
 
           {/* Desktop nav */}
           <nav className="hidden lg:flex items-center gap-0.5">
-            <DropdownMenu label="Framework"    items={frameworkItems} />
-            <DropdownMenu label="Implementação" items={implementItems} />
-            <DropdownMenu label="Assessment"   items={assessItems} />
-            <DropdownMenu label="Referências"  items={referenceItems} />
-            <Link to="/about" className="px-3 py-2 text-sm font-medium text-slate-600 hover:text-slate-900 hover:bg-slate-50 rounded-md transition-colors">Sobre</Link>
+            <Link
+              to="/intro"
+              className={`px-3 py-2 text-sm font-medium rounded-md transition-colors
+                ${location.pathname === '/intro' ? 'text-slate-900 bg-slate-100' : 'text-slate-600 hover:text-slate-900 hover:bg-slate-50'}`}
+            >
+              Introdução
+            </Link>
+            <DropdownMenu label="Framework" items={frameworkItems} active={isFramework} />
+            <ImplementationDropdown active={isImplement} />
+            <Link
+              to="/about"
+              className={`px-3 py-2 text-sm font-medium rounded-md transition-colors
+                ${location.pathname === '/about' ? 'text-slate-900 bg-slate-100' : 'text-slate-600 hover:text-slate-900 hover:bg-slate-50'}`}
+            >
+              Sobre
+            </Link>
           </nav>
 
           {/* Search + hamburger */}
@@ -170,7 +257,8 @@ const Header: React.FC = () => {
                             onClick={() => { navigate(r.path); setSearchOpen(false); setQuery(''); }}
                             className="w-full text-left px-3 py-2.5 text-sm rounded-lg hover:bg-slate-50 flex items-center gap-3"
                           >
-                            <span className="text-xs font-mono font-bold px-1.5 py-0.5 rounded shrink-0" style={{ backgroundColor: getFnColors(r.fnId).bg, color: getFnColors(r.fnId).text }}>
+                            <span className="text-xs font-mono font-bold px-1.5 py-0.5 rounded shrink-0"
+                              style={{ backgroundColor: getFnColors(r.fnId).bg, color: getFnColors(r.fnId).text }}>
                               {r.fnId}
                             </span>
                             <span className="text-slate-700 truncate">{r.label}</span>
@@ -206,25 +294,26 @@ const Header: React.FC = () => {
 
       {/* Mobile menu */}
       {mobileMenuOpen && (
-        <div className="lg:hidden border-t border-slate-100 bg-white px-4 py-4 space-y-2 max-h-[80vh] overflow-y-auto">
+        <div className="lg:hidden border-t border-slate-100 bg-white px-4 py-4 space-y-1 max-h-[80vh] overflow-y-auto">
+          <Link to="/intro" onClick={() => setMobileMenuOpen(false)}
+            className="block px-3 py-2 text-sm font-semibold text-slate-800 hover:bg-slate-50 rounded-lg">
+            Introdução
+          </Link>
+
           {mobileGroups.map(group => (
             <div key={group.key}>
               <button
                 onClick={() => setMobileSection(mobileSection === group.key ? null : group.key)}
-                className="w-full flex items-center justify-between px-3 py-2 text-sm font-bold text-slate-800 hover:bg-slate-50 rounded-lg"
+                className="w-full flex items-center justify-between px-3 py-2 text-sm font-semibold text-slate-800 hover:bg-slate-50 rounded-lg"
               >
                 <span>{group.label}</span>
                 <ChevronDown size={14} className={`transition-transform ${mobileSection === group.key ? 'rotate-180' : ''}`} />
               </button>
               {mobileSection === group.key && (
-                <div className="pl-3 space-y-1 mt-1">
+                <div className="pl-4 space-y-0.5 mt-1">
                   {group.items.map(item => (
-                    <Link
-                      key={item.to}
-                      to={item.to}
-                      onClick={() => setMobileMenuOpen(false)}
-                      className="block px-3 py-2 text-sm text-slate-700 hover:bg-slate-50 rounded-lg"
-                    >
+                    <Link key={item.to} to={item.to} onClick={() => setMobileMenuOpen(false)}
+                      className="block px-3 py-2 text-sm text-slate-600 hover:bg-slate-50 rounded-lg">
                       {item.label}
                     </Link>
                   ))}
@@ -232,8 +321,12 @@ const Header: React.FC = () => {
               )}
             </div>
           ))}
+
           <div className="pt-1 border-t border-slate-100">
-            <Link to="/about" onClick={() => setMobileMenuOpen(false)} className="block px-3 py-2 text-sm font-medium text-slate-700 hover:bg-slate-50 rounded-lg">Sobre</Link>
+            <Link to="/about" onClick={() => setMobileMenuOpen(false)}
+              className="block px-3 py-2 text-sm font-semibold text-slate-700 hover:bg-slate-50 rounded-lg">
+              Sobre
+            </Link>
           </div>
         </div>
       )}
